@@ -1,0 +1,452 @@
+﻿@if (skill) {
+<!-- Hero Section -->
+<section class="relative pt-12 pb-16 md:pt-20 md:pb-24 px-4 md:px-8 overflow-hidden">
+  <!-- Background -->
+  <div
+    class="absolute top-0 right-0 -mr-40 -mt-40 w-[600px] h-[600px] rounded-full blur-3xl -z-10 pointer-events-none opacity-20"
+    [ngClass]="'bg-gradient-to-r ' + skill.gradientClass"></div>
+
+  <div class="max-w-[1000px] mx-auto">
+    <!-- Breadcrumb -->
+    <nav class="mb-8">
+      <ol class="flex items-center gap-2 text-sm">
+        <li><a routerLink="/skills"
+            class="text-slate-500 dark:text-brand-muted hover:text-brand-blue transition-colors">Compétences</a>
+        </li>
+        <li><small class="text-slate-500 dark:text-brand-muted">/</small></li>
+        <li class="text-slate-900 dark:text-brand-text font-medium">{{ skill.name }}</li>
+      </ol>
+    </nav>
+
+    <div class="flex flex-col md:flex-row gap-8 items-start">
+      <!-- Icon -->
+      <div class="w-20 h-20 rounded-2xl flex items-center justify-center shrink-0"
+        [ngClass]="[skill.bgClass, skill.colorClass]">
+        <i class="material-symbols-outlined text-4xl" aria-hidden="true">{{ skill.icon }}</i>
+      </div>
+
+      <!-- Content -->
+      <div class="flex-1">
+        <h1 class="text-4xl md:text-5xl font-black leading-tight tracking-tight mb-4">
+          {{ skill.name }}
+        </h1>
+        <p class="text-lg text-slate-500 dark:text-brand-muted mb-6 max-w-2xl">
+          {{ skill.longDescription }}
+        </p>
+
+        <!-- Meta Stats -->
+        <div class="flex flex-wrap gap-6">
+          <div class="flex items-center gap-2">
+            <i class="material-symbols-outlined text-xl" [ngClass]="skill.colorClass" aria-hidden="true">trending_up</i>
+            <strong class="font-bold text-slate-900 dark:text-brand-text">{{ skill.level }}%</strong>
+            <small class="text-slate-500 dark:text-brand-muted">maîtrise</small>
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="material-symbols-outlined text-xl" [ngClass]="skill.colorClass" aria-hidden="true">schedule</i>
+
+            <strong class="font-bold text-slate-900 dark:text-brand-text">{{ getLevelLabel(skill.level) }}</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main Content -->
+<section class="py-12 px-4 md:px-8 bg-white dark:bg-brand-surface">
+  <div class="max-w-[1000px] mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- Left Column: Skills Detail -->
+      <div class="lg:col-span-2 space-y-8">
+        <!-- Individual Skills -->
+        <div class="bg-white dark:bg-brand-surface rounded-xl border border-slate-200 dark:border-brand-border p-6">
+          <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+            <i class="material-symbols-outlined" [ngClass]="skill.colorClass" aria-hidden="true">code</i>
+            Technologies
+          </h2>
+
+          <div class="space-y-6">
+            @for (tech of skill.skills; track tech.name) {
+            <div class="space-y-2">
+              <div class="flex justify-between items-center">
+                <div>
+                  <strong class="font-bold text-slate-900 dark:text-brand-text">{{ tech.name }}</strong>
+                  <small class="text-sm text-slate-500 dark:text-brand-muted ml-2">{{ tech.experience }}</small>
+                </div>
+                <small class="text-sm font-medium" [ngClass]="skill.colorClass">{{ getLevelLabel(tech.level) }}</small>
+              </div>
+              <div class="w-full h-2 bg-slate-200 dark:bg-brand-bg rounded-full overflow-hidden">
+                <div class="h-full rounded-full transition-all duration-700 bg-gradient-to-r"
+                  [ngClass]="skill.gradientClass" [style.width.%]="tech.level"></div>
+              </div>
+              @if (tech.description) {
+              <p class="text-sm text-slate-500 dark:text-brand-muted">{{ tech.description }}</p>
+              }
+            </div>
+            }
+          </div>
+        </div>
+
+        <!-- Key Strengths -->
+        <div class="bg-white dark:bg-brand-surface rounded-xl border border-slate-200 dark:border-brand-border p-6">
+          <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+            <i class="material-symbols-outlined" [ngClass]="skill.colorClass" aria-hidden="true">star</i>
+            Points forts
+          </h2>
+
+          <div class="grid grid-cols-2 gap-4">
+            @for (strength of skill.keyStrengths; track strength) {
+            <div class="flex items-center gap-3 p-3 rounded-lg bg-slate-50 dark:bg-brand-bg">
+              <i class="material-symbols-outlined text-lg" [ngClass]="skill.colorClass"
+                aria-hidden="true">check_circle</i>
+              <small class="text-sm font-medium text-slate-500 dark:text-brand-muted">{{ strength }}</small>
+            </div>
+            }
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="bg-white dark:bg-brand-surface rounded-xl border border-slate-200 dark:border-brand-border p-6">
+          <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+            <i class="material-symbols-outlined" [ngClass]="skill.colorClass" aria-hidden="true">build</i>
+            Outils & Technologies
+          </h2>
+
+          <div class="flex flex-wrap gap-2">
+            @for (tool of skill.tools; track tool) {
+            <small
+              class="px-3 py-2 rounded-lg bg-slate-50 dark:bg-brand-bg border border-slate-200 dark:border-brand-border text-sm font-medium text-slate-500 dark:text-brand-muted">
+              {{ tool }}
+            </small>
+            }
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Projects & Resources -->
+      <div class="space-y-8">
+        <!-- Related Projects -->
+        <div class="bg-white dark:bg-brand-surface rounded-xl border border-slate-200 dark:border-brand-border p-6">
+          <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+            <i class="material-symbols-outlined" [ngClass]="skill.colorClass" aria-hidden="true">folder_open</i>
+            Projets liés
+          </h2>
+
+          <div class="space-y-4">
+            @for (project of skill.relatedProjects; track project.id) {
+            <a [routerLink]="['/projects', project.id]"
+              class="block p-4 rounded-lg bg-slate-50 dark:bg-brand-bg border border-slate-200 dark:border-brand-border hover:border-brand-blue/50 transition-colors group">
+              <h3
+                class="font-bold text-slate-900 dark:text-brand-text group-hover:text-brand-blue transition-colors mb-1">
+                {{ project.title }}
+              </h3>
+              <p class="text-sm text-slate-500 dark:text-brand-muted">{{ project.description }}</p>
+            </a>
+            }
+          </div>
+
+          <a routerLink="/projects" class="inline-flex items-center gap-1 text-brand-blue font-medium text-sm mt-4">
+            Voir tous les projets
+            <i class="material-symbols-outlined text-lg" aria-hidden="true">arrow_forward</i>
+          </a>
+        </div>
+
+        <!-- Resources -->
+        <div class="bg-white dark:bg-brand-surface rounded-xl border border-slate-200 dark:border-brand-border p-6">
+          <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+            <i class="material-symbols-outlined" [ngClass]="skill.colorClass" aria-hidden="true">menu_book</i>
+            Ressources
+          </h2>
+
+          <div class="space-y-3">
+            @for (resource of skill.resources; track resource.title) {
+            <a [href]="resource.url"
+              class="flex items-center gap-3 p-3 rounded-lg bg-slate-50 dark:bg-brand-bg hover:bg-slate-100 dark:hover:bg-brand-border transition-colors">
+              <i class="material-symbols-outlined text-slate-500 dark:text-brand-muted" aria-hidden="true">
+                @switch (resource.type) {
+                @case ('Livre') {
+                book
+                }
+                @case ('Cours') {
+                school
+                }
+                @case ('Certification') {
+                workspace_premium
+                }
+                @default {
+                link
+                }
+                }
+              </i>
+              <div class="flex-1 min-w-0">
+                <p class="font-medium text-slate-900 dark:text-brand-text text-sm truncate">{{ resource.title }}</p>
+                <p class="text-xs text-slate-500 dark:text-brand-muted">{{ resource.type }}</p>
+              </div>
+              <i class="material-symbols-outlined text-slate-500 dark:text-brand-muted text-lg"
+                aria-hidden="true">open_in_new</i>
+            </a>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Professional Definition -->
+@if (skill.professionalDefinition) {
+<section class="py-12 px-4 md:px-8 bg-slate-50 dark:bg-brand-bg">
+  <div class="max-w-[1000px] mx-auto">
+    <h2 class="text-2xl font-bold mb-6 flex items-center gap-3 text-slate-900 dark:text-brand-text">
+      <i class="material-symbols-outlined" [ngClass]="skill.colorClass" aria-hidden="true">info</i>
+      Définition professionnelle
+    </h2>
+    <div class="p-6 rounded-xl bg-white dark:bg-brand-surface border border-slate-200 dark:border-brand-border">
+      <p class="text-slate-600 dark:text-brand-muted leading-relaxed">{{ skill.professionalDefinition }}</p>
+    </div>
+  </div>
+</section>
+}
+
+<!-- Anecdotes -->
+@if (skill.anecdotes && skill.anecdotes.length > 0) {
+<section class="py-12 px-4 md:px-8 bg-white dark:bg-brand-surface">
+  <div class="max-w-[1000px] mx-auto">
+    <h2 class="text-2xl font-bold mb-6 flex items-center gap-3 text-slate-900 dark:text-brand-text">
+      <i class="material-symbols-outlined" [ngClass]="skill.colorClass" aria-hidden="true">auto_stories</i>
+      Anecdotes professionnelles
+    </h2>
+    <p class="text-slate-500 dark:text-brand-muted mb-8">Exemples concrets d'utilisation de cette compétence dans mes
+      projets.</p>
+
+    <div class="space-y-6">
+      @for (anecdote of skill.anecdotes; track anecdote.title) {
+      <div class="p-6 rounded-xl border border-slate-200 dark:border-brand-border bg-slate-50 dark:bg-brand-bg">
+        <h3 class="text-lg font-bold mb-4 text-slate-900 dark:text-brand-text">{{ anecdote.title }}</h3>
+
+        <div class="space-y-4">
+          <!-- Contexte -->
+          <div class="flex gap-3">
+            <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
+              [ngClass]="[skill.bgClass, skill.colorClass]">
+              <i class="material-symbols-outlined text-base" aria-hidden="true">description</i>
+            </div>
+            <div class="flex-1">
+              <p class="text-xs font-bold uppercase tracking-wide text-slate-400 dark:text-brand-muted mb-1">Contexte
+              </p>
+              <p class="text-sm text-slate-600 dark:text-brand-muted">{{ anecdote.context }}</p>
+            </div>
+          </div>
+
+          <!-- Action -->
+          <div class="flex gap-3">
+            <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
+              [ngClass]="[skill.bgClass, skill.colorClass]">
+              <i class="material-symbols-outlined text-base" aria-hidden="true">flash_on</i>
+            </div>
+            <div class="flex-1">
+              <p class="text-xs font-bold uppercase tracking-wide text-slate-400 dark:text-brand-muted mb-1">Action</p>
+              <p class="text-sm text-slate-600 dark:text-brand-muted">{{ anecdote.action }}</p>
+            </div>
+          </div>
+
+          <!-- Résultat -->
+          <div class="flex gap-3">
+            <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
+              [ngClass]="[skill.bgClass, skill.colorClass]">
+              <i class="material-symbols-outlined text-base" aria-hidden="true">check_circle</i>
+            </div>
+            <div class="flex-1">
+              <p class="text-xs font-bold uppercase tracking-wide text-slate-400 dark:text-brand-muted mb-1">Résultat
+              </p>
+              <p class="text-sm text-slate-600 dark:text-brand-muted">{{ anecdote.result }}</p>
+            </div>
+          </div>
+
+          <!-- Valeur ajoutée -->
+          <div class="flex gap-3">
+            <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 bg-brand-teal/10 text-brand-teal">
+              <i class="material-symbols-outlined text-base" aria-hidden="true">stars</i>
+            </div>
+            <div class="flex-1">
+              <p class="text-xs font-bold uppercase tracking-wide text-brand-teal/70 mb-1">Valeur ajoutée</p>
+              <p class="text-sm font-medium text-slate-900 dark:text-brand-text">{{ anecdote.addedValue }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+}
+
+<!-- Self-Critique -->
+@if (skill.selfCritique) {
+<section class="py-12 px-4 md:px-8 bg-slate-50 dark:bg-brand-bg">
+  <div class="max-w-[1000px] mx-auto">
+    <h2 class="text-2xl font-bold mb-6 flex items-center gap-3 text-slate-900 dark:text-brand-text">
+      <i class="material-symbols-outlined" [ngClass]="skill.colorClass" aria-hidden="true">assessment</i>
+      Auto-critique & Analyse
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Mastery Level -->
+      <div class="p-6 rounded-xl bg-white dark:bg-brand-surface border border-slate-200 dark:border-brand-border">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center shrink-0"
+            [ngClass]="[skill.bgClass, skill.colorClass]">
+            <i class="material-symbols-outlined text-2xl" aria-hidden="true">emoji_events</i>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-bold text-slate-900 dark:text-brand-text mb-2">Niveau de maîtrise</h3>
+            <p class="text-sm text-slate-600 dark:text-brand-muted">{{ skill.selfCritique.mastery }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Importance -->
+      <div class="p-6 rounded-xl bg-white dark:bg-brand-surface border border-slate-200 dark:border-brand-border">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center shrink-0"
+            [ngClass]="[skill.bgClass, skill.colorClass]">
+            <i class="material-symbols-outlined text-2xl" aria-hidden="true">priority_high</i>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-bold text-slate-900 dark:text-brand-text mb-2">Importance</h3>
+            <p class="text-sm text-slate-600 dark:text-brand-muted">{{ skill.selfCritique.importance }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Acquisition Speed -->
+      <div class="p-6 rounded-xl bg-white dark:bg-brand-surface border border-slate-200 dark:border-brand-border">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center shrink-0"
+            [ngClass]="[skill.bgClass, skill.colorClass]">
+            <i class="material-symbols-outlined text-2xl" aria-hidden="true">speed</i>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-bold text-slate-900 dark:text-brand-text mb-2">Vitesse d'acquisition</h3>
+            <p class="text-sm text-slate-600 dark:text-brand-muted">{{ skill.selfCritique.acquisitionSpeed }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Advice -->
+      <div class="p-6 rounded-xl bg-white dark:bg-brand-surface border border-slate-200 dark:border-brand-border">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center shrink-0"
+            [ngClass]="[skill.bgClass, skill.colorClass]">
+            <i class="material-symbols-outlined text-2xl" aria-hidden="true">lightbulb</i>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-bold text-slate-900 dark:text-brand-text mb-2">Conseil</h3>
+            <p class="text-sm text-slate-600 dark:text-brand-muted">{{ skill.selfCritique.advice }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+}
+
+<!-- Evolution -->
+@if (skill.evolution) {
+<section class="py-12 px-4 md:px-8 bg-white dark:bg-brand-surface">
+  <div class="max-w-[1000px] mx-auto">
+    <h2 class="text-2xl font-bold mb-6 flex items-center gap-3 text-slate-900 dark:text-brand-text">
+      <i class="material-symbols-outlined" [ngClass]="skill.colorClass" aria-hidden="true">trending_up</i>
+      Évolution & Objectifs futurs
+    </h2>
+
+    <div class="space-y-6">
+      <!-- Future Level Progress -->
+      <div class="p-6 rounded-xl border border-slate-200 dark:border-brand-border bg-slate-50 dark:bg-brand-bg">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="font-bold text-slate-900 dark:text-brand-text">Objectif de niveau</h3>
+          <small class="px-3 py-1 bg-brand-blue/10 text-brand-blue text-xs rounded-full font-bold">
+            {{ skill.evolution.targetDate }}
+          </small>
+        </div>
+        <div class="flex items-center gap-4 mb-2">
+          <span class="text-sm text-slate-500 dark:text-brand-muted">Actuel: <strong [ngClass]="skill.colorClass">{{
+              skill.level }}%</strong></span>
+          <i class="material-symbols-outlined text-brand-blue" aria-hidden="true">arrow_forward</i>
+          <span class="text-sm text-slate-500 dark:text-brand-muted">Cible: <strong class="text-brand-blue">{{
+              skill.evolution.futureLevel }}%</strong></span>
+        </div>
+        <div class="w-full h-3 bg-slate-200 dark:bg-brand-bg rounded-full overflow-hidden">
+          <div class="h-full rounded-full transition-all duration-700 bg-gradient-to-r" [ngClass]="skill.gradientClass"
+            [style.width.%]="skill.evolution.futureLevel"></div>
+        </div>
+      </div>
+
+      <!-- Training Plans -->
+      @if (skill.evolution.trainingPlans && skill.evolution.trainingPlans.length > 0) {
+      <div class="p-6 rounded-xl border border-slate-200 dark:border-brand-border">
+        <h3 class="font-bold text-slate-900 dark:text-brand-text mb-4 flex items-center gap-2">
+          <i class="material-symbols-outlined" [ngClass]="skill.colorClass" aria-hidden="true">school</i>
+          Plan de formation
+        </h3>
+        <ul class="space-y-3">
+          @for (plan of skill.evolution.trainingPlans; track plan) {
+          <li class="flex items-start gap-3">
+            <i class="material-symbols-outlined text-brand-blue mt-0.5" aria-hidden="true">chevron_right</i>
+            <p class="text-sm text-slate-600 dark:text-brand-muted flex-1">{{ plan }}</p>
+          </li>
+          }
+        </ul>
+      </div>
+      }
+
+      <!-- Next Steps -->
+      @if (skill.evolution.nextSteps && skill.evolution.nextSteps.length > 0) {
+      <div class="p-6 rounded-xl border border-slate-200 dark:border-brand-border">
+        <h3 class="font-bold text-slate-900 dark:text-brand-text mb-4 flex items-center gap-2">
+          <i class="material-symbols-outlined" [ngClass]="skill.colorClass" aria-hidden="true">playlist_add_check</i>
+          Prochaines étapes
+        </h3>
+        <ul class="space-y-3">
+          @for (step of skill.evolution.nextSteps; track step) {
+          <li class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-brand-teal/10 flex items-center justify-center shrink-0 mt-0.5">
+              <i class="material-symbols-outlined text-brand-teal text-sm" aria-hidden="true">done</i>
+            </div>
+            <p class="text-sm text-slate-600 dark:text-brand-muted flex-1">{{ step }}</p>
+          </li>
+          }
+        </ul>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+}
+
+<!-- Navigation -->
+<section class="py-12 px-4 md:px-8">
+  <div class="max-w-[1000px] mx-auto">
+    <a routerLink="/skills"
+      class="inline-flex items-center gap-2 text-slate-500 dark:text-brand-muted hover:text-brand-blue transition-colors">
+      <i class="material-symbols-outlined" aria-hidden="true">arrow_back</i>
+      Retour aux compétences
+    </a>
+  </div>
+</section>
+} @else {
+<!-- Not Found -->
+<section class="py-32 px-4 text-center">
+  <div class="max-w-md mx-auto">
+    <i class="material-symbols-outlined text-6xl text-slate-500 dark:text-brand-muted mb-4"
+      aria-hidden="true">search_off</i>
+    <h1 class="text-2xl font-bold text-slate-900 dark:text-brand-text mb-2">Compétence non trouvée</h1>
+    <p class="text-slate-500 dark:text-brand-muted mb-6">La compétence demandée n'existe pas.</p>
+    <a routerLink="/skills"
+      class="inline-flex items-center gap-2 px-6 py-3 bg-brand-blue text-white font-bold rounded-lg hover:shadow-lg hover:shadow-brand-blue/40 transition-all">
+      <i class="material-symbols-outlined" aria-hidden="true">arrow_back</i>
+      Retour aux compétences
+    </a>
+  </div>
+</section>
+}
