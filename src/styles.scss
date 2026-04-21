@@ -3,6 +3,50 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ==========================================
+   RÈGLE GLOBALE D'ALIGNEMENT DES ICÔNES
+   ==========================================
+   Material Symbols est une police d'icônes dont le glyphe possède
+   une line-height native supérieure à 1, ce qui crée des décalages
+   verticaux visibles quand l'icône est placée à côté d'un texte ou
+   dans un conteneur de taille fixe (rond, carré, badge…).
+
+   On normalise ici une bonne fois pour toutes :
+   - display: inline-flex + items/justify-center  → centre le glyphe
+     dans toute boîte parente (carrée, ronde, badge).
+   - line-height: 1 + vertical-align: middle     → aligne l'icône sur
+     la ligne de texte quand elle est en ligne.
+   - flex-shrink: 0                              → l'icône ne se
+     rétracte jamais dans un flex container.
+
+   Conséquence : PAS besoin d'ajouter `mt-0.5`, `leading-none`, etc.
+   sur chaque icône dans les templates. */
+.material-symbols-outlined {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+/* Lignes « icône + texte » réutilisables.
+   Usage : <div class="icon-row"><i class="material-symbols-outlined">…</i><span>…</span></div>
+   Équivalent à `flex items-center gap-3` mais centralisé. */
+.icon-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Ligne « icône + bloc multi-ligne » : icône alignée sur la première
+   ligne du texte, le reste du paragraphe coule dessous. */
+.icon-row-start {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
 /* Smooth scroll for entire page */
 html {
   scroll-behavior: smooth;

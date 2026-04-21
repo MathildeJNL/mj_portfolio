@@ -21,7 +21,6 @@ export class ProjectDetailComponent implements OnInit {
   readonly tabs = [
     { id: 'overview', label: "Vue d'ensemble", icon: 'visibility' },
     { id: 'technical', label: 'Technique', icon: 'code' },
-    { id: 'timeline', label: 'Timeline', icon: 'schedule' },
   ];
 
   ngOnInit(): void {

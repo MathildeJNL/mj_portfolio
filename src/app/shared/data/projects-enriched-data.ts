@@ -1,4 +1,4 @@
-// Donnees enrichies pour les projets selon grille ISCOD/VISIPLUS
+// Données enrichies pour les projets selon grille ISCOD/VISIPLUS
 import { ProjectActor, ProjectResults, ProjectFuture, ProjectReflection } from '../models';
 
 export const projectEnrichedData: Record<
@@ -16,15 +16,15 @@ export const projectEnrichedData: Record<
 > = {
     'openclassrooms-2': {
         objectives: [
-            'Integrer une maquette Figma en HTML/CSS responsive (mobile, tablette, desktop)',
-            'Maitriser les techniques de mise en page moderne (Flexbox, Grid)',
-            'Assurer une qualite de code professionnelle (W3C, semantique)',
+            'Intégrer une maquette Figma en HTML/CSS responsive (mobile, tablette, desktop)',
+            'Maîtriser les techniques de mise en page moderne (Flexbox, Grid)',
+            'Assurer une qualité de code professionnelle (W3C, sémantique)',
             'Versionner le projet avec Git et GitHub',
         ],
         context:
-            "Projet 2 du parcours OpenClassrooms 'Developpeur Web'. Il s'agissait du premier projet d'integration pure, simulant une commande reelle d'un client (agence de voyage Booki) avec une maquette Figma fournie.",
+            "Projet 2 du parcours OpenClassrooms « Développeur Web ». Il s'agissait du premier projet d'intégration pure, simulant une commande réelle d'un client (agence de voyage Booki) avec une maquette Figma fournie.",
         stakes: [
-            "Apprendre a traduire fidelement une intention de design en code HTML/CSS fonctionnel et maintenable. C'est une competence fondamentale pour tout developpeur frontend.",
+            "Apprendre à traduire fidèlement une intention de design en code HTML/CSS fonctionnel et maintenable. C'est une compétence fondamentale pour tout développeur frontend.",
         ],
         actors: [
             {
@@ -33,69 +33,69 @@ export const projectEnrichedData: Record<
                     'Accompagnement hebdomadaire, validation des livrables, conseils sur les bonnes pratiques HTML/CSS et responsive design.',
             },
             {
-                role: 'Evaluateur OpenClassrooms',
+                role: 'Évaluateur OpenClassrooms',
                 description:
-                    'Evaluation finale du projet selon les criteres de la grille (semantique, accessibilite, responsive, qualite du code).',
+                    'Évaluation finale du projet selon les critères de la grille (sémantique, accessibilité, responsive, qualité du code).',
             },
         ],
         results: {
             forStudent: [
-                'Maitrise des bases de l\'integration responsive (Flexbox, Grid, media queries)',
-                'Comprehension de l\'importance de la semantique HTML pour l\'accessibilite et le SEO',
-                'Acquisition d\'une methodologie d\'integration (mobile-first, decoupage en composants)',
-                'Validation de la competence avec mention "Excellent travail d\'integration"',
+                "Maîtrise des bases de l'intégration responsive (Flexbox, Grid, media queries)",
+                "Compréhension de l'importance de la sémantique HTML pour l'accessibilité et le SEO",
+                "Acquisition d'une méthodologie d'intégration (mobile-first, découpage en composants)",
+                "Validation de la compétence avec mention « Excellent travail d'intégration »",
             ],
             forCompany: [
-                'Demonstration d\'une capacite a respecter un cahier des charges de design',
+                "Démonstration d'une capacité à respecter un cahier des charges de design",
                 'Code HTML/CSS maintenable et conforme aux standards W3C',
-                'Respect des delais de livraison du projet',
+                'Respect des délais de livraison du projet',
             ],
         },
         future: {
             status:
-                'Projet pedagogique termine. Le code reste accessible sur GitHub comme reference de mes competences en integration HTML/CSS responsive.',
+                'Projet pédagogique terminé. Le code reste accessible sur GitHub comme référence de mes compétences en intégration HTML/CSS responsive.',
             potentialEnhancements: [
-                'Ajouter des animations CSS pour dynamiser l\'interface',
-                'Integrer un systeme de reservation fonctionnel (JavaScript)',
-                'Ameliorer l\'accessibilite (ARIA, navigation clavier)',
+                "Ajouter des animations CSS pour dynamiser l'interface",
+                'Intégrer un système de réservation fonctionnel (JavaScript)',
+                "Améliorer l'accessibilité (ARIA, navigation clavier)",
             ],
         },
         reflection: {
             whatWorkedWell: [
-                'Methode mobile-first efficace pour garantir la responsivite',
+                'Méthode mobile-first efficace pour garantir la responsivité',
                 'Utilisation pertinente de Flexbox et Grid pour les layouts',
-                'Code semantique et structure claire',
+                'Code sémantique et structure claire',
             ],
             whatCouldBeImproved: [
-                'Temps d\'integration un peu long (manque d\'experience)',
-                'Organisation CSS aurait pu etre plus modulaire (BEM, SCSS)',
-                'Quelques ajustements manuels de pixels au lieu d\'une logique plus systematique',
+                "Temps d'intégration un peu long (manque d'expérience)",
+                'Organisation CSS aurait pu être plus modulaire (BEM, SCSS)',
+                "Quelques ajustements manuels de pixels au lieu d'une logique plus systématique",
             ],
             lessonsLearned: [
-                'L\'importance du mobile-first pour simplifier l\'integration responsive',
-                'La valeur d\'un code HTML semantique pour le SEO et l\'accessibilite',
-                'La necessite de structurer son CSS des le debut pour faciliter la maintenance',
+                "L'importance du mobile-first pour simplifier l'intégration responsive",
+                "La valeur d'un code HTML sémantique pour le SEO et l'accessibilité",
+                'La nécessité de structurer son CSS dès le début pour faciliter la maintenance',
             ],
             wouldDoDifferently:
-                'Avec mon experience actuelle, j\'utiliserais SCSS et une architecture de styles plus modulaire (variables, mixins, BEM) pour faciliter l\'evolution du projet. J\'aurais egalement pense l\'accessibilite des le debut plutot qu\'en correction.',
+                "Avec mon expérience actuelle, j'utiliserais SCSS et une architecture de styles plus modulaire (variables, mixins, BEM) pour faciliter l'évolution du projet. J'aurais également pensé l'accessibilité dès le début plutôt qu'en correction.",
         },
         risks: [
-            'Non-conformite W3C (validation manuelle necessaire)',
-            'Manque de tests sur navigateurs anciens (IE11 a l\'epoque)',
-            'Code CSS peu maintenable sans prepro processeur',
+            'Non-conformité W3C (validation manuelle nécessaire)',
+            "Manque de tests sur navigateurs anciens (IE11 à l'époque)",
+            'Code CSS peu maintenable sans préprocesseur',
         ],
     },
     'openclassrooms-3': {
         objectives: [
-            'Creer des animations CSS avancees (keyframes, transitions, transforms)',
-            'Adopter une approche mobile-first systematique',
-            'Utiliser un preprocesseur CSS (SASS) pour organiser le code',
+            'Créer des animations CSS avancées (keyframes, transitions, transforms)',
+            'Adopter une approche mobile-first systématique',
+            'Utiliser un préprocesseur CSS (SASS) pour organiser le code',
             'Versionner avec Git et utiliser des branches features',
         ],
         context:
-            "Projet 3 du parcours OpenClassrooms. Il fallait dynamiser l'interface d'Ohmyfood (site de reservation de restaurants) avec des animations CSS : spinner de chargement, apparition progressive des plats, effets au survol.",
+            "Projet 3 du parcours OpenClassrooms. Il fallait dynamiser l'interface d'Ohmyfood (site de réservation de restaurants) avec des animations CSS : spinner de chargement, apparition progressive des plats, effets au survol.",
         stakes: [
-            'Apprendre a enrichir l\'experience utilisateur avec des animations fluides et performantes, sans alourdir le chargement ou nuire a l\'accessibilite.',
+            "Apprendre à enrichir l'expérience utilisateur avec des animations fluides et performantes, sans alourdir le chargement ou nuire à l'accessibilité.",
         ],
         actors: [
             {
@@ -104,498 +104,418 @@ export const projectEnrichedData: Record<
                     'Accompagnement sur les animations CSS, conseils sur SASS et la structuration du code CSS.',
             },
             {
-                role: 'Evaluateur OpenClassrooms',
+                role: 'Évaluateur OpenClassrooms',
                 description:
-                    'Evaluation selon les criteres : qualite des animations, code SASS structure, approche mobile-first.',
+                    'Évaluation selon les critères : qualité des animations, code SASS structuré, approche mobile-first.',
             },
         ],
         results: {
             forStudent: [
-                'Maitrise des animations CSS (keyframes, transitions, transforms)',
-                'Comprehension des bonnes pratiques : performance, accessibilite des animations',
+                'Maîtrise des animations CSS (keyframes, transitions, transforms)',
+                "Compréhension des bonnes pratiques : performance, accessibilité des animations",
                 'Apprentissage de SASS : variables, mixins, imbrication',
-                'Adoption d\'une approche mobile-first rigoureuse',
+                "Adoption d'une approche mobile-first rigoureuse",
             ],
             forCompany: [
-                'Demonstration d\'une capacite a creer des interfaces dynamiques et engageantes',
-                'Code CSS structure et maintenable grace a SASS',
-                'Respect des standards d\'accessibilite meme avec des animations',
+                "Démonstration d'une capacité à créer des interfaces dynamiques et engageantes",
+                "Code CSS structuré et maintenable grâce à SASS",
+                "Respect des standards d'accessibilité même avec des animations",
             ],
         },
         future: {
             status:
-                'Projet termine et disponible sur GitHub. Les techniques apprises (animations, SASS) sont reutilisees dans mes projets professionnels (Worldline, Portfolio).',
+                'Projet terminé et disponible sur GitHub. Les techniques apprises (animations, SASS) sont réutilisées dans mes projets professionnels (Worldline, Portfolio).',
             potentialEnhancements: [
                 'Ajouter des micro-interactions JavaScript pour plus de dynamisme',
-                'Implemer un systeme de commande fonctionnel (backend)',
+                'Implémenter un système de commande fonctionnel (backend)',
                 'Optimiser les animations pour les appareils bas de gamme',
             ],
         },
         reflection: {
             whatWorkedWell: [
-                'Animations fluides et performantes (60fps)',
-                'Code SASS bien structure avec variables et mixins',
-                'Approche mobile-first respectee systematiquement',
+                'Animations fluides et performantes (60 fps)',
+                'Code SASS bien structuré avec variables et mixins',
+                'Approche mobile-first respectée systématiquement',
             ],
             whatCouldBeImproved: [
-                'Certaines animations un peu trop prononcees (feedback utilisateur)',
+                'Certaines animations un peu trop prononcées (feedback utilisateur)',
                 'Temps de chargement du spinner un peu long',
                 'Manque de tests sur navigateurs Safari',
             ],
             lessonsLearned: [
-                'Les animations doivent rester subtiles pour ne pas gener l\'utilisateur',
+                "Les animations doivent rester subtiles pour ne pas gêner l'utilisateur",
                 'SASS apporte une vraie valeur sur les projets moyens/grands',
                 'Tester les animations sur plusieurs appareils est crucial',
             ],
             wouldDoDifferently:
-                'J\'utiliserais des animations plus subtiles et je testerais systematiquement sur Safari (webkit a des specificites). J\'ajouterais egalement une option pour desactiver les animations (accessibilite).',
+                "J'utiliserais des animations plus subtiles et je testerais systématiquement sur Safari (WebKit a des spécificités). J'ajouterais également une option pour désactiver les animations (accessibilité).",
         },
         risks: [
             'Animations trop lourdes pour les appareils anciens',
-            'Incompatibilite navigateurs (prefixes -webkit-, -moz-)',
-            'Accessibilite : les animations peuvent gener certains utilisateurs',
+            'Incompatibilité navigateurs (préfixes -webkit-, -moz-)',
+            'Accessibilité : les animations peuvent gêner certains utilisateurs',
         ],
     },
     'openclassrooms-4': {
         objectives: [
-            'Optimiser le SEO d\'un site web existant',
-            'Ameliorer l\'accessibilite selon les criteres WCAG',
+            "Optimiser le SEO d'un site web existant",
+            "Améliorer l'accessibilité selon les critères WCAG",
             'Optimiser les performances (temps de chargement, images)',
-            'Produire un rapport d\'audit complet avec recommandations',
+            "Produire un rapport d'audit complet avec recommandations",
         ],
         context:
-            "Projet 4 du parcours OpenClassrooms. Il fallait auditer et optimiser le site web d'une photographe (La Panthere) pour ameliorer son referencement, son accessibilite et ses performances.",
+            "Projet 4 du parcours OpenClassrooms. Il fallait auditer et optimiser le site web d'une photographe (La Panthère) pour améliorer son référencement, son accessibilité et ses performances.",
         stakes: [
-            'Comprendre l\'impact du SEO, de l\'accessibilite et des performances sur la reussite d\'un site web. Apprendre a utiliser les outils d\'audit (Lighthouse, WAVE, GTmetrix).',
+            "Comprendre l'impact du SEO, de l'accessibilité et des performances sur la réussite d'un site web. Apprendre à utiliser les outils d'audit (Lighthouse, WAVE, GTmetrix).",
         ],
         actors: [
             {
                 role: 'Mentor OpenClassrooms',
                 description:
-                    'Accompagnement sur les audits SEO, accessibilite et performances. Conseils sur les outils a utiliser et les ameliorations prioritaires.',
+                    "Accompagnement sur les audits SEO, accessibilité et performances. Conseils sur les outils à utiliser et les améliorations prioritaires.",
             },
             {
-                role: 'Evaluateur OpenClassrooms',
+                role: 'Évaluateur OpenClassrooms',
                 description:
-                    'Evaluation du rapport d\'audit, des ameliorations implementees, et de l\'impact mesure (scores avant/apres).',
+                    "Évaluation du rapport d'audit, des améliorations implémentées et de l'impact mesuré (scores avant/après).",
             },
         ],
         results: {
             forStudent: [
-                'Maitrise des outils d\'audit (Lighthouse, WAVE, GTmetrix)',
-                'Comprehension approfondie du SEO technique (balises meta, schema.org, sitemap)',
-                'Competences en optimisation d\'images (compression, formats modernes)',
-                'Sensibilisation a l\'accessibilite (WCAG, contrastes, navigation clavier)',
+                "Maîtrise des outils d'audit (Lighthouse, WAVE, GTmetrix)",
+                'Compréhension approfondie du SEO technique (balises meta, schema.org, sitemap)',
+                "Compétences en optimisation d'images (compression, formats modernes)",
+                "Sensibilisation à l'accessibilité (WCAG, contrastes, navigation clavier)",
             ],
             forCompany: [
-                'Demonstration d\'une capacite a auditer et ameliorer un site existant',
-                'Ameliorations mesurables : score Lighthouse passe de 60 a 95/100',
-                'Rapport d\'audit professionnel et comprehensible pour un client non-technique',
+                "Démonstration d'une capacité à auditer et améliorer un site existant",
+                'Améliorations mesurables : score Lighthouse passé de 60 à 95/100',
+                "Rapport d'audit professionnel et compréhensible pour un client non technique",
             ],
         },
         future: {
             status:
-                'Projet pedagogique termine. Les competences acquises (SEO, accessibilite, performances) sont appliquees systematiquement dans tous mes projets actuels.',
+                'Projet pédagogique terminé. Les compétences acquises (SEO, accessibilité, performances) sont appliquées systématiquement dans tous mes projets actuels.',
             potentialEnhancements: [
-                'Ajouter un blog pour ameliorer le SEO (contenu frais)',
-                'Implementer un systeme de reservation en ligne',
+                'Ajouter un blog pour améliorer le SEO (contenu frais)',
+                'Implémenter un système de réservation en ligne',
                 'Optimiser le SEO local (Google My Business, avis clients)',
             ],
         },
         reflection: {
             whatWorkedWell: [
-                'Methodologie d\'audit structuree (SEO, accessibilite, performances)',
-                'Ameliorations mesurables et documentees',
-                'Utilisation pertinente des outils d\'audit',
+                "Méthodologie d'audit structurée (SEO, accessibilité, performances)",
+                'Améliorations mesurables et documentées',
+                "Utilisation pertinente des outils d'audit",
             ],
             whatCouldBeImproved: [
-                'Temps d\'audit un peu long (manque d\'experience sur les outils)',
-                'Rapport aurait pu inclure plus de recommandations strategiques',
-                'Manque de tests utilisateurs reels apres les ameliorations',
+                "Temps d'audit un peu long (manque d'expérience sur les outils)",
+                'Rapport aurait pu inclure plus de recommandations stratégiques',
+                "Manque de tests utilisateurs réels après les améliorations",
             ],
             lessonsLearned: [
-                'L\'optimisation des images a un impact enorme sur les performances',
-                'L\'accessibilite doit etre pensee des la conception, pas en correction',
-                'Le SEO technique est facile a ameliorer avec les bonnes pratiques',
+                "L'optimisation des images a un impact énorme sur les performances",
+                "L'accessibilité doit être pensée dès la conception, pas en correction",
+                "Le SEO technique est facile à améliorer avec les bonnes pratiques",
             ],
             wouldDoDifferently:
-                'J\'utiliserais un outil d\'optimisation d\'images automatique (Sharp, ImageOptim) des le debut. J\'impliquerais egalement des utilisateurs reels pour tester l\'accessibilite (lecteur d\'ecran, navigation clavier).',
+                "J'utiliserais un outil d'optimisation d'images automatique (Sharp, ImageOptim) dès le début. J'impliquerais également des utilisateurs réels pour tester l'accessibilité (lecteur d'écran, navigation clavier).",
         },
         risks: [
-            'Sur-optimisation : trop compresser les images peut nuire a la qualite',
-            'Accessibilite : certains ajustements peuvent modifier le design visible',
-            'SEO : les ameliorations techniques ne garantissent pas un meilleur classement Google',
+            'Sur-optimisation : trop compresser les images peut nuire à la qualité',
+            'Accessibilité : certains ajustements peuvent modifier le design visible',
+            'SEO : les améliorations techniques ne garantissent pas un meilleur classement Google',
         ],
     },
     'openclassrooms-5': {
         objectives: [
-            'Creer une API REST securisee avec Node.js et Express',
-            'Implementer l\'authentification JWT',
-            'Gerer l\'upload de fichiers images de maniere securisee',
-            'Appliquer les bonnes pratiques de securite (hachage, validation, protection CSRF)',
+            'Créer une API REST sécurisée avec Node.js et Express',
+            "Implémenter l'authentification JWT",
+            "Gérer l'upload de fichiers images de manière sécurisée",
+            'Appliquer les bonnes pratiques de sécurité (hachage, validation, protection CSRF)',
         ],
         context:
-            "Projet 6 du parcours OpenClassrooms (backend). Il fallait developper l'API backend pour Piiquante, une application de notation de sauces piquantes, avec authentification et gestion d'images.",
+            "Projet 6 du parcours OpenClassrooms (backend). Il fallait développer l'API backend pour Piiquante, une application de notation de sauces piquantes, avec authentification et gestion d'images.",
         stakes: [
-            'Apprendre a construire une API backend securisee et fonctionnelle. Comprendre l\'importance critique de la securite backend (fuites de donnees, injections).',
+            "Apprendre à construire une API backend sécurisée et fonctionnelle. Comprendre l'importance critique de la sécurité backend (fuites de données, injections).",
         ],
         actors: [
             {
                 role: 'Mentor OpenClassrooms',
                 description:
-                    'Accompagnement sur Node.js, Express, MongoDB. Conseils sur la securite backend (JWT, bcrypt, validation).',
+                    'Accompagnement sur Node.js, Express, MongoDB. Conseils sur la sécurité backend (JWT, bcrypt, validation).',
             },
             {
-                role: 'Evaluateur OpenClassrooms',
+                role: 'Évaluateur OpenClassrooms',
                 description:
-                    'Evaluation de la securite de l\'API, des endpoints CRUD, de l\'authentification JWT, et de la gestion d\'images.',
+                    "Évaluation de la sécurité de l'API, des endpoints CRUD, de l'authentification JWT et de la gestion d'images.",
             },
         ],
         results: {
             forStudent: [
-                'Maitrise de Node.js et Express pour creer des API REST',
-                'Comprehension approfondie de la securite backend (JWT, bcrypt, validation)',
-                'Competences en gestion d\'upload de fichiers (multer, stockage securise)',
-                'Validation avec mention "Excellente mise en oeuvre de la securite"',
+                'Maîtrise de Node.js et Express pour créer des API REST',
+                'Compréhension approfondie de la sécurité backend (JWT, bcrypt, validation)',
+                "Compétences en gestion d'upload de fichiers (multer, stockage sécurisé)",
+                "Validation avec mention « Excellente mise en œuvre de la sécurité »",
             ],
             forCompany: [
-                'Demonstration d\'une capacite a developper des API backend securisees',
-                'Code structure et maintenable (separation controllers/services/models)',
-                'Application des standards de securite (OWASP)',
+                "Démonstration d'une capacité à développer des API backend sécurisées",
+                'Code structuré et maintenable (séparation controllers/services/models)',
+                'Application des standards de sécurité (OWASP)',
             ],
         },
         future: {
             status:
-                'Projet termine et disponible sur GitHub. Les competences acquises sont utilisees dans mes projets professionnels (API chez Worldline).',
+                'Projet terminé et disponible sur GitHub. Les compétences acquises sont utilisées dans mes projets professionnels (API chez Worldline).',
             potentialEnhancements: [
                 'Ajouter une pagination et des filtres sur la liste des sauces',
-                'Implementer un systeme de notifications (email, push)',
-                'Ajouter des tests unitaires et d\'integration (Jest, Supertest)',
+                'Implémenter un système de notifications (email, push)',
+                "Ajouter des tests unitaires et d'intégration (Jest, Supertest)",
             ],
         },
         reflection: {
             whatWorkedWell: [
-                'Securite implementee correctement (JWT, bcrypt, validation)',
-                'API fonctionnelle et testee manuellement avec Postman',
-                'Code structure avec separation des responsabilites',
+                'Sécurité implémentée correctement (JWT, bcrypt, validation)',
+                'API fonctionnelle et testée manuellement avec Postman',
+                'Code structuré avec séparation des responsabilités',
             ],
             whatCouldBeImproved: [
-                'Manque de tests automatises (unitaires, integration)',
-                'Gestion d\'erreurs basique (codes HTTP generiques)',
+                'Manque de tests automatisés (unitaires, intégration)',
+                "Gestion d'erreurs basique (codes HTTP génériques)",
                 'Documentation API insuffisante (pas de Swagger/OpenAPI)',
             ],
             lessonsLearned: [
-                'La securite backend doit etre pensee des le debut, pas ajoutee apres',
-                'Les tests automatises sont essentiels pour garantir la fiabilite d\'une API',
-                'Une bonne documentation API facilite la collaboration et l\'integration',
+                'La sécurité backend doit être pensée dès le début, pas ajoutée après',
+                "Les tests automatisés sont essentiels pour garantir la fiabilité d'une API",
+                "Une bonne documentation API facilite la collaboration et l'intégration",
             ],
             wouldDoDifferently:
-                'J\'implementerais des tests unitaires et d\'integration des le debut (TDD). J\'ajouterais une documentation Swagger pour faciliter l\'utilisation de l\'API. Et j\'utiliserais un logger structure (Winston) pour faciliter le debugging en production.',
+                "J'implémenterais des tests unitaires et d'intégration dès le début (TDD). J'ajouterais une documentation Swagger pour faciliter l'utilisation de l'API. Et j'utiliserais un logger structuré (Winston) pour faciliter le debugging en production.",
         },
         risks: [
-            'Vulnerabilites de securite si les bonnes pratiques ne sont pas respectees',
-            'Gestion d\'images : risque de saturation de l\'espace disque',
-            'Performance : manque d\'optimisation des requetes MongoDB',
+            'Vulnérabilités de sécurité si les bonnes pratiques ne sont pas respectées',
+            "Gestion d'images : risque de saturation de l'espace disque",
+            'Performance : manque d\'optimisation des requêtes MongoDB',
         ],
     },
     'openclassrooms-6': {
         objectives: [
             'Construire une API REST avec Express et MongoDB',
-            'Implementer un systeme d\'authentification securise',
-            'Creer une interface frontend avec Vue.js',
-            'Gerer l\'upload et le stockage d\'images',
+            "Implémenter un système d'authentification sécurisé",
+            'Créer une interface frontend avec Vue.js',
+            "Gérer l'upload et le stockage d'images",
         ],
         context:
-            "Projet 7 du parcours OpenClassrooms (fullstack). Il fallait developper Groupomania, un reseau social d'entreprise permettant aux employes de partager des posts, commenter et liker.",
+            "Projet 7 du parcours OpenClassrooms (fullstack). Il fallait développer Groupomania, un réseau social d'entreprise permettant aux employés de partager des posts, commenter et liker.",
         stakes: [
-            'Premier projet fullstack complet (frontend + backend + base de donnees). Apprendre a faire communiquer frontend et backend, gerer l\'authentification de bout en bout, et concevoir une base de donnees pour une application sociale.',
+            "Premier projet fullstack complet (frontend + backend + base de données). Apprendre à faire communiquer frontend et backend, gérer l'authentification de bout en bout, et concevoir une base de données pour une application sociale.",
         ],
         actors: [
             {
                 role: 'Mentor OpenClassrooms',
                 description:
-                    'Accompagnement sur l\'architecture fullstack, conseils sur la communication frontend/backend (API REST), et aide sur la conception de la base de donnees.',
+                    "Accompagnement sur l'architecture fullstack, conseils sur la communication frontend/backend (API REST) et aide sur la conception de la base de données.",
             },
             {
-                role: 'Evaluateur OpenClassrooms',
+                role: 'Évaluateur OpenClassrooms',
                 description:
-                    'Evaluation de l\'API, de l\'interface, de la securite, et de l\'architecture globale du projet.',
+                    "Évaluation de l'API, de l'interface, de la sécurité et de l'architecture globale du projet.",
             },
         ],
         results: {
             forStudent: [
-                'Maitrise complete d\'une stack fullstack (Vue.js + Node.js + MongoDB)',
-                'Comprehension de l\'architecture client/serveur et de la communication HTTP',
-                'Competences en gestion d\'etat frontend (Vuex) et en routing (Vue Router)',
-                'Validation du diplome "Developpeur Web" OpenClassrooms (Bac+2)',
+                "Maîtrise complète d'une stack fullstack (Vue.js + Node.js + MongoDB)",
+                "Compréhension de l'architecture client/serveur et de la communication HTTP",
+                "Compétences en gestion d'état frontend (Vuex) et en routing (Vue Router)",
+                "Validation du diplôme « Développeur Web » OpenClassrooms (Bac+2)",
             ],
             forCompany: [
-                'Demonstration d\'une capacite a livrer une application complete et fonctionnelle',
-                'Gestion de projet autonome (analyse, conception, developpement, tests)',
-                'Code structure et maintenable sur les deux couches (frontend et backend)',
+                "Démonstration d'une capacité à livrer une application complète et fonctionnelle",
+                'Gestion de projet autonome (analyse, conception, développement, tests)',
+                'Code structuré et maintenable sur les deux couches (frontend et backend)',
             ],
         },
         future: {
             status:
-                'Projet pedagogique termine. Le code est disponible sur GitHub. Les competences acquises sont la base de ma pratique professionnelle actuelle.',
+                'Projet pédagogique terminé. Le code est disponible sur GitHub. Les compétences acquises sont la base de ma pratique professionnelle actuelle.',
             potentialEnhancements: [
-                'Ajouter des notifications en temps reel (WebSockets)',
-                'Implementer un systeme de moderation des posts',
-                'Ameliorer l\'UI/UX avec des micro-interactions',
+                'Ajouter des notifications en temps réel (WebSockets)',
+                'Implémenter un système de modération des posts',
+                "Améliorer l'UI/UX avec des micro-interactions",
                 'Ajouter des tests e2e avec Cypress',
             ],
         },
         reflection: {
             whatWorkedWell: [
-                'Architecture claire : separation frontend/backend bien definie',
+                'Architecture claire : séparation frontend/backend bien définie',
                 'API fonctionnelle avec CRUD complet',
                 'Interface utilisateur intuitive et responsive',
             ],
             whatCouldBeImproved: [
-                'Performances : requetes N+1 sur les commentaires (optimisation necessaire)',
-                'Tests automatises insuffisants (uniquement des tests manuels)',
-                'Securite : gestion basique des autorisations (admin vs user)',
+                'Performances : requêtes N+1 sur les commentaires (optimisation nécessaire)',
+                'Tests automatisés insuffisants (uniquement des tests manuels)',
+                'Sécurité : gestion basique des autorisations (admin vs user)',
             ],
             lessonsLearned: [
-                'L\'importance de concevoir l\'architecture avant de coder',
-                'La necessite d\'optimiser les requetes BDD des le debut',
-                'Les tests automatises font gagner du temps sur la duree',
+                "L'importance de concevoir l'architecture avant de coder",
+                "La nécessité d'optimiser les requêtes BDD dès le début",
+                'Les tests automatisés font gagner du temps sur la durée',
             ],
             wouldDoDifferently:
-                'J\'implementerais des tests automatises des le debut (TDD). J\'optimiserais les requetes BDD en amont avec des jointures bien pensees. Et j\'ajouterais un systeme de roles/permissions plus robuste pour l\'admin.',
+                "J'implémenterais des tests automatisés dès le début (TDD). J'optimiserais les requêtes BDD en amont avec des jointures bien pensées. Et j'ajouterais un système de rôles/permissions plus robuste pour l'admin.",
         },
         risks: [
-            'Securite : vulnerabilites potentielles si l\'API n\'est pas auditee',
-            'Performance : problemes de scalabilite si le nombre d\'utilisateurs augmente',
-            'Maintenance : manque de tests rend les evolutions risquees',
+            "Sécurité : vulnérabilités potentielles si l'API n'est pas auditée",
+            "Performance : problèmes de scalabilité si le nombre d'utilisateurs augmente",
+            'Maintenance : manque de tests rend les évolutions risquées',
         ],
     },
-    'worldline-api-migration': {
+    'openclassrooms-7': {
         objectives: [
-            'Participer a la migration d\'une API Node.js vers Java/Spring Boot',
-            'Apprendre l\'ecosysteme Spring (Boot, Data, Security)',
-            'S\'integrer dans une equipe Scrum en tant qu\'apprentie',
-            'Contribuer a la qualite du code avec des tests unitaires',
+            "Développer un réseau social d'entreprise (frontend + backend + base de données)",
+            "Concevoir une base de données relationnelle (MySQL) adaptée à un réseau social",
+            "Implémenter une authentification sécurisée et la modération de contenu",
+            "Livrer une application fullstack responsive et maintenable",
         ],
         context:
-            "Mission d'apprentissage chez Worldline (2023-2024). L'equipe devait moderniser une ancienne API Node.js pour l'integrer dans l'ecosysteme Java de l'entreprise.",
+            "Projet 7 du parcours OpenClassrooms (fullstack). Il fallait concevoir Groupomania, un réseau social interne pour les collaborateurs d'une entreprise, avec publication d'articles, interactions et modération.",
         stakes: [
-            'Apprendre le developpement backend d\'entreprise avec Java/Spring Boot, comprendre les enjeux de migration technique, et s\'adapter aux contraintes d\'un environnement professionnel (qualite, securite, performance).',
+            "Livrer un projet fullstack de bout en bout, en maîtrisant l'intégralité de la chaîne (BDD relationnelle, API REST, interface Vue.js, authentification, modération).",
         ],
         actors: [
             {
-                role: 'Maitre d\'apprentissage',
+                role: 'Mentor OpenClassrooms',
                 description:
-                    'Accompagnement quotidien, revues de code, mentorat sur Java/Spring Boot et les pratiques de l\'equipe.',
+                    'Accompagnement sur la conception fullstack, revues de code régulières et conseils sur la sécurité.',
             },
             {
-                role: 'Equipe de developpement',
+                role: 'Évaluateur OpenClassrooms',
                 description:
-                    'Collaboration sur la migration : partage des taches, pair programming, revues de code croisees.',
-            },
-            {
-                role: 'Product Owner',
-                description:
-                    'Definition des priorites, validation des user stories, feedback sur les fonctionnalites livrees.',
+                    "Évaluation finale de l'application sur les critères de sécurité, d'architecture, de qualité de code et de respect du cahier des charges.",
             },
         ],
         results: {
             forStudent: [
-                'Maitrise des bases de Java et Spring Boot',
-                'Comprehension des architectures d\'entreprise (layering, dependency injection)',
-                'Pratique du developpement agile (Scrum, Jira, sprints)',
-                'Montee en competence sur les tests unitaires (JUnit, Mockito)',
+                "Maîtrise d'une stack fullstack complète (Vue.js, Node/Express, MySQL)",
+                "Consolidation des compétences en API REST, authentification et modélisation BDD",
+                "Validation du titre « Développeur Web » RNCP Niveau 5",
+                "Confiance renforcée sur ma capacité à mener un projet de A à Z",
             ],
             forCompany: [
-                'Contribution effective a la migration (plusieurs endpoints migres)',
-                'Code teste et revue par les seniors',
-                'Integration rapide dans l\'equipe malgre le statut d\'apprentie',
+                "Démonstration d'une capacité à livrer une application fullstack fonctionnelle",
+                "Code structuré, sécurisé et maintenable",
+                "Respect du cahier des charges et des contraintes fonctionnelles",
             ],
         },
         future: {
             status:
-                'Mission d\'apprentissage en cours (jusqu\'a 2024). Le projet continue d\'evoluer avec de nouvelles fonctionnalites a migrer.',
+                'Projet pédagogique terminé. Le code est disponible sur GitHub comme référence de mes compétences fullstack.',
             potentialEnhancements: [
-                'Finaliser la migration de tous les endpoints restants',
-                'Ajouter une couche de cache (Redis) pour ameliorer les performances',
-                'Implementer une architecture microservices',
+                'Ajouter un système de notifications en temps réel',
+                'Mettre en place un rôle modérateur plus riche',
+                "Déployer l'application en production avec une CI/CD",
             ],
         },
         reflection: {
             whatWorkedWell: [
-                'Integration rapide dans l\'equipe grace a la communication',
-                'Apprentissage progressif de Java/Spring Boot avec mentorat',
-                'Participation active aux ceremonies Scrum',
+                'Architecture fullstack claire et découplée',
+                'CRUD complet fonctionnel côté API et côté interface',
+                'Authentification sécurisée (JWT, bcrypt)',
             ],
             whatCouldBeImproved: [
-                'Montee en competence initiale longue sur Java (venant de JavaScript)',
-                'Manque d\'autonomie sur certaines taches complexes',
-                'Tests unitaires parfois insuffisamment exhaustifs',
+                'Couverture de tests automatisés insuffisante',
+                "Gestion des rôles/permissions encore basique",
+                "Performances : certaines requêtes à optimiser",
             ],
             lessonsLearned: [
-                'L\'importance du mentorat pour monter en competence rapidement',
-                'La valeur de la revue de code pour apprendre les bonnes pratiques',
-                'La rigueur de l\'ecosysteme Java (typage fort, conventions strictes) est un atout',
+                "L'importance de cadrer l'architecture avant de coder",
+                "La valeur d'un CRUD propre et cohérent entre les couches",
+                "La nécessité d'anticiper la sécurité dès la conception",
             ],
             wouldDoDifferently:
-                'Je me serais formee sur Java avant de commencer l\'apprentissage pour avoir des bases plus solides. J\'aurais egalement demande plus de feedback reguliers pour corriger mes erreurs plus tot.',
+                "J'ajouterais des tests automatisés dès le début, je déploierais une CI/CD minimaliste et je documenterais l'API avec OpenAPI.",
         },
         risks: [
-            'Retards de migration si les ressources sont insuffisantes',
-            'Regressions fonctionnelles si les tests ne couvrent pas tous les cas',
-            'Difficulte a maintenir deux versions en parallele (Node.js et Spring Boot)',
-        ],
-    },
-    'worldline-portal': {
-        objectives: [
-            'Refondre le portail interne pour le rendre responsive',
-            'Ameliorer l\'experience utilisateur (navigation, performance)',
-            'Garantir l\'accessibilite (WCAG)',
-            'Creer des composants Angular reutilisables',
-        ],
-        context:
-            "Mission d'apprentissage chez Worldline. Le portail interne etait utilise par plus de 200 collaborateurs mais n'etait pas responsive. Il fallait le rendre accessible sur mobile/tablette.",
-        stakes: [
-            'Ameliorer la productivite des collaborateurs en mobilite en leur donnant acces au portail depuis n\'importe quel appareil. Deontrer la valeur du responsive design en entreprise.',
-        ],
-        actors: [
-            {
-                role: 'Maitre d\'apprentissage',
-                description:
-                    'Definition du perimetre de la refonte, accompagnement technique, validation des livrables.',
-            },
-            {
-                role: 'Utilisateurs internes',
-                description:
-                    'Feedback sur l\'interface actuelle, tests de la nouvelle version, validation de l\'ergonomie.',
-            },
-            {
-                role: 'Equipe UX/UI',
-                description:
-                    'Conseils sur l\'ergonomie mobile, validation des maquettes, tests d\'accessibilite.',
-            },
-        ],
-        results: {
-            forStudent: [
-                'Maitrise du responsive design a l\'echelle d\'une application d\'entreprise',
-                'Pratique de la collaboration avec une equipe UX/UI',
-                'Comprehension des contraintes d\'accessibilite en entreprise',
-            ],
-            forCompany: [
-                'Portail accessible sur mobile et tablette (augmentation de 40% de l\'usage mobile)',
-                'Amelioration de la satisfaction utilisateurs (feedback positifs)',
-                'Composants Angular reutilisables pour les futurs developpements',
-            ],
-        },
-        future: {
-            status:
-                'Le portail est en production et utilise quotidiennement par les collaborateurs. Des evolutions sont prevues (nouvelles fonctionnalites, nouvelles sections).',
-            potentialEnhancements: [
-                'Ajouter des notifications push pour les alertes importantes',
-                'Implementer un mode offline (PWA)',
-                'Ameliorer la personnalisation (widgets configurables)',
-            ],
-        },
-        reflection: {
-            whatWorkedWell: [
-                'Approche mobile-first efficace pour garantir la responsivite',
-                'Collaboration etroite avec l\'equipe UX/UI',
-                'Tests utilisateurs reguliers pour valider l\'ergonomie',
-            ],
-            whatCouldBeImproved: [
-                'Temps de refonte un peu long (manque d\'experience sur Angular)',
-                'Certains composants auraient pu etre plus generiques',
-                'Documentation technique insuffisante pour les futurs developpeurs',
-            ],
-            lessonsLearned: [
-                'L\'importance des tests utilisateurs reels pour valider l\'ergonomie',
-                'La valeur de la collaboration avec une equipe UX/UI',
-                'Le responsive design est un investissement rentable pour l\'entreprise',
-            ],
-            wouldDoDifferently:
-                'J\'aurais documente l\'architecture et les composants des le debut pour faciliter la reprise par d\'autres developpeurs. J\'aurais egalement cree plus de composants generiques reutilisables.',
-        },
-        risks: [
-            'Regressions fonctionnelles lors de la refonte',
-            'Resistance au changement de certains utilisateurs habitues a l\'ancienne interface',
-            'Performance : le portail doit rester rapide meme sur mobile bas de gamme',
+            "Sécurité : gestion des autorisations encore perfectible",
+            "Scalabilité limitée sans cache ni optimisation des requêtes",
+            "Maintenabilité : l'absence de tests rend les évolutions plus risquées",
         ],
     },
     portfolio: {
         objectives: [
-            'Creer un portfolio moderne et professionnel pour presenter mes competences',
-            'Implenter un design responsive avec theme sombre/clair',
+            'Créer un portfolio moderne et professionnel pour présenter mes compétences',
+            'Implémenter un design responsive avec thème sombre/clair',
             'Optimiser les performances et le SEO',
-            'Demontrer ma maitrise d\'Angular et Tailwind CSS',
+            "Démontrer ma maîtrise d'Angular et Tailwind CSS",
         ],
         context:
-            'Projet personnel developpe en 2024 pour presenter mon parcours, mes competences et mes projets de maniere professionnelle. Concu pour repondre aux exigences de la grille d\'evaluation ISCOD/VISIPLUS.',
+            "Projet personnel développé en 2024 pour présenter mon parcours, mes compétences et mes projets de manière professionnelle. Conçu pour répondre aux exigences de la grille d'évaluation ISCOD/VISIPLUS.",
         stakes: [
-            'Avoir une vitrine professionnelle de qualite pour les recruteurs et les clients potentiels. Demontrer ma capacite a concevoir et developper une application complete de A a Z.',
+            "Avoir une vitrine professionnelle de qualité pour les recruteurs et les contacts potentiels. Démontrer ma capacité à concevoir et développer une application complète de A à Z.",
         ],
         actors: [
             {
-                role: 'Designer (moi-meme)',
+                role: 'Designer (moi-même)',
                 description:
-                    'Conception de la charte graphique, des maquettes, et du systeme de design (couleurs, typographies, composants).',
+                    'Conception de la charte graphique, des maquettes et du système de design (couleurs, typographies, composants).',
             },
             {
-                role: 'Developpeur (moi-meme)',
+                role: 'Développeuse (moi-même)',
                 description:
-                    'Developpement de l\'application avec Angular, integration du design avec Tailwind CSS, optimisation des performances.',
+                    "Développement de l'application avec Angular, intégration du design avec Tailwind CSS, optimisation des performances.",
             },
             {
                 role: 'Recruteurs et contacts professionnels',
                 description:
-                    'Utilisateurs finaux du portfolio : consultation des projets, evaluation des competences, prise de contact.',
+                    'Utilisateurs finaux du portfolio : consultation des projets, évaluation des compétences, prise de contact.',
             },
         ],
         results: {
             forStudent: [
-                'Application complete demontrant ma maitrise d\'Angular et Tailwind CSS',
+                "Application complète démontrant ma maîtrise d'Angular et Tailwind CSS",
                 'Portfolio en ligne accessible 24/7 pour les recruteurs',
-                'Consolidation de mes competences frontend (responsive, animations, accessibilite)',
-                'Projet concret a presenter en entretien',
+                "Consolidation de mes compétences frontend (responsive, animations, accessibilité)",
+                'Projet concret à présenter en entretien',
             ],
             forCompany: [
-                'Demonstration de capacite a mener un projet complet de A a Z',
-                'Code de qualite professionnelle (TypeScript strict, composants reutilisables)',
-                'Respect des bonnes pratiques (SEO, performances, accessibilite)',
+                'Démonstration de capacité à mener un projet complet de A à Z',
+                'Code de qualité professionnelle (TypeScript strict, composants réutilisables)',
+                'Respect des bonnes pratiques (SEO, performances, accessibilité)',
             ],
         },
         future: {
             status:
-                'En evolution continue. Le portfolio est mis a jour regulierement avec de nouveaux projets, competences et certifications.',
+                "En évolution continue. Le portfolio est mis à jour régulièrement avec de nouveaux projets, compétences et certifications.",
             potentialEnhancements: [
                 'Ajouter un blog technique pour partager mes apprentissages',
-                'Implementer un backoffice pour gerer le contenu sans redeployer',
+                'Implémenter un back-office pour gérer le contenu sans redéployer',
                 'Ajouter des analytics pour suivre les visites et les interactions',
-                'Integrer un systeme de commentaires ou de recommandations',
+                'Intégrer un système de commentaires ou de recommandations',
             ],
         },
         reflection: {
             whatWorkedWell: [
-                'Design moderne et professionnel qui plait aux recruteurs',
+                'Design moderne et professionnel qui plaît aux recruteurs',
                 'Performances excellentes (score Lighthouse 95+)',
-                'Architecture modulaire facilitant l\'ajout de nouvelles sections',
+                "Architecture modulaire facilitant l'ajout de nouvelles sections",
             ],
             whatCouldBeImproved: [
-                'Manque d\'un backoffice pour gerer le contenu dynamiquement',
-                'Certaines sections pourraient etre plus detaillees',
+                "Manque d'un back-office pour gérer le contenu dynamiquement",
+                'Certaines sections pourraient être plus détaillées',
                 'Pas encore de blog pour partager mes apprentissages',
             ],
             lessonsLearned: [
-                'L\'importance d\'un portfolio de qualite pour se differencier',
-                'La valeur d\'un systeme de design coherent et maintenable',
-                'Les performances et l\'accessibilite sont des criteres de serieux professionnel',
+                "L'importance d'un portfolio de qualité pour se différencier",
+                "La valeur d'un système de design cohérent et maintenable",
+                "Les performances et l'accessibilité sont des critères de sérieux professionnel",
             ],
             wouldDoDifferently:
-                'J\'aurais concu un backoffice des le debut pour gerer le contenu sans redeployer. J\'aurais egalement ajoute un blog technique pour demontrer ma capacite de vulgarisation et de partage de connaissances.',
+                "J'aurais conçu un back-office dès le début pour gérer le contenu sans redéployer. J'aurais également ajouté un blog technique pour démontrer ma capacité de vulgarisation et de partage de connaissances.",
         },
         risks: [
-            'Obsolescence : le portfolio doit etre mis a jour regulierement',
-            'Securite : formulaire de contact vulnerable au spam (protection necessaire)',
-            'Hebergement : dependance a Vercel pour la disponibilite',
+            'Obsolescence : le portfolio doit être mis à jour régulièrement',
+            'Sécurité : formulaire de contact vulnérable au spam (protection nécessaire)',
+            "Hébergement : dépendance à un prestataire externe pour la disponibilité",
         ],
     },
 };

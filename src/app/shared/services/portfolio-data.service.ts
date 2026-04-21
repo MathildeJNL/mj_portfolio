@@ -37,9 +37,21 @@ import {
   designAnecdotes,
   designSelfCritique,
   designEvolution,
-  softSkillsAnecdotes,
-  softSkillsSelfCritique,
-  softSkillsEvolution,
+  communicationAnecdotes,
+  communicationSelfCritique,
+  communicationEvolution,
+  teamworkAnecdotes,
+  teamworkSelfCritique,
+  teamworkEvolution,
+  adaptabilityAnecdotes,
+  adaptabilitySelfCritique,
+  adaptabilityEvolution,
+  autonomyAnecdotes,
+  autonomySelfCritique,
+  autonomyEvolution,
+  rigorAnecdotes,
+  rigorSelfCritique,
+  rigorEvolution,
 } from '../data/skills-enriched-data';
 
 import { projectEnrichedData } from '../data/projects-enriched-data';
@@ -118,10 +130,10 @@ export class PortfolioDataService {
   // ─────────────────────────── HOME ───────────────────────────
 
   readonly homeTechStack = [
-    { icon: 'web', title: 'Frontend' },
-    { icon: 'database', title: 'Backend' },
-    { icon: 'storage', title: 'Base de données' },
-    { icon: 'travel_explore', title: 'SEO' },
+    { icon: 'web', title: 'Frontend', label: 'Frontend' },
+    { icon: 'database', title: 'Backend', label: 'Backend' },
+    { icon: 'storage', title: 'Base de données', label: 'Bases de données' },
+    { icon: 'travel_explore', title: 'SEO', label: 'SEO' },
   ];
 
   readonly homeValues: Value[] = [
@@ -153,7 +165,7 @@ export class PortfolioDataService {
   ];
 
   readonly homeAboutParagraphs = [
-    "Je suis développeuse Web junior, dôtée de trois années d'alternance en développement auprès de Worldline. ",
+    "Je suis développeuse Web junior, dotée de trois années d'alternance en développement auprès de Worldline. ",
     'Mon objectif de carrière est de devenir une développeuse polyvalente, capable de contribuer à toutes les étapes du développement logiciel, du frontend au backend.',
   ];
 
@@ -199,6 +211,13 @@ export class PortfolioDataService {
 
   readonly homeProjectPreviews = [
     {
+      id: 'portfolio',
+      title: 'Concevoir un portfolio professionnel avec Angular',
+      description: 'Développement de ce portfolio avec Angular, Tailwind CSS, optimisation SEO et contenu structuré selon la grille ISCOD/VISIPLUS.',
+      imageUrl: 'assets/images/logo.png',
+      tags: ['Angular', 'Tailwind CSS', 'SEO', 'Accessibilité'],
+    },
+    {
       id: 'openclassrooms-2',
       title: 'Transformer une maquette en site web avec HTML & CSS',
       description: "Intégration d'une maquette de site responsive en utilisant HTML et CSS.",
@@ -224,19 +243,16 @@ export class PortfolioDataService {
   ];
 
   readonly skillFilters: Filter[] = [
-    { id: 'all', label: 'Tout' },
-    { id: 'frontend', label: 'Frontend' },
-    { id: 'backend', label: 'Backend' },
-    { id: 'databases', label: 'Databases' },
-    { id: 'tools', label: 'Outils' },
-    { id: 'design', label: 'Design' },
-    { id: 'soft-skills', label: 'Soft Skills' },
+    { id: 'all', label: 'Toutes' },
+    { id: 'technique', label: 'Compétences techniques' },
+    { id: 'humaine', label: 'Compétences humaines' },
   ];
 
   readonly skillCategories: SkillCategory[] = [
     {
       id: 'frontend',
       name: 'Frontend',
+      domain: 'technique',
       icon: 'web',
       description: 'HTML5/CSS3, JavaScript, Angular, TypeScript, Vue.js',
       longDescription:
@@ -312,10 +328,11 @@ export class PortfolioDataService {
     {
       id: 'backend',
       name: 'Backend & APIs',
+      domain: 'technique',
       icon: 'database',
-      description: 'Java, Spring Boot, Node.js, Express, REST API',
+      description: 'Java, Spring Boot, Node.js, Express, TypeScript, REST API',
       longDescription:
-        "Compétences backend acquises durant la formation OpenClassrooms (Node.js/Express) et approfondies à Wild Code School et chez Worldline (Java/Spring Boot). Je suis à l'aise pour créer des APIs REST sécurisées et des applications serveur.",
+        "Compétences backend acquises durant la formation OpenClassrooms (Node.js/Express) et approfondies à Wild Code School et chez Worldline (Java/Spring Boot). Je suis à l'aise pour créer des APIs REST sécurisées et des applications serveur, aussi bien en Java qu'en TypeScript/Node.",
       level: 68,
       yearsExperience: 2,
       colorClass: 'text-brand-blue',
@@ -329,6 +346,12 @@ export class PortfolioDataService {
           level: 72,
           experience: '2 ans',
           description: 'API REST, middleware, gestion des routes et authentification JWT',
+        },
+        {
+          name: 'TypeScript (Node)',
+          level: 70,
+          experience: '2 ans',
+          description: 'APIs Node.js typées, partage de types entre frontend Angular et backend',
         },
         {
           name: 'Java / Spring Boot',
@@ -376,6 +399,7 @@ export class PortfolioDataService {
     {
       id: 'databases',
       name: 'Bases de données',
+      domain: 'technique',
       icon: 'storage',
       description: 'SQL, MySQL, MongoDB',
       longDescription:
@@ -428,6 +452,7 @@ export class PortfolioDataService {
     {
       id: 'tools',
       name: 'Outils & Workflow',
+      domain: 'technique',
       icon: 'build',
       description: 'Git, GitLab, Méthodes Agiles, Docker, Bash',
       longDescription:
@@ -493,6 +518,7 @@ export class PortfolioDataService {
     {
       id: 'design',
       name: 'Design & Intégration',
+      domain: 'technique',
       icon: 'palette',
       description: 'Responsive Design, Bootstrap, Tailwind CSS, SEO',
       longDescription:
@@ -555,88 +581,192 @@ export class PortfolioDataService {
       evolution: designEvolution,
     },
     {
-      id: 'soft-skills',
-      name: 'Soft Skills',
-      icon: 'psychology',
-      description: 'Communication, empathie, travail en équipe, adaptabilité',
+      id: 'communication',
+      name: 'Communication',
+      domain: 'humaine',
+      icon: 'chat',
+      description: "Savoir transmettre clairement ses idées à l'oral comme à l'écrit, à des publics techniques ou non techniques.",
       longDescription:
-        "Des compétences humaines solides, construites tout au long de parcours atypiques : 1 an à la réception hôtelière, puis 3 ans d'alternance en pharmacie (relation patient, conseil, rigueur), avant une reconversion complète vers le développement web. Ces expériences ont forgé une vraie capacité à communiquer, écouter et s'adapter à des environnements très différents.",
-      level: 90,
-      yearsExperience: 7,
+        "Développée pendant 1 an en réception hôtelière, 3 ans d'alternance en pharmacie (conseil patient) et aujourd'hui chez Worldline où je traduis régulièrement des sujets techniques pour des interlocuteurs non techniques. La communication écrite est également un pilier de mon travail avec les documents Confluence et les revues de code.",
+      level: 88,
+      yearsExperience: 6,
       colorClass: 'text-brand-teal',
       bgClass: 'bg-brand-teal/20',
       borderClass: 'border-brand-teal/30 hover:border-brand-teal',
       barClass: 'bg-brand-teal',
       gradientClass: 'from-brand-teal to-brand-blue',
       skills: [
-        {
-          name: 'Communication',
-          level: 92,
-          experience: '6 ans',
-          description:
-            'Relation client en hôtellerie, conseil patient en pharmacie, communication projet chez Worldline',
-        },
-        {
-          name: 'Travail en équipe',
-          level: 90,
-          experience: '5 ans',
-          description: 'Collaboration quotidienne chez Worldline (code review, pair programming)',
-        },
-        {
-          name: 'Empathie & écoute',
-          level: 95,
-          experience: '6 ans',
-          description: 'Développée au contact des patients et clients : comprendre les besoins, rassurer, conseiller',
-        },
-        {
-          name: 'Adaptabilité',
-          level: 90,
-          experience: '7 ans',
-          description: "Reconversion professionnelle, passage de l'hôtellerie à la pharmacie puis au développement web",
-        },
-        {
-          name: 'Autonomie',
-          level: 85,
-          experience: '3 ans',
-          description: 'Gestion de projets en solo (formation OpenClassrooms) et missions techniques chez Worldline',
-        },
-        {
-          name: 'Rigueur',
-          level: 85,
-          experience: '5 ans',
-          description: 'Exigée dans la préparation de médicaments, retrouvée dans la qualité du code et les tests',
-        },
+        { name: 'Communication orale', level: 90, experience: '6 ans', description: "Relation client, présentation de sujets techniques en réunion d'équipe" },
+        { name: 'Communication écrite', level: 85, experience: '4 ans', description: 'Documentation technique, e-mails, revues de code, rédaction de tickets' },
+        { name: 'Vulgarisation technique', level: 85, experience: '2 ans', description: "Traduction de concepts techniques pour des interlocuteurs métiers chez Worldline" },
+        { name: 'Écoute active', level: 92, experience: '6 ans', description: 'Développée au contact des patients et clients : comprendre les besoins avant de répondre' },
       ],
-      keyStrengths: ['Relation humaine', 'Écoute active', 'Empathie', 'Pédagogie'],
-      tools: ['Confluence', 'Slack', 'Microsoft Teams'],
+      keyStrengths: ['Vulgarisation', 'Écoute active', 'Pédagogie', 'Clarté à l\'écrit'],
+      tools: ['Confluence', 'Slack', 'Microsoft Teams', 'GitLab (merge requests)'],
       relatedProjects: [
-        {
-          id: 'openclassrooms-7',
-          title: 'Groupomania - Réseau social',
-          description: 'Projet de bout en bout géré en autonomie',
-        },
-        {
-          id: 'openclassrooms-4',
-          title: 'Chouette Agence - SEO',
-          description: 'Audit, recommandations et rédaction de rapport',
-        },
+        { id: 'openclassrooms-4', title: 'Chouette Agence - SEO', description: 'Rédaction d\'un rapport d\'audit compréhensible par un client non technique' },
+        { id: 'portfolio', title: 'Portfolio Angular', description: 'Présentation structurée et pédagogique du parcours et des projets' },
       ],
       resources: [
-        {
-          title: 'Soft Skills, vous avez dit : soft skills',
-          type: 'Page web',
-          url: 'https://www.cmvrh.developpement-durable.gouv.fr/soft-skills-vous-avez-dit-soft-skills-a4390.html',
-        },
+        { title: 'La communication non violente', type: 'Livre', url: 'https://fr.wikipedia.org/wiki/Communication_non_violente' },
       ],
       professionalDefinition:
-        "Les soft skills sont les compétences humaines et relationnelles : communication, empathie, travail d'équipe, adaptabilité, gestion du stress. Contrairement aux compétences techniques (hard skills), elles sont transversales et difficiles à quantifier. Pourtant, elles sont essentielles à la collaboration, au leadership, et à la réussite professionnelle. Un bon développeur allie technique ET savoir-être.",
-      anecdotes: softSkillsAnecdotes,
-      selfCritique: softSkillsSelfCritique,
-      evolution: softSkillsEvolution,
+        "La communication est la compétence humaine de transmettre une information, une idée ou une émotion de manière claire, adaptée à son interlocuteur. Elle combine oral, écrit, écoute et vulgarisation. En contexte professionnel, bien communiquer permet de faire avancer les projets, lever les incompréhensions et renforcer la confiance entre collègues et parties prenantes.",
+      anecdotes: communicationAnecdotes,
+      selfCritique: communicationSelfCritique,
+      evolution: communicationEvolution,
+    },
+    {
+      id: 'teamwork',
+      name: "Travail d'équipe",
+      domain: 'humaine',
+      icon: 'groups',
+      description: "Collaborer efficacement au sein d'une équipe, partager l'information et avancer vers un objectif commun.",
+      longDescription:
+        "Pratiqué quotidiennement chez Worldline dans une équipe agile : daily stand-up, revues de code, pair programming et rétrospectives. Avant cela, le service en hôtellerie-restauration et la pharmacie m'ont appris la coordination en équipe sous pression, avec une exigence de qualité constante.",
+      level: 85,
+      yearsExperience: 5,
+      colorClass: 'text-brand-blue',
+      bgClass: 'bg-brand-blue/20',
+      borderClass: 'border-brand-blue/30 hover:border-brand-blue',
+      barClass: 'bg-brand-blue',
+      gradientClass: 'from-brand-blue to-brand-teal',
+      skills: [
+        { name: 'Collaboration Agile', level: 85, experience: '3 ans', description: 'Daily, sprints, rétrospectives chez Worldline' },
+        { name: 'Revues de code', level: 80, experience: '2 ans', description: 'Merge requests GitLab, retours constructifs' },
+        { name: 'Pair programming', level: 75, experience: '2 ans', description: 'Résolution de bugs et montée en compétence en binôme' },
+        { name: 'Coordination opérationnelle', level: 88, experience: '5 ans', description: 'Coordination en service hôtelier et en pharmacie' },
+      ],
+      keyStrengths: ['Esprit collectif', 'Partage de connaissances', 'Respect des engagements', 'Fiabilité'],
+      tools: ['GitLab', 'Jira', 'Confluence', 'Microsoft Teams'],
+      relatedProjects: [
+        { id: 'worldline-portal', title: 'Portail Worldline', description: "Développement en équipe agile avec revues de code systématiques" },
+        { id: 'worldline-api-migration', title: 'Migration API Worldline', description: "Collaboration étroite avec les architectes et testeurs" },
+      ],
+      resources: [
+        { title: 'Scrum Guide', type: 'Documentation', url: 'https://scrumguides.org/' },
+      ],
+      professionalDefinition:
+        "Le travail d'équipe consiste à coopérer avec d'autres personnes pour atteindre un objectif commun, en partageant information et responsabilités. Il suppose écoute, respect, engagement et une certaine humilité. Dans le développement logiciel, il se matérialise par les revues de code, le pair programming, les cérémonies agiles et le partage documentaire.",
+      anecdotes: teamworkAnecdotes,
+      selfCritique: teamworkSelfCritique,
+      evolution: teamworkEvolution,
+    },
+    {
+      id: 'adaptability',
+      name: 'Adaptabilité',
+      domain: 'humaine',
+      icon: 'autorenew',
+      description: "Capacité à évoluer dans des environnements et contextes différents, à apprendre rapidement et à rebondir face au changement.",
+      longDescription:
+        "Mon parcours illustre cette compétence : hôtellerie, pharmacie puis reconversion vers le développement web. Chez Worldline, je passe régulièrement d'un contexte front-end Angular à un contexte back-end Java/Spring Boot, en intégrant de nouveaux outils selon les projets.",
+      level: 88,
+      yearsExperience: 7,
+      colorClass: 'text-brand-purple',
+      bgClass: 'bg-brand-purple/20',
+      borderClass: 'border-brand-purple/30 hover:border-brand-purple',
+      barClass: 'bg-brand-purple',
+      gradientClass: 'from-brand-purple to-brand-pink',
+      skills: [
+        { name: 'Apprentissage rapide', level: 88, experience: '7 ans', description: "Reconversion professionnelle et montée en compétence continue sur des technologies variées" },
+        { name: 'Flexibilité', level: 85, experience: '7 ans', description: "Changement de contexte, de technologies et d'équipes" },
+        { name: 'Gestion du changement', level: 80, experience: '5 ans', description: "Intégration de nouveaux processus et outils (GitLab, Confluence, Docker...)" },
+      ],
+      keyStrengths: ['Curiosité', 'Résilience', 'Polyvalence', 'Apprentissage continu'],
+      tools: ['Documentation officielle', 'MDN', 'OpenClassrooms', 'Udemy'],
+      relatedProjects: [
+        { id: 'worldline-api-migration', title: 'Migration API Worldline', description: "Prise en main rapide d'une stack existante et de ses contraintes" },
+      ],
+      resources: [
+        { title: 'Mindset (Carol Dweck)', type: 'Livre', url: 'https://fr.wikipedia.org/wiki/Carol_Dweck' },
+      ],
+      professionalDefinition:
+        "L'adaptabilité est la capacité à évoluer dans des environnements variés, à apprendre de nouveaux outils et à accepter le changement. Dans un métier du numérique où les technologies changent vite, cette compétence est essentielle : elle permet de rester pertinent, de s'intégrer rapidement dans une nouvelle équipe ou un nouveau projet, et de transformer les imprévus en opportunités.",
+      anecdotes: adaptabilityAnecdotes,
+      selfCritique: adaptabilitySelfCritique,
+      evolution: adaptabilityEvolution,
+    },
+    {
+      id: 'autonomy',
+      name: 'Autonomie',
+      domain: 'humaine',
+      icon: 'self_improvement',
+      description: "Savoir s'organiser, avancer seul sur un sujet et prendre des initiatives sans attendre que tout soit indiqué.",
+      longDescription:
+        "Développée pendant la formation OpenClassrooms (projets menés seule de A à Z) et renforcée chez Worldline, où je prends en charge des sujets en autonomie : analyse, recherche, implémentation et restitution. J'aime comprendre le « pourquoi » d'un sujet pour proposer les meilleures solutions.",
+      level: 85,
+      yearsExperience: 4,
+      colorClass: 'text-brand-amber',
+      bgClass: 'bg-brand-amber/20',
+      borderClass: 'border-brand-amber/30 hover:border-brand-amber',
+      barClass: 'bg-brand-amber',
+      gradientClass: 'from-brand-amber to-brand-pink',
+      skills: [
+        { name: 'Organisation personnelle', level: 85, experience: '4 ans', description: "Planification, priorisation, gestion du temps" },
+        { name: 'Prise d\'initiative', level: 80, experience: '3 ans', description: "Proposer des solutions et expérimenter sans attendre une consigne détaillée" },
+        { name: 'Résolution de problèmes', level: 82, experience: '4 ans', description: "Debug, recherche documentaire, tests d'hypothèses" },
+      ],
+      keyStrengths: ['Proactivité', 'Organisation', 'Recherche documentaire', 'Sens des responsabilités'],
+      tools: ['Notion', 'Trello', 'Google Agenda', 'Documentation officielle'],
+      relatedProjects: [
+        { id: 'openclassrooms-7', title: 'Groupomania - Réseau social', description: "Projet fullstack mené intégralement en autonomie" },
+        { id: 'portfolio', title: 'Portfolio Angular', description: "Projet personnel conçu, développé et maintenu seule" },
+      ],
+      resources: [
+        { title: 'Getting Things Done (David Allen)', type: 'Livre', url: 'https://gettingthingsdone.com/' },
+      ],
+      professionalDefinition:
+        "L'autonomie professionnelle est la capacité à s'organiser, avancer sans supervision permanente et prendre des décisions adaptées à son niveau de responsabilité. Elle suppose rigueur dans la gestion de son temps, curiosité pour comprendre les sujets, et sens de l'initiative. C'est une qualité particulièrement recherchée dans les environnements agiles et distribués.",
+      anecdotes: autonomyAnecdotes,
+      selfCritique: autonomySelfCritique,
+      evolution: autonomyEvolution,
+    },
+    {
+      id: 'rigor',
+      name: 'Rigueur',
+      domain: 'humaine',
+      icon: 'verified',
+      description: 'Attention aux détails, exigence de qualité et respect des procédures, indispensables au développement logiciel.',
+      longDescription:
+        "Compétence forgée en pharmacie (préparations, contrôles, traçabilité) et désormais appliquée au développement : code propre, tests, revues, conventions de nommage, documentation. Je préfère livrer un peu plus tard mais livrer juste.",
+      level: 87,
+      yearsExperience: 5,
+      colorClass: 'text-brand-green',
+      bgClass: 'bg-brand-green/20',
+      borderClass: 'border-brand-green/30 hover:border-brand-green',
+      barClass: 'bg-brand-green',
+      gradientClass: 'from-brand-green to-brand-teal',
+      skills: [
+        { name: 'Attention aux détails', level: 90, experience: '5 ans', description: "Contrôles en pharmacie, relecture du code, revues minutieuses" },
+        { name: 'Respect des procédures', level: 88, experience: '5 ans', description: "Procédures pharmaceutiques, conventions de code, workflows Git" },
+        { name: 'Qualité logicielle', level: 80, experience: '3 ans', description: "Tests, lint, bonnes pratiques, accessibilité" },
+      ],
+      keyStrengths: ['Exigence', 'Qualité', 'Traçabilité', 'Fiabilité'],
+      tools: ['ESLint', 'Prettier', 'Lighthouse', 'Jest', 'GitLab CI'],
+      relatedProjects: [
+        { id: 'openclassrooms-5', title: 'Piiquante - API sécurisée', description: "Implémentation rigoureuse des bonnes pratiques de sécurité" },
+        { id: 'openclassrooms-4', title: 'Chouette Agence - SEO', description: "Audit structuré, corrections mesurées et documentées" },
+      ],
+      resources: [
+        { title: 'Clean Code (Robert C. Martin)', type: 'Livre', url: 'https://fr.wikipedia.org/wiki/Robert_Cecil_Martin' },
+      ],
+      professionalDefinition:
+        "La rigueur est l'exigence constante de qualité, de précision et de respect des procédures. Dans le développement logiciel, elle se traduit par du code propre, des tests, une documentation à jour, le respect des conventions d'équipe et une attention particulière aux détails. C'est une compétence indispensable pour livrer des produits fiables et maintenables.",
+      anecdotes: rigorAnecdotes,
+      selfCritique: rigorSelfCritique,
+      evolution: rigorEvolution,
     },
   ];
 
   readonly certifications: Certification[] = [
+    {
+      name: 'Brevet Professionnel Préparateur en Pharmacie',
+      issuer: "CFA Pharmacie d'Orléans",
+      date: '2021',
+      icon: 'medication',
+      colorClass: 'text-brand-green',
+      bgClass: 'bg-brand-green/20',
+    },
     {
       name: 'Développeur Web - Titre RNCP Niveau 5',
       issuer: 'OpenClassrooms',
@@ -652,14 +782,6 @@ export class PortfolioDataService {
       icon: 'code',
       colorClass: 'text-brand-blue',
       bgClass: 'bg-brand-blue/20',
-    },
-    {
-      name: 'Brevet Professionnel Préparateur en Pharmacie',
-      issuer: "CFA Pharmacie d'Orléans",
-      date: '2021',
-      icon: 'medication',
-      colorClass: 'text-brand-green',
-      bgClass: 'bg-brand-green/20',
     },
   ];
 
@@ -678,6 +800,18 @@ export class PortfolioDataService {
   ];
 
   readonly projects: ProjectGalleryItem[] = [
+    {
+      id: 'portfolio',
+      title: 'Concevoir un portfolio professionnel avec Angular',
+      description:
+        "Création d'un portfolio moderne, responsive et maintenable pour présenter mon parcours, mes compétences et mes projets selon la grille d'évaluation.",
+      imageUrl: 'assets/images/logo.png',
+      tags: ['Angular', 'Tailwind CSS', 'SEO', 'Accessibilité'],
+      categories: ['frontend'],
+      year: 2024,
+      featured: true,
+      metrics: [{ label: 'Projet', value: 'Personnel' }],
+    },
     {
       id: 'openclassrooms-2',
       title: 'Transformer une maquette en site web avec HTML & CSS',
@@ -749,6 +883,72 @@ export class PortfolioDataService {
   ];
 
   readonly projectDetails: ProjectDetail[] = [
+    {
+      id: 'portfolio',
+      title: 'Concevoir un portfolio professionnel avec Angular',
+      subtitle: 'Projet personnel',
+      description:
+        "Développement de ce portfolio pour présenter mon profil, mes compétences et mes réalisations dans un format structuré, performant et adapté aux attentes de la grille d'évaluation.",
+      longDescription:
+        "Ce portfolio a été conçu comme une application Angular complète servant à la fois de vitrine professionnelle et de démonstration technique. L'objectif était de structurer l'information de façon claire pour des recruteurs et évaluateurs, tout en garantissant une expérience fluide sur mobile et desktop, un bon niveau d'accessibilité, et une architecture de contenu facile à faire évoluer.",
+      imageUrl: 'assets/images/logo.png',
+      galleryImages: ['assets/images/logo.png'],
+      tags: ['Angular', 'Tailwind CSS', 'SEO', 'Accessibilité'],
+      categories: ['frontend'],
+      year: 2024,
+      duration: 'Projet continu',
+      role: 'Designer & Développeuse',
+      teamSize: 'Individuel',
+      status: 'En cours',
+      metrics: [
+        { label: 'Framework', value: 'Angular', icon: 'code' },
+        { label: 'Styling', value: 'Tailwind', icon: 'palette' },
+        { label: 'Focus', value: 'SEO / UX', icon: 'insights' },
+      ],
+      challenges: [
+        {
+          title: 'Structurer la grille d’évaluation',
+          description:
+            'Transformer des attendus pédagogiques parfois dispersés en rubriques lisibles et convaincantes pour un visiteur externe.',
+        },
+        {
+          title: 'Équilibrer contenu et lisibilité',
+          description:
+            'Donner assez de profondeur sur les compétences et projets sans surcharger l’interface ni perdre en clarté.',
+        },
+      ],
+      solutions: [
+        'Centralisation des données du portfolio dans un service unique et des fichiers enrichis dédiés',
+        'Création de pages de détail pour les projets et les compétences afin de rendre visibles les critères de grille',
+        'Mise en place d’une UI responsive avec mode sombre/clair et contenus pensés pour les recruteurs',
+      ],
+      technologies: [
+        { name: 'Angular', category: 'Frontend', description: 'Architecture de l’application, routing et composants' },
+        { name: 'TypeScript', category: 'Frontend', description: 'Typage strict et structuration des données métier' },
+        { name: 'Tailwind CSS', category: 'UI', description: 'Système de styles utilitaire et responsive design' },
+      ],
+      milestones: [
+        {
+          date: '2024',
+          title: 'Première mise en ligne',
+          description: 'Création de la base du portfolio et structuration des pages principales',
+        },
+        {
+          date: '2026',
+          title: 'Enrichissement éditorial',
+          description: 'Ajout des rubriques détaillées liées à la grille ISCOD/VISIPLUS pour les projets et compétences',
+        },
+      ],
+      links: {},
+      relatedSkillCategories: [
+        { id: 'frontend', name: 'Frontend' },
+        { id: 'design', name: 'Design & Intégration' },
+        { id: 'tools', name: 'Outils & Workflow' },
+        { id: 'autonomy', name: 'Autonomie' },
+        { id: 'rigor', name: 'Rigueur' },
+      ],
+      ...projectEnrichedData['portfolio'],
+    },
     {
       id: 'openclassrooms-2',
       title: 'Transformer une maquette en site web avec HTML & CSS',
@@ -1034,6 +1234,7 @@ export class PortfolioDataService {
       title: 'Développeuse Web en alternance',
       organization: 'Worldline',
       organizationUrl: 'https://worldline.com',
+      organizationLogo: 'assets/images/Logo_Worldline_-_2021.svg',
       location: 'Blois, Centre-Val de Loire',
       startDate: '2024-10',
       endDate: null,
@@ -1063,6 +1264,7 @@ export class PortfolioDataService {
       title: 'Mastère Expert en Ingénierie du Logiciel',
       organization: 'ISCOD',
       organizationUrl: 'https://www.iscod.fr',
+      organizationLogo: 'assets/images/logo_iscod1.png',
       location: 'France',
       startDate: '2024-10',
       endDate: '2026-09',
@@ -1091,6 +1293,7 @@ export class PortfolioDataService {
       title: 'Apprentie Ingénieur SRE',
       organization: 'Worldline',
       organizationUrl: 'https://worldline.com',
+      organizationLogo: 'assets/images/Logo_Worldline_-_2021.svg',
       location: 'Blois, Centre-Val de Loire',
       startDate: '2023-09',
       endDate: '2024-09',
@@ -1119,6 +1322,7 @@ export class PortfolioDataService {
       title: "Bachelor Concepteur Développeur d'Applications",
       organization: 'CESI',
       organizationUrl: 'https://www.cesi.fr',
+      organizationLogo: 'assets/images/cesi_CMJN.png',
       location: 'Orléans, Centre-Val de Loire',
       startDate: '2023-09',
       endDate: '2024-09',
@@ -1145,6 +1349,7 @@ export class PortfolioDataService {
       title: 'Formation Développeur Java',
       organization: 'Wild Code School',
       organizationUrl: 'https://www.wildcodeschool.com',
+      organizationLogo: 'assets/images/lg_wcs.png',
       location: 'France',
       startDate: '2023-05',
       endDate: '2023-07',
@@ -1172,6 +1377,7 @@ export class PortfolioDataService {
       title: 'Développeur Web - Titre RNCP Niveau 5',
       organization: 'OpenClassrooms',
       organizationUrl: 'https://openclassrooms.com',
+      organizationLogo: 'assets/images/lg_oc.png',
       location: 'France',
       startDate: '2021-11',
       endDate: '2022-08',
@@ -1220,7 +1426,9 @@ export class PortfolioDataService {
       bgClass: 'bg-brand-blue/20',
       linkedTo: '8',
       relatedSkillCategories: [
-        { id: 'soft-skills', name: 'Soft Skills' },
+        { id: 'communication', name: 'Communication' },
+        { id: 'rigor', name: 'Rigueur' },
+        { id: 'teamwork', name: "Travail d'équipe" },
       ],
     },
     {
@@ -1239,7 +1447,9 @@ export class PortfolioDataService {
       bgClass: 'bg-brand-green/20',
       linkedTo: '7',
       relatedSkillCategories: [
-        { id: 'soft-skills', name: 'Soft Skills' },
+        { id: 'communication', name: 'Communication' },
+        { id: 'rigor', name: 'Rigueur' },
+        { id: 'adaptability', name: 'Adaptabilité' },
       ],
     },
     {
@@ -1258,7 +1468,9 @@ export class PortfolioDataService {
       bgClass: 'bg-brand-blue/20',
       linkedTo: '10',
       relatedSkillCategories: [
-        { id: 'soft-skills', name: 'Soft Skills' },
+        { id: 'communication', name: 'Communication' },
+        { id: 'adaptability', name: 'Adaptabilité' },
+        { id: 'teamwork', name: "Travail d'équipe" },
       ],
     },
     {
@@ -1277,7 +1489,8 @@ export class PortfolioDataService {
       bgClass: 'bg-brand-green/20',
       linkedTo: '9',
       relatedSkillCategories: [
-        { id: 'soft-skills', name: 'Soft Skills' },
+        { id: 'communication', name: 'Communication' },
+        { id: 'adaptability', name: 'Adaptabilité' },
       ],
     },
     {
@@ -1295,7 +1508,8 @@ export class PortfolioDataService {
       colorClass: 'text-brand-green',
       bgClass: 'bg-brand-green/20',
       relatedSkillCategories: [
-        { id: 'soft-skills', name: 'Soft Skills' },
+        { id: 'communication', name: 'Communication' },
+        { id: 'teamwork', name: "Travail d'équipe" },
       ],
     },
   ];
@@ -1379,7 +1593,11 @@ export class PortfolioDataService {
         { label: 'Bases de données', path: '/skills/databases', icon: 'storage' },
         { label: 'Outils & Workflow', path: '/skills/tools', icon: 'build' },
         { label: 'Design & Intégration', path: '/skills/design', icon: 'palette' },
-        { label: 'Soft Skills', path: '/skills/soft-skills', icon: 'psychology' },
+        { label: 'Communication', path: '/skills/communication', icon: 'chat' },
+        { label: "Travail d'équipe", path: '/skills/teamwork', icon: 'groups' },
+        { label: 'Adaptabilité', path: '/skills/adaptability', icon: 'autorenew' },
+        { label: 'Autonomie', path: '/skills/autonomy', icon: 'self_improvement' },
+        { label: 'Rigueur', path: '/skills/rigor', icon: 'verified' },
       ],
     },
     {

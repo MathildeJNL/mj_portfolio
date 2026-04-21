@@ -94,6 +94,8 @@ export interface SkillEvolution {
 export interface SkillCategory {
   id: string;
   name: string;
+  /** Domaine de la compétence (technique/métier ou humaine/transverse) */
+  domain?: 'technique' | 'humaine';
   icon: string;
   description: string;
   longDescription?: string;
@@ -192,6 +194,7 @@ export interface TimelineEvent {
   title: string;
   organization: string;
   organizationUrl?: string;
+  organizationLogo?: string;
   location: string;
   startDate: string;
   endDate: string | null;

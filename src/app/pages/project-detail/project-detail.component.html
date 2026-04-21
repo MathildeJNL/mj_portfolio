@@ -120,7 +120,7 @@
       @for (metric of project.metrics; track metric.label) {
       <div
         class="p-5 rounded-xl bg-white dark:bg-brand-surface border border-slate-200 dark:border-brand-border text-center">
-        <i class="material-symbols-outlined text-3xl text-brand-blue mb-2" aria-hidden="true">{{ metric.icon }}</i>
+        <i class="material-symbols-outlined text-2xl text-brand-blue mb-2" aria-hidden="true">{{ metric.icon }}</i>
         <p class="text-2xl md:text-3xl font-black text-slate-900 dark:text-brand-text">{{ metric.value }}</p>
         <p class="text-sm text-slate-500 dark:text-brand-muted">{{ metric.label }}</p>
       </div>
@@ -140,7 +140,7 @@
               'border-brand-blue text-brand-blue': activeTab === tab.id,
               'border-transparent text-slate-500 dark:text-brand-muted hover:text-slate-700 dark:hover:text-brand-text': activeTab !== tab.id,
             }">
-        <i class="material-symbols-outlined text-lg" aria-hidden="true">{{ tab.icon }}</i>
+        <i class="material-symbols-outlined text-xl" aria-hidden="true">{{ tab.icon }}</i>
         {{ tab.label }}
       </button>
       }
@@ -185,7 +185,7 @@
           </h2>
           <ul class="space-y-3">
             @for (solution of project.solutions; track solution) {
-            <li class="flex items-center gap-3">
+            <li class="flex items-start gap-3">
               <i class="material-symbols-outlined text-brand-green text-xl shrink-0" aria-hidden="true">check_circle</i>
               <p class="text-sm text-slate-500 dark:text-brand-muted">{{ solution }}</p>
             </li>
@@ -203,7 +203,7 @@
           <ul class="space-y-3">
             @for (objective of project.objectives; track objective) {
             <li class="flex items-start gap-3">
-              <i class="material-symbols-outlined text-brand-blue text-xl shrink-0 mt-0.5"
+              <i class="material-symbols-outlined text-brand-blue text-xl shrink-0"
                 aria-hidden="true">arrow_right</i>
               <p class="text-sm text-slate-600 dark:text-brand-muted">{{ objective }}</p>
             </li>
@@ -276,7 +276,7 @@
             <ul class="space-y-2">
               @for (result of project.results.forStudent; track result) {
               <li class="flex items-start gap-2 text-sm text-slate-600 dark:text-brand-muted">
-                <i class="material-symbols-outlined text-brand-green text-base shrink-0 mt-0.5"
+                <i class="material-symbols-outlined text-brand-green text-base shrink-0"
                   aria-hidden="true">check_circle</i>
                 {{ result }}
               </li>
@@ -295,7 +295,7 @@
             <ul class="space-y-2">
               @for (result of project.results.forCompany; track result) {
               <li class="flex items-start gap-2 text-sm text-slate-600 dark:text-brand-muted">
-                <i class="material-symbols-outlined text-brand-teal text-base shrink-0 mt-0.5"
+                <i class="material-symbols-outlined text-brand-teal text-base shrink-0"
                   aria-hidden="true">check_circle</i>
                 {{ result }}
               </li>
@@ -323,7 +323,7 @@
             <ul class="space-y-2">
               @for (enhancement of project.future.potentialEnhancements; track enhancement) {
               <li class="flex items-start gap-2 text-sm text-slate-600 dark:text-brand-muted">
-                <i class="material-symbols-outlined text-brand-teal text-base shrink-0 mt-0.5"
+                <i class="material-symbols-outlined text-brand-teal text-base shrink-0"
                   aria-hidden="true">add_circle</i>
                 {{ enhancement }}
               </li>
@@ -353,7 +353,7 @@
               <ul class="space-y-2">
                 @for (item of project.reflection.whatWorkedWell; track item) {
                 <li class="text-sm text-slate-600 dark:text-brand-muted flex items-start gap-2">
-                  <i class="material-symbols-outlined text-brand-green text-base shrink-0 mt-0.5"
+                  <i class="material-symbols-outlined text-brand-green text-base shrink-0"
                     aria-hidden="true">done</i>
                   {{ item }}
                 </li>
@@ -372,7 +372,7 @@
               <ul class="space-y-2">
                 @for (item of project.reflection.whatCouldBeImproved; track item) {
                 <li class="text-sm text-slate-600 dark:text-brand-muted flex items-start gap-2">
-                  <i class="material-symbols-outlined text-brand-amber text-base shrink-0 mt-0.5"
+                  <i class="material-symbols-outlined text-brand-amber text-base shrink-0"
                     aria-hidden="true">priority_high</i>
                   {{ item }}
                 </li>
@@ -392,7 +392,7 @@
             <ul class="space-y-2">
               @for (lesson of project.reflection.lessonsLearned; track lesson) {
               <li class="text-sm text-slate-600 dark:text-brand-muted flex items-start gap-2">
-                <i class="material-symbols-outlined text-brand-blue text-base shrink-0 mt-0.5"
+                <i class="material-symbols-outlined text-brand-blue text-base shrink-0"
                   aria-hidden="true">arrow_right</i>
                 {{ lesson }}
               </li>
@@ -427,7 +427,7 @@
             @for (risk of project.risks; track risk) {
             <div
               class="flex items-start gap-3 p-4 rounded-lg bg-red-50/50 dark:bg-red-900/5 border border-red-200/50 dark:border-red-500/20">
-              <i class="material-symbols-outlined text-red-500 text-lg shrink-0 mt-0.5" aria-hidden="true">error</i>
+              <i class="material-symbols-outlined text-red-500 text-lg shrink-0" aria-hidden="true">error</i>
               <p class="text-sm text-slate-600 dark:text-brand-muted">{{ risk }}</p>
             </div>
             }
@@ -467,9 +467,9 @@
             <a [routerLink]="['/skills', skill.id]"
               class="flex items-center gap-3 p-3 rounded-lg bg-slate-50 dark:bg-brand-bg border border-slate-200 dark:border-brand-border hover:border-brand-blue hover:bg-brand-blue/5 transition-all group">
               <i class="material-symbols-outlined text-brand-blue text-lg" aria-hidden="true">chevron_right</i>
-              <span
+              <small
                 class="text-sm font-medium text-slate-500 dark:text-brand-muted group-hover:text-brand-blue transition-colors">{{
-                skill.name }}</span>
+                skill.name }}</small>
             </a>
             }
           </div>
@@ -479,7 +479,7 @@
         <!-- Testimonial -->
         @if (project.testimonial) {
         <div class="bg-gradient-to-br from-brand-blue/10 to-brand-teal/10 rounded-xl border border-brand-blue/20 p-6">
-          <i class="material-symbols-outlined text-4xl text-brand-blue/50 mb-2" aria-hidden="true">format_quote</i>
+          <i class="material-symbols-outlined text-2xl text-brand-blue/50 mb-2" aria-hidden="true">format_quote</i>
           <p class="text-slate-500 dark:text-brand-muted italic mb-4">"{{ project.testimonial.quote }}"</p>
           <div>
             <p class="font-bold text-slate-900 dark:text-brand-text">{{ project.testimonial.author }}</p>
@@ -528,32 +528,6 @@
     </div>
     }
 
-    <!-- Timeline Tab -->
-    @if (activeTab === 'timeline') {
-    <div class="bg-white dark:bg-brand-surface rounded-xl border border-slate-200 dark:border-brand-border p-6">
-      <h2 class="text-xl font-bold mb-8">Timeline du projet</h2>
-      <div class="relative">
-        <!-- Vertical Line -->
-        <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-slate-200 dark:bg-brand-border"></div>
-
-        <div class="space-y-8">
-          @for (milestone of project.milestones; track milestone.date; let i = $index; let last = $last) {
-          <div class="relative pl-12">
-            <!-- Dot -->
-            <div class="absolute left-2 w-5 h-5 rounded-full border-4 border-white dark:border-brand-surface"
-              [ngClass]="last ? 'bg-brand-blue' : 'bg-slate-200 dark:bg-brand-border'"></div>
-
-            <div class="bg-slate-50 dark:bg-brand-bg rounded-lg p-4">
-              <p class="text-sm text-brand-blue font-medium mb-1">{{ milestone.date }}</p>
-              <h3 class="font-bold text-slate-900 dark:text-brand-text mb-1">{{ milestone.title }}</h3>
-              <p class="text-sm text-slate-500 dark:text-brand-muted">{{ milestone.description }}</p>
-            </div>
-          </div>
-          }
-        </div>
-      </div>
-    </div>
-    }
   </div>
 </section>
 
