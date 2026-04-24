@@ -518,4 +518,194 @@ export const projectEnrichedData: Record<
             "Hébergement : dépendance à un prestataire externe pour la disponibilité",
         ],
     },
+    'valkea': {
+        objectives: [
+            "Développer une application complète de suivi de santé animale (fullstack Java/Angular)",
+            "Concevoir une base de données MySQL adaptée à la gestion des profils d'animaux",
+            "Mettre en place des alertes et rappels pour les soins vétérinaires",
+            "Appliquer les bonnes pratiques d'architecture Spring Boot et Angular",
+        ],
+        context:
+            "Projet personnel initié en 2024 pour répondre à un besoin réel : le suivi de santé de mon husky. L'application permet de centraliser les informations médicales, les vaccinations, les rendez-vous vétérinaires et les rappels de soins pour un ou plusieurs animaux de compagnie.",
+        stakes: [
+            "Concevoir et développer une application fullstack de A à Z en dehors du contexte professionnel, en appliquant les compétences acquises chez Worldline (Java/Spring Boot, Angular) sur un projet personnel concret.",
+        ],
+        actors: [
+            {
+                role: 'Développeuse (moi-même)',
+                description: 'Conception de l\'architecture, développement frontend Angular et backend Java/Spring Boot, modélisation de la base de données MySQL.',
+            },
+            {
+                role: 'Utilisatrice principale',
+                description: 'Propriétaire d\'animaux de compagnie souhaitant centraliser le suivi de santé et ne plus manquer un rendez-vous vétérinaire.',
+            },
+        ],
+        results: {
+            forStudent: [
+                'Mise en pratique concrète de Java/Spring Boot sur un projet personnel',
+                'Consolidation des compétences Angular (composants, services, routing)',
+                'Maîtrise de la conception de base de données relationnelle avec MySQL',
+                'Renforcement de l\'autonomie sur un projet fullstack complet',
+            ],
+            forCompany: [
+                'Démonstration d\'une initiative personnelle et d\'une passion pour le développement',
+                'Preuve de capacité à concevoir une architecture fullstack cohérente',
+                'Application répondant à un besoin utilisateur réel',
+            ],
+        },
+        future: {
+            status: 'En cours de développement. Les fonctionnalités de base (profils animaux, suivi médical, rappels) sont en cours d\'implémentation.',
+            potentialEnhancements: [
+                'Application mobile (PWA ou React Native)',
+                'Partage de profil avec le vétérinaire',
+                'Intégration d\'une IA pour des recommandations de soins',
+                'Mode multi-utilisateurs (famille)',
+            ],
+        },
+        reflection: {
+            whatWorkedWell: [
+                'Architecture Spring Boot claire avec séparation des responsabilités',
+                'Design Tailwind CSS cohérent et adapté au thème vétérinaire',
+                'Modélisation de la base de données MySQL bien structurée',
+            ],
+            whatCouldBeImproved: [
+                'Couverture de tests à améliorer',
+                'Documentation technique à compléter',
+                'CI/CD à mettre en place',
+            ],
+            lessonsLearned: [
+                'Concevoir une app pour un besoin personnel facilite la motivation sur la durée',
+                'L\'architecture Spring Boot apporte une vraie structure sur les projets moyens/grands',
+                'Tailwind CSS accélère considérablement le développement UI',
+            ],
+            wouldDoDifferently: 'Je mettrais en place la CI/CD dès le début et je rédigerais les tests en parallèle du développement plutôt qu\'après.',
+        },
+        risks: [
+            'Gestion des données médicales sensibles (RGPD)',
+            'Disponibilité du service (hébergement à sécuriser)',
+            'Maintenance régulière nécessaire pour rester à jour',
+        ],
+    },
+    'unio': {
+        objectives: [
+            "Développer une application d'organisation de mariage et de vie en couple",
+            "Concevoir une interface intuitive pour partager listes, budgets et événements",
+            "Appliquer la même stack que Valkea (Java, Angular, Tailwind CSS, MySQL)",
+            "Explorer les fonctionnalités collaboratives en temps réel",
+        ],
+        context:
+            "Projet personnel en cours de conception, inspiré par le besoin d'une application centralisée pour l'organisation des grandes étapes de la vie en couple : mariage, voyage, budget partagé, listes de tâches communes. Conçu pour être le compagnon digital des couples.",
+        stakes: [
+            "Explorer les fonctionnalités collaboratives (partage en temps réel, notifications) tout en approfondissant la stack Java/Angular dans un contexte différent de Valkea.",
+        ],
+        actors: [
+            {
+                role: 'Développeuse (moi-même)',
+                description: 'Conception UX/UI, architecture backend Java/Spring Boot et frontend Angular/Tailwind CSS.',
+            },
+            {
+                role: 'Utilisateurs cibles',
+                description: 'Couples souhaitant organiser leur mariage et leur vie commune de manière collaborative et centralisée.',
+            },
+        ],
+        results: {
+            forStudent: [
+                'Approfondissement des fonctionnalités collaboratives (partage, notifications)',
+                'Exploration de la gestion des rôles et permissions (deux utilisateurs par compte)',
+                'Renforcement des compétences en design UI avec Tailwind CSS',
+            ],
+            forCompany: [
+                'Preuve de créativité et d\'initiative dans la conception de produits digitaux',
+                'Démonstration d\'une capacité à concevoir des applications orientées utilisateur',
+            ],
+        },
+        future: {
+            status: 'En phase de conception. L\'architecture et les maquettes sont en cours de définition.',
+            potentialEnhancements: [
+                'Application mobile (PWA)',
+                'Intégration avec des services de wedding planning (Pinterest, etc.)',
+                'Mode partage avec la famille et les amis',
+                'Gestion du budget et des dépenses partagées',
+            ],
+        },
+        reflection: {
+            whatWorkedWell: [
+                'Idée validée par des retours d\'utilisateurs potentiels',
+                'Architecture similaire à Valkea : montée en compétences réutilisable',
+            ],
+            whatCouldBeImproved: [
+                'Spécifications fonctionnelles à affiner',
+                'UX à tester avec de vrais utilisateurs',
+            ],
+            lessonsLearned: [
+                'La réutilisation d\'une stack maîtrisée accélère le démarrage d\'un nouveau projet',
+                'La phase de conception est aussi importante que le développement',
+            ],
+            wouldDoDifferently: 'Je commencerais par des interviews utilisateurs et des wireframes avant d\'écrire la première ligne de code.',
+        },
+        risks: [
+            'Gestion des données personnelles sensibles (RGPD)',
+            'Complexité des fonctionnalités collaboratives en temps réel',
+            'Maintenance et évolution sur le long terme',
+        ],
+    },
+    'mathilde-j': {
+        objectives: [
+            'Créer un site portfolio professionnel pour présenter mon profil de développeuse',
+            'Maîtriser le déploiement continu avec Vercel',
+            'Produire un site performant et accessible pour les recruteurs',
+            'Versionner et organiser le projet avec Git/GitHub',
+        ],
+        context:
+            "Premier portfolio professionnel développé avant le portfolio Angular actuel. Ce site a été ma vitrine initiale lors de ma recherche d'alternance, conçu pour présenter mon parcours atypique et mes premières compétences en développement web.",
+        stakes: [
+            "Obtenir un premier contrat d'alternance en développement web en montrant une réalisation concrète reflétant mes compétences et ma personnalité professionnelle.",
+        ],
+        actors: [
+            {
+                role: 'Développeuse (moi-même)',
+                description: 'Conception, développement et déploiement complets du site.',
+            },
+            {
+                role: 'Recruteurs',
+                description: 'Utilisateurs principaux du site, à la recherche d\'une alternante développeuse web.',
+            },
+        ],
+        results: {
+            forStudent: [
+                'Premier projet déployé en production via Vercel',
+                'Maîtrise du pipeline de déploiement continu (GitHub → Vercel)',
+                'Portfolio en ligne ayant contribué à l\'obtention d\'un contrat d\'alternance chez Worldline',
+            ],
+            forCompany: [
+                'Site accessible et professionnel ayant servi de support lors des entretiens',
+                'Preuve tangible des compétences en développement web',
+            ],
+        },
+        future: {
+            status: 'Remplacé par le portfolio Angular actuel, mais conservé en ligne comme référence de progression.',
+            potentialEnhancements: [
+                'Maintenu en l\'état comme archive de ma progression',
+            ],
+        },
+        reflection: {
+            whatWorkedWell: [
+                'Déploiement rapide grâce à Vercel',
+                'Site accessible et clair pour les recruteurs',
+            ],
+            whatCouldBeImproved: [
+                'Design à moderniser',
+                'Contenu à enrichir',
+                'Accessibilité à améliorer',
+            ],
+            lessonsLearned: [
+                'Un portfolio en ligne est indispensable pour décrocher un premier contrat',
+                'Vercel simplifie énormément le déploiement continu',
+            ],
+            wouldDoDifferently: 'J\'aurais investi plus de temps dans le design et la rédaction du contenu pour mieux me démarquer.',
+        },
+        risks: [
+            'Obsolescence du contenu (informations à jour dans le nouveau portfolio)',
+        ],
+    },
 };
