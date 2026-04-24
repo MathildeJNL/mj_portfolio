@@ -19,7 +19,7 @@ export class HomeComponent {
   readonly name = 'Mathilde';
   readonly title = 'Développeuse Full-Stack.';
   readonly tagline = "Développeuse junior, passionnée par la création d'applications modernes, fiables et élégantes.";
-  readonly profileImageUrl = 'assets/images/pp2.jpg';
+  readonly profileImageUrl = 'assets/images/mj_pp.png';
 
   readonly techStack = this.data.homeTechStack;
   readonly values = this.data.homeValues;

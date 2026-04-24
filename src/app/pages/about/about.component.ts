@@ -15,7 +15,7 @@ export class AboutComponent {
     private readonly data = inject(PortfolioDataService);
     private readonly router = inject(Router);
 
-    readonly profileImageUrl = 'assets/images/pp2.jpg';
+    readonly profileImageUrl = 'assets/images/mj_pp.png';
     readonly introParagraphs = this.data.aboutIntroParagraphs;
     readonly values = this.data.aboutValues;
     readonly professionalProject = this.data.aboutProfessionalProject;
