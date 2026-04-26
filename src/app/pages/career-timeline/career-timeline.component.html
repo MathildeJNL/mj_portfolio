@@ -115,12 +115,15 @@
                   </strong>
                 </div>
                 <h3 class="text-lg font-bold text-slate-900 dark:text-brand-text mb-1">{{ item.education.title }}</h3>
-                <p class="text-brand-green font-medium text-sm mb-2">
+                <!-- Organisation école + tooltip -->
+                <div class="relative group inline-block mb-2">
                   @if (item.education.organizationUrl) {
                   <a [href]="item.education.organizationUrl" target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center gap-1 hover:underline">
+                    class="inline-flex items-center gap-1 text-brand-green font-medium text-sm hover:underline"
+                    [attr.aria-describedby]="item.education.organizationTooltip ? 'tooltip-edu-' + item.education.id : null">
                     @if (item.education.organizationLogo) {
-                    <img [src]="item.education.organizationLogo" [alt]="item.education.organization" class="h-5 w-auto object-contain">
+                    <img [src]="item.education.organizationLogo" [alt]="item.education.organization"
+                      class="h-5 w-auto object-contain">
                     } @else {
                     <i class="material-symbols-outlined text-base" aria-hidden="true">school</i>
                     }
@@ -128,9 +131,21 @@
                     <i class="material-symbols-outlined text-base" aria-hidden="true">open_in_new</i>
                   </a>
                   } @else {
-                  {{ item.education.organization }}
+                  <span class="text-brand-green font-medium text-sm"
+                    [attr.aria-describedby]="item.education.organizationTooltip ? 'tooltip-edu-' + item.education.id : null">
+                    {{ item.education.organization }}
+                  </span>
                   }
-                </p>
+                  <!-- Tooltip -->
+                  @if (item.education.organizationTooltip) {
+                  <div [id]="'tooltip-edu-' + item.education.id" role="tooltip" class="absolute bottom-full left-0 mb-2 w-72 p-3 rounded-xl
+                           bg-brand-surface border border-brand-border text-brand-muted text-xs leading-relaxed
+                           opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                           transition-all duration-200 z-50 shadow-xl pointer-events-none">
+                    {{ item.education.organizationTooltip }}
+                  </div>
+                  }
+                </div>
                 <p class="text-slate-500 dark:text-brand-muted text-sm mb-3">{{ item.education.description }}</p>
                 <div class="space-y-1.5">
                   @for (highlight of item.education.highlights.slice(0, 3); track highlight) {
@@ -156,7 +171,8 @@
                   <a [href]="item.job.organizationUrl" target="_blank" rel="noopener noreferrer"
                     class="inline-flex items-center gap-1 hover:underline">
                     @if (item.job.organizationLogo) {
-                    <img [src]="item.job.organizationLogo" [alt]="item.job.organization" class="h-5 w-auto object-contain">
+                    <img [src]="item.job.organizationLogo" [alt]="item.job.organization"
+                      class="h-5 w-auto object-contain">
                     } @else {
                     <i class="material-symbols-outlined text-base" aria-hidden="true">apartment</i>
                     }
@@ -263,23 +279,38 @@
             <!-- Content -->
             <div class="p-6">
               <h3 class="text-xl font-bold text-slate-900 dark:text-brand-text mb-1">{{ item.event.title }}</h3>
-              <p class="font-medium mb-2" [ngClass]="item.event.colorClass">
+              <!-- Organisation + tooltip pour les formations -->
+              <div class="relative group inline-block mb-2" [ngClass]="item.event.colorClass">
                 @if (item.event.organizationUrl) {
                 <a [href]="item.event.organizationUrl" target="_blank" rel="noopener noreferrer"
-                  class="inline-flex items-center gap-1 hover:underline">
+                  class="inline-flex items-center gap-1 font-medium text-sm hover:underline"
+                  [attr.aria-describedby]="item.event.type === 'education' ? 'tooltip-event-' + item.event.id : null">
                   @if (item.event.organizationLogo) {
-                  <img [src]="item.event.organizationLogo" [alt]="item.event.organization" class="h-5 w-auto object-contain">
+                  <img [src]="item.event.organizationLogo" [alt]="item.event.organization"
+                    class="h-5 w-auto object-contain">
                   } @else {
-                    <i class="material-symbols-outlined text-base" aria-hidden="true">{{ item.event.type === 'education' ?
+                  <i class="material-symbols-outlined text-base" aria-hidden="true">{{ item.event.type === 'education' ?
                     'school' : 'apartment' }}</i>
                   }
                   {{ item.event.organization }}
                   <i class="material-symbols-outlined text-base" aria-hidden="true">open_in_new</i>
                 </a>
                 } @else {
-                {{ item.event.organization }}
+                <span class="font-medium text-sm"
+                  [attr.aria-describedby]="item.event.type === 'education' ? 'tooltip-event-' + item.event.id : null">
+                  {{ item.event.organization }}
+                </span>
                 }
-              </p>
+                <!-- Tooltip : uniquement pour les formations avec un texte dédié -->
+                @if (item.event.type === 'education' && item.event.organizationTooltip) {
+                <div [id]="'tooltip-event-' + item.event.id" role="tooltip" class="absolute bottom-full left-0 mb-2 w-72 p-3 rounded-xl
+                         bg-brand-surface border border-brand-border text-brand-muted text-xs leading-relaxed
+                         opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                         transition-all duration-200 z-50 shadow-xl pointer-events-none">
+                  {{ item.event.organizationTooltip }}
+                </div>
+                }
+              </div>
               <p class="text-sm text-slate-500 dark:text-brand-muted mb-4 flex items-center gap-1">
                 <i class="material-symbols-outlined text-base" aria-hidden="true">location_on</i>
                 {{ item.event.location }}
@@ -292,8 +323,7 @@
               <div class="space-y-2 mb-4">
                 @for (highlight of item.event.highlights; track highlight) {
                 <div class="flex items-start gap-2">
-                  <i class="material-symbols-outlined text-base" [ngClass]="item.event.colorClass"
-                    aria-hidden="true">
+                  <i class="material-symbols-outlined text-base" [ngClass]="item.event.colorClass" aria-hidden="true">
                     check
                   </i>
                   <small class="text-sm text-slate-500 dark:text-brand-muted">{{ highlight }}</small>

@@ -76,8 +76,8 @@
       Projets mis en avant
     </h2>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-      @for (project of featuredProjects.slice(0, 2); track project.id) {
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      @for (project of featuredProjects.slice(0, 3); track project.id) {
       <a [routerLink]="['/projects', project.id]"
         class="group relative overflow-hidden rounded-2xl bg-white dark:bg-brand-surface border border-slate-200 dark:border-brand-border hover:shadow-2xl transition-all duration-300">
         <!-- Image -->

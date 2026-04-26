@@ -477,18 +477,12 @@ export const projectEnrichedData: Record<
                 "Consolidation de mes compétences frontend (responsive, animations, accessibilité)",
                 'Projet concret à présenter en entretien',
             ],
-            forCompany: [
-                'Démonstration de capacité à mener un projet complet de A à Z',
-                'Code de qualité professionnelle (TypeScript strict, composants réutilisables)',
-                'Respect des bonnes pratiques (SEO, performances, accessibilité)',
-            ],
         },
         future: {
             status:
                 "En évolution continue. Le portfolio est mis à jour régulièrement avec de nouveaux projets, compétences et certifications.",
             potentialEnhancements: [
-                'Ajouter un blog technique pour partager mes apprentissages',
-                'Implémenter un back-office pour gérer le contenu sans redéployer',
+                'Implémenter un back-office',
                 'Ajouter des analytics pour suivre les visites et les interactions',
                 'Intégrer un système de commentaires ou de recommandations',
             ],
@@ -496,7 +490,7 @@ export const projectEnrichedData: Record<
         reflection: {
             whatWorkedWell: [
                 'Design moderne et professionnel qui plaît aux recruteurs',
-                'Performances excellentes (score Lighthouse 95+)',
+                'Déploiement rapide grâce à Vercel',
                 "Architecture modulaire facilitant l'ajout de nouvelles sections",
             ],
             whatCouldBeImproved: [
@@ -510,11 +504,10 @@ export const projectEnrichedData: Record<
                 "Les performances et l'accessibilité sont des critères de sérieux professionnel",
             ],
             wouldDoDifferently:
-                "J'aurais conçu un back-office dès le début pour gérer le contenu sans redéployer. J'aurais également ajouté un blog technique pour démontrer ma capacité de vulgarisation et de partage de connaissances.",
+                "J'aurais conçu un back-office dès le début. J'aurais investi plus de temps dans le design et la rédaction du contenu pour mieux me démarquer.",
         },
         risks: [
             'Obsolescence : le portfolio doit être mis à jour régulièrement',
-            'Sécurité : formulaire de contact vulnérable au spam (protection nécessaire)',
             "Hébergement : dépendance à un prestataire externe pour la disponibilité",
         ],
     },
@@ -546,11 +539,6 @@ export const projectEnrichedData: Record<
                 'Consolidation des compétences Angular (composants, services, routing)',
                 'Maîtrise de la conception de base de données relationnelle avec MySQL',
                 'Renforcement de l\'autonomie sur un projet fullstack complet',
-            ],
-            forCompany: [
-                'Démonstration d\'une initiative personnelle et d\'une passion pour le développement',
-                'Preuve de capacité à concevoir une architecture fullstack cohérente',
-                'Application répondant à un besoin utilisateur réel',
             ],
         },
         future: {
@@ -614,10 +602,6 @@ export const projectEnrichedData: Record<
                 'Exploration de la gestion des rôles et permissions (deux utilisateurs par compte)',
                 'Renforcement des compétences en design UI avec Tailwind CSS',
             ],
-            forCompany: [
-                'Preuve de créativité et d\'initiative dans la conception de produits digitaux',
-                'Démonstration d\'une capacité à concevoir des applications orientées utilisateur',
-            ],
         },
         future: {
             status: 'En phase de conception. L\'architecture et les maquettes sont en cours de définition.',
@@ -650,62 +634,83 @@ export const projectEnrichedData: Record<
         ],
     },
     'mathilde-j': {
+        objectives: [],
+    },
+    'extranet': {
         objectives: [
-            'Créer un site portfolio professionnel pour présenter mon profil de développeuse',
-            'Maîtriser le déploiement continu avec Vercel',
-            'Produire un site performant et accessible pour les recruteurs',
-            'Versionner et organiser le projet avec Git/GitHub',
+            'Contribuer au développement d’un extranet interne de gestion clients chez Worldline',
+            'Concevoir des interfaces Angular claires pour administrer configurations, builds et clients',
+            'Implémenter et maintenir une API Node.js/TypeScript exposée à partir de données MongoDB',
+            'S’intégrer dans une équipe agile et respecter les standards de production',
         ],
         context:
-            "Premier portfolio professionnel développé avant le portfolio Angular actuel. Ce site a été ma vitrine initiale lors de ma recherche d'alternance, conçu pour présenter mon parcours atypique et mes premières compétences en développement web.",
+            "Mission réalisée en alternance chez Worldline. L’extranet est un outil interne utilisé par les équipes pour piloter les configurations, les builds et le suivi des clients sur des environnements multiples. Le travail s’inscrit dans une codebase Angular/Node.js déjà existante et fait l’objet de mises en production régulières.",
         stakes: [
-            "Obtenir un premier contrat d'alternance en développement web en montrant une réalisation concrète reflétant mes compétences et ma personnalité professionnelle.",
+            "Apporter de la valeur métier rapidement sur un produit existant tout en montant en compétence sur un écosystème Angular/Node.js/MongoDB en environnement professionnel.",
         ],
         actors: [
             {
-                role: 'Développeuse (moi-même)',
-                description: 'Conception, développement et déploiement complets du site.',
+                role: 'Tech Lead & équipe Worldline',
+                description: 'Encadrement technique, revues de code, validation des choix d’architecture et des livrables.',
             },
             {
-                role: 'Recruteurs',
-                description: 'Utilisateurs principaux du site, à la recherche d\'une alternante développeuse web.',
+                role: 'Product Owner / métier',
+                description: 'Définition des besoins fonctionnels, priorisation du backlog et validation des fonctionnalités livrées.',
+            },
+            {
+                role: 'Utilisateurs internes',
+                description: 'Équipes métier et exploitation utilisant l’extranet pour gérer les configurations et les clients au quotidien.',
+            },
+            {
+                role: 'Développeuse (moi-même)',
+                description: 'Mise en œuvre des fonctionnalités frontend Angular et de l’API Node.js, corrections de bugs et améliorations UX.',
             },
         ],
         results: {
             forStudent: [
-                'Premier projet déployé en production via Vercel',
-                'Maîtrise du pipeline de déploiement continu (GitHub → Vercel)',
-                'Portfolio en ligne ayant contribué à l\'obtention d\'un contrat d\'alternance chez Worldline',
+                'Montée en compétence concrète sur Angular et TypeScript en environnement professionnel',
+                'Première expérience d’une codebase Node.js/MongoDB de production',
+                'Découverte d’un workflow agile (sprints, revues de code, CI/CD)',
+                'Renforcement de la capacité à lire, comprendre et faire évoluer du code existant',
             ],
             forCompany: [
-                'Site accessible et professionnel ayant servi de support lors des entretiens',
-                'Preuve tangible des compétences en développement web',
+                'Livraison de fonctionnalités utilisées par les équipes internes',
+                'Maintenance et stabilisation de l’extranet en production',
+                'Amélioration de l’expérience utilisateur sur les écrans de gestion clients',
             ],
         },
         future: {
-            status: 'Remplacé par le portfolio Angular actuel, mais conservé en ligne comme référence de progression.',
+            status:
+                "Produit toujours actif chez Worldline. Mes contributions continuent d’être maintenues par l’équipe en place et l’application évolue au rythme des besoins métier.",
             potentialEnhancements: [
-                'Maintenu en l\'état comme archive de ma progression',
+                'Refonte UX de certains écrans de gestion les plus utilisés',
+                'Renforcement des tests automatisés (frontend et API)',
+                'Optimisation des performances sur les listes volumineuses',
             ],
         },
         reflection: {
             whatWorkedWell: [
-                'Déploiement rapide grâce à Vercel',
-                'Site accessible et clair pour les recruteurs',
+                'Intégration rapide dans une équipe et une codebase déjà en place',
+                'Bon usage des composants Angular pour factoriser les écrans de gestion',
+                'Communication régulière avec le tech lead et le PO sur les choix techniques',
             ],
             whatCouldBeImproved: [
-                'Design à moderniser',
-                'Contenu à enrichir',
-                'Accessibilité à améliorer',
+                'Couverture de tests automatisés à renforcer',
+                'Documentation technique parfois lacunaire à compléter',
+                'Certains écrans mériteraient une refonte UX dédiée',
             ],
             lessonsLearned: [
-                'Un portfolio en ligne est indispensable pour décrocher un premier contrat',
-                'Vercel simplifie énormément le déploiement continu',
+                'Travailler sur un produit existant impose d’abord de comprendre l’histoire du code',
+                'Les revues de code sont un accélérateur fort de montée en compétence',
+                'Une bonne communication métier évite des développements inutiles',
             ],
-            wouldDoDifferently: 'J\'aurais investi plus de temps dans le design et la rédaction du contenu pour mieux me démarquer.',
+            wouldDoDifferently:
+                "Avec mon expérience actuelle, je proposerais plus tôt des améliorations UX et des refactorings ciblés plutôt que d’accumuler de la dette technique sur les écrans existants.",
         },
         risks: [
-            'Obsolescence du contenu (informations à jour dans le nouveau portfolio)',
+            'Données clients sensibles (confidentialité, gestion fine des accès)',
+            'Dépendance à un écosystème et des services internes Worldline',
+            'Dette technique potentielle sur une codebase ancienne',
         ],
     },
 };

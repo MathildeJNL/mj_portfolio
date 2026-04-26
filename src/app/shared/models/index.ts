@@ -171,7 +171,7 @@ export interface ProjectActor {
 /** Project results */
 export interface ProjectResults {
   forStudent: string[];
-  forCompany: string[];
+  forCompany?: string[];
 }
 
 /** Project future */
@@ -206,6 +206,7 @@ export interface TimelineEvent {
   colorClass: string;
   bgClass: string;
   linkedTo?: string;
+  organizationTooltip?: string;
   relatedProjects?: ProjectRef[];
   relatedSkillCategories?: { id: string; name: string }[];
 }

@@ -114,6 +114,7 @@ export interface ProjectDetail {
   milestones: Milestone[];
   links: { github?: string; live?: string; documentation?: string };
   testimonial?: { quote: string; author: string; role: string };
+  mockupImages?: string[];
   relatedSkillCategories?: { id: string; name: string }[];
   actors?: ProjectActor[];
   results?: ProjectResults;
@@ -207,13 +208,6 @@ export class PortfolioDataService {
 
   readonly homeProjectPreviews = [
     {
-      id: 'portfolio',
-      title: 'Concevoir un portfolio professionnel avec Angular',
-      description: 'Développement de ce portfolio avec Angular, Tailwind CSS, optimisation SEO et contenu structuré selon la grille ISCOD/VISIPLUS.',
-      imageUrl: 'assets/images/logo.png',
-      tags: ['Angular', 'Tailwind CSS', 'SEO', 'Accessibilité'],
-    },
-    {
       id: 'valkea',
       title: 'Valkea — Suivi de santé animale',
       description: 'Application fullstack Java/Angular de suivi médical pour animaux de compagnie.',
@@ -221,11 +215,18 @@ export class PortfolioDataService {
       tags: ['Java', 'Spring Boot', 'Angular', 'MySQL'],
     },
     {
-      id: 'openclassrooms-6',
-      title: "Construire une API sécurisée pour une application d'avis gastronomique",
-      description: "Création d'une API REST sécurisée avec NodeJS et MongoDB.",
-      imageUrl: 'assets/images/projects/piiquante.png',
-      tags: ['NodeJS', 'MongoDB', 'Sécurité', 'API'],
+      id: 'unio',
+      title: 'Unio — Application de couple',
+      description: "Application dédiée aux couples pour organiser leur vie commune : mariage, budget, listes partagées, événements.",
+      imageUrl: 'assets/images/unio_logo.png',
+      tags: ['Java', 'Spring Boot', 'Angular', 'MySQL'],
+    },
+    {
+      id: 'extranet',
+      title: 'Extranet — Portail de gestion client Worldline',
+      description: "Application web interne développée chez Worldline pour la gestion des configurations et déploiements clients.",
+      imageUrl: 'assets/images/Logo_Worldline_-_2021.svg',
+      tags: ['TypeScript', 'Angular', 'Bootstrap', 'Node.js', 'MongoDB'],
     },
   ];
 
@@ -658,20 +659,8 @@ export class PortfolioDataService {
       tags: ['Angular', 'Tailwind CSS', 'SEO', 'Accessibilité'],
       categories: ['frontend'],
       year: 2024,
-      featured: true,
-      metrics: [{ label: 'Projet', value: 'Personnel' }],
-    },
-    {
-      id: 'mathilde-j',
-      title: 'Portfolio professionnel Mathilde J.',
-      description:
-        "Premier portfolio professionnel développé et déployé sur Vercel pour décrocher mon alternance chez Worldline.",
-      imageUrl: 'assets/images/logo.png',
-      tags: ['HTML', 'CSS', 'JavaScript', 'Vercel'],
-      categories: ['frontend'],
-      year: 2023,
       featured: false,
-      metrics: [{ label: 'Projet', value: 'Pro' }],
+      metrics: [{ label: 'Projet', value: 'Personnel' }],
     },
     {
       id: 'valkea',
@@ -690,11 +679,11 @@ export class PortfolioDataService {
       title: 'Unio — Application de couple',
       description:
         "Application dédiée aux couples pour organiser leur vie commune : mariage, budget, listes partagées, événements.",
-      imageUrl: 'assets/images/rings.jpg',
+      imageUrl: 'assets/images/unio_logo.png',
       tags: ['Java', 'Spring Boot', 'Angular', 'Tailwind CSS', 'MySQL'],
       categories: ['frontend', 'backend'],
       year: 2026,
-      featured: false,
+      featured: true,
       metrics: [{ label: 'Projet', value: 'Personnel' }],
     },
     {
@@ -716,8 +705,20 @@ export class PortfolioDataService {
       tags: ['VueJS', 'SQL', 'CRUD'],
       categories: ['frontend', 'backend'],
       year: 2022,
-      featured: true,
+      featured: false,
       metrics: [{ label: 'Formation', value: 'OpenClassrooms' }],
+    },
+    {
+      id: 'extranet',
+      title: 'Extranet — Portail de gestion client Worldline',
+      description:
+        "Application web interne développée chez Worldline pour la gestion des configurations et déploiements clients.",
+      imageUrl: 'assets/images/Logo_Worldline_-_2021.svg',
+      tags: ['TypeScript', 'Angular', 'Bootstrap', 'Node.js', 'MongoDB'],
+      categories: ['frontend', 'backend'],
+      year: 2024,
+      featured: true,
+      metrics: [{ label: 'Entreprise', value: 'Worldline' }],
     },
   ];
 
@@ -732,9 +733,9 @@ export class PortfolioDataService {
         "Ce portfolio a été conçu comme une application Angular complète servant à la fois de vitrine professionnelle et de démonstration technique. L'objectif était de structurer l'information de façon claire pour des recruteurs et évaluateurs, tout en garantissant une expérience fluide sur mobile et desktop, un bon niveau d'accessibilité, et une architecture de contenu facile à faire évoluer.",
       imageUrl: 'assets/images/logo.png',
       galleryImages: ['assets/images/logo.png'],
-      tags: ['Angular', 'Tailwind CSS', 'SEO', 'Accessibilité'],
+      tags: [],
       categories: ['frontend'],
-      year: 2024,
+      year: 2026,
       duration: 'Projet continu',
       role: 'Designer & Développeuse',
       teamSize: 'Individuel',
@@ -743,6 +744,8 @@ export class PortfolioDataService {
         { label: 'Framework', value: 'Angular', icon: 'code' },
         { label: 'Styling', value: 'Tailwind', icon: 'palette' },
         { label: 'Focus', value: 'SEO / UX', icon: 'insights' },
+        { label: 'Déploiement', value: 'Vercel', icon: 'rocket_launch' },
+        { label: 'Source', value: 'GitHub', icon: 'code' },
       ],
       challenges: [
         {
@@ -765,6 +768,7 @@ export class PortfolioDataService {
         { name: 'Angular', category: 'Frontend', description: "Architecture de l’application, routing et composants" },
         { name: 'TypeScript', category: 'Frontend', description: 'Typage strict et structuration des données métier' },
         { name: 'Tailwind CSS', category: 'UI', description: 'Système de styles utilitaire et responsive design' },
+        { name: 'Vercel', category: 'Déploiement', description: 'Hébergement et CI/CD automatisé' },
       ],
       milestones: [
         {
@@ -778,7 +782,7 @@ export class PortfolioDataService {
           description: 'Ajout des rubriques détaillées liées à la grille ISCOD/VISIPLUS pour les projets et compétences',
         },
       ],
-      links: {},
+      links: { github: 'https://github.com/MathildeJNL/mj_portfolio' },
       relatedSkillCategories: [
         { id: 'html-css', name: 'HTML & CSS' },
         { id: 'angular', name: 'Angular' },
@@ -789,61 +793,6 @@ export class PortfolioDataService {
       ...projectEnrichedData['portfolio'],
     },
     {
-      id: 'mathilde-j',
-      title: 'Portfolio professionnel Mathilde J.',
-      subtitle: 'Projet professionnel',
-      description:
-        "Premier portfolio professionnel développé et déployé sur Vercel pour décrocher mon alternance chez Worldline.",
-      longDescription:
-        "Ce site portfolio a été ma première vitrine en ligne lors de ma recherche d'alternance en développement web. Conçu pour mettre en avant mon parcours atypique et mes premières compétences, il est déployé en continu via Vercel à chaque push sur GitHub.",
-      imageUrl: 'assets/images/logo.png',
-      galleryImages: [],
-      tags: ['HTML', 'CSS', 'JavaScript', 'Vercel'],
-      categories: ['frontend'],
-      year: 2023,
-      duration: 'Quelques semaines',
-      role: 'Développeuse & Designer',
-      teamSize: 'Individuel',
-      status: 'Terminé',
-      metrics: [
-        { label: 'Déploiement', value: 'Vercel', icon: 'rocket_launch' },
-        { label: 'Source', value: 'GitHub', icon: 'code' },
-      ],
-      challenges: [
-        {
-          title: 'Premier déploiement en production',
-          description: 'Mettre en ligne un site professionnel pour la première fois, avec un pipeline de déploiement continu.',
-        },
-        {
-          title: 'Se démarquer sans expérience',
-          description: 'Présenter un parcours atypique de façon convaincante pour des recruteurs tech.',
-        },
-      ],
-      solutions: [
-        'Utilisation de Vercel pour un déploiement continu automatisé depuis GitHub',
-        'Design épuré centré sur le contenu et la lisibilité',
-        'Structure claire pour mettre en avant les compétences et la motivation',
-      ],
-      technologies: [
-        { name: 'HTML5', category: 'Frontend', description: 'Structure sémantique du site' },
-        { name: 'CSS3', category: 'Frontend', description: 'Mise en forme et responsive design' },
-        { name: 'JavaScript', category: 'Frontend', description: 'Interactions et dynamisme' },
-        { name: 'Vercel', category: 'Déploiement', description: 'Hébergement et CI/CD automatisé' },
-      ],
-      milestones: [
-        { date: '2023', title: 'Mise en ligne', description: 'Déploiement du portfolio sur Vercel via GitHub' },
-      ],
-      links: {
-        live: 'https://mathilde-j.vercel.app/',
-        github: 'https://github.com/MathildeJNL/MathildeJ',
-      },
-      relatedSkillCategories: [
-        { id: 'html-css', name: 'HTML & CSS' },
-        { id: 'git', name: 'Git' },
-      ],
-      ...projectEnrichedData['mathilde-j'],
-    },
-    {
       id: 'valkea',
       title: 'Valkea — Suivi de santé animale',
       subtitle: 'Projet personnel',
@@ -852,7 +801,20 @@ export class PortfolioDataService {
       longDescription:
         "Valkea est une application fullstack développée en Java/Spring Boot (backend) et Angular/Tailwind CSS (frontend) avec MySQL comme base de données. Elle permet à un propriétaire d'animaux de centraliser toutes les informations médicales : vaccinations, traitements, rendez-vous vétérinaires et rappels de soins.",
       imageUrl: 'assets/images/valkea_logo.png',
-      galleryImages: [],
+      galleryImages: [
+        'assets/images/projects/valkea1.png',
+        'assets/images/projects/valkea2.png',
+        'assets/images/projects/valkea3.png',
+        'assets/images/projects/valkea4.png',
+        'assets/images/projects/valkea5.png',
+      ],
+      mockupImages: [
+        'assets/images/projects/valkea1.png',
+        'assets/images/projects/valkea2.png',
+        'assets/images/projects/valkea3.png',
+        'assets/images/projects/valkea4.png',
+        'assets/images/projects/valkea5.png',
+      ],
       tags: ['Java', 'Spring Boot', 'Angular', 'Tailwind CSS', 'MySQL'],
       categories: ['frontend', 'backend'],
       year: 2025,
@@ -891,7 +853,7 @@ export class PortfolioDataService {
       milestones: [
         { date: '2025', title: 'Démarrage', description: "Conception de l'architecture et premiers développements" },
       ],
-      links: { github: 'https://github.com/MathildeJNL/VetCare' },
+      links: {},
       relatedSkillCategories: [
         { id: 'java', name: 'Java' },
         { id: 'spring', name: 'Spring' },
@@ -910,8 +872,19 @@ export class PortfolioDataService {
         "Application dédiée aux couples pour organiser leur vie commune : mariage, budget, listes partagées, événements.",
       longDescription:
         "Unio est une application fullstack en cours de conception, pensée pour accompagner les couples dans les grandes étapes de leur vie commune. L'application proposera un espace partagé pour l'organisation du mariage, la gestion du budget, les listes de tâches et les événements importants.",
-      imageUrl: 'assets/images/projects/unio.png',
-      galleryImages: [],
+      imageUrl: 'assets/images/rings.jpg',
+      galleryImages: [
+        'assets/images/projects/unio_home.png',
+        'assets/images/projects/unio_details.png',
+        'assets/images/projects/unio_details_contact.png',
+        'assets/images/projects/unio_rsvp.png',
+      ],
+      mockupImages: [
+        'assets/images/projects/unio_home.png',
+        'assets/images/projects/unio_details.png',
+        'assets/images/projects/unio_details_contact.png',
+        'assets/images/projects/unio_rsvp.png',
+      ],
       tags: ['Java', 'Spring Boot', 'Angular', 'Tailwind CSS', 'MySQL'],
       categories: ['frontend', 'backend'],
       year: 2026,
@@ -1059,6 +1032,78 @@ export class PortfolioDataService {
       ],
       ...projectEnrichedData['openclassrooms-7'],
     },
+    {
+      id: 'extranet',
+      title: 'Extranet — Portail de gestion client Worldline',
+      subtitle: 'Projet professionnel — Worldline',
+      description:
+        "Application web interne développée chez Worldline pour la gestion des configurations et déploiements clients.",
+      longDescription:
+        "Dans le cadre de mon alternance chez Worldline, j'ai participé au développement d'un extranet permettant aux équipes internes de gérer les configurations, les builds et le suivi des clients. L'application offre une interface Angular/Bootstrap pour visualiser et administrer les données stockées en MongoDB, via une API Node.js/TypeScript.",
+      imageUrl: 'assets/images/Logo_Worldline_-_2021.svg',
+      galleryImages: [
+        'assets/images/projects/extranet/desktop_customer_builds.png',
+        'assets/images/projects/extranet/desktop_customer_configurations.png',
+        'assets/images/projects/extranet/desktop_customer_configurations_details.png',
+        'assets/images/projects/extranet/desktop_customer_configurations_error.png',
+        'assets/images/projects/extranet/web_customers.png',
+      ],
+      mockupImages: [
+        'assets/images/projects/extranet/desktop_customer_builds.png',
+        'assets/images/projects/extranet/desktop_customer_configurations.png',
+        'assets/images/projects/extranet/desktop_customer_configurations_details.png',
+        'assets/images/projects/extranet/desktop_customer_configurations_error.png',
+        'assets/images/projects/extranet/web_customers.png',
+      ],
+      tags: ['TypeScript', 'Angular', 'Bootstrap', 'Node.js', 'MongoDB'],
+      categories: ['frontend', 'backend'],
+      year: 2024,
+      duration: 'En cours',
+      role: 'Développeuse Fullstack',
+      teamSize: 'Équipe agile',
+      status: 'En cours',
+      metrics: [
+        { label: 'Frontend', value: 'Angular', icon: 'code' },
+        { label: 'Backend', value: 'Node.js', icon: 'dns' },
+        { label: 'DB', value: 'MongoDB', icon: 'storage' },
+        { label: 'Contexte', value: 'Worldline', icon: 'apartment' },
+      ],
+      challenges: [
+        {
+          title: 'Interface de gestion complexe',
+          description: 'Concevoir des vues claires pour administrer des configurations techniques variées et volumineuses.',
+        },
+        {
+          title: 'Intégration dans un écosystème existant',
+          description: "Respecter les conventions de l'équipe Worldline et s'intégrer à une base de code Angular et Node.js en production.",
+        },
+      ],
+      solutions: [
+        'Utilisation de composants Angular réutilisables et Bootstrap pour une UI cohérente',
+        'API Node.js/TypeScript avec Express pour exposer les données MongoDB',
+        'Pagination, filtres et recherche côté client pour gérer de grands volumes de données',
+      ],
+      technologies: [
+        { name: 'Angular', category: 'Frontend', description: 'Framework SPA pour les interfaces de gestion' },
+        { name: 'TypeScript', category: 'Frontend', description: 'Typage strict côté client et serveur' },
+        { name: 'Bootstrap', category: 'UI', description: 'Framework CSS pour les composants et la mise en page' },
+        { name: 'Node.js', category: 'Backend', description: "Environnement d'exécution serveur" },
+        { name: 'MongoDB', category: 'Base de données', description: 'Stockage NoSQL des données clients et configurations' },
+      ],
+      milestones: [
+        { date: '2024', title: 'Intégration équipe', description: "Prise en main de la codebase existante chez Worldline" },
+        { date: '2024-2025', title: 'Développement features', description: 'Développement de nouvelles fonctionnalités de gestion' },
+      ],
+      links: {},
+      relatedSkillCategories: [
+        { id: 'angular', name: 'Angular' },
+        { id: 'typescript', name: 'TypeScript' },
+        { id: 'git', name: 'Git' },
+        { id: 'teamwork', name: "Travail d'équipe" },
+        { id: 'adaptability', name: 'Adaptabilité' },
+      ],
+      ...projectEnrichedData['extranet'],
+    },
   ];
 
   // ─────────────────────────── CAREER TIMELINE ───────────────────────────
@@ -1112,6 +1157,7 @@ export class PortfolioDataService {
       organization: 'ISCOD',
       organizationUrl: 'https://www.iscod.fr',
       organizationLogo: 'assets/images/logo_iscod1.png',
+      organizationTooltip: '🎓 ISCOD — École 100% en ligne spécialisée dans le digital et l\'ingénierie logicielle.',
       location: 'France',
       startDate: '2024-10',
       endDate: '2026-09',
@@ -1170,6 +1216,7 @@ export class PortfolioDataService {
       organization: 'CESI',
       organizationUrl: 'https://www.cesi.fr',
       organizationLogo: 'assets/images/cesi_CMJN.png',
+      organizationTooltip: '🏫 CESI — École d\'ingénieurs axée sur la pratique et le développement applicatif.',
       location: 'Orléans, Centre-Val de Loire',
       startDate: '2023-09',
       endDate: '2024-09',
@@ -1225,6 +1272,7 @@ export class PortfolioDataService {
       organization: 'OpenClassrooms',
       organizationUrl: 'https://openclassrooms.com',
       organizationLogo: 'assets/images/lg_oc.png',
+      organizationTooltip: '🌐 OpenClassrooms — Formation en ligne orientée projets concrets en développement web.',
       location: 'France',
       startDate: '2021-11',
       endDate: '2022-08',

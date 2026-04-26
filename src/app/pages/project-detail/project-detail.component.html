@@ -203,8 +203,7 @@
           <ul class="space-y-3">
             @for (objective of project.objectives; track objective) {
             <li class="flex items-start gap-3">
-              <i class="material-symbols-outlined text-brand-blue text-xl shrink-0"
-                aria-hidden="true">arrow_right</i>
+              <i class="material-symbols-outlined text-brand-blue text-xl shrink-0" aria-hidden="true">arrow_right</i>
               <p class="text-sm text-slate-600 dark:text-brand-muted">{{ objective }}</p>
             </li>
             }
@@ -353,8 +352,7 @@
               <ul class="space-y-2">
                 @for (item of project.reflection.whatWorkedWell; track item) {
                 <li class="text-sm text-slate-600 dark:text-brand-muted flex items-start gap-2">
-                  <i class="material-symbols-outlined text-brand-green text-base shrink-0"
-                    aria-hidden="true">done</i>
+                  <i class="material-symbols-outlined text-brand-green text-base shrink-0" aria-hidden="true">done</i>
                   {{ item }}
                 </li>
                 }
@@ -488,18 +486,6 @@
         </div>
         }
 
-        <!-- Gallery -->
-        @if (project.galleryImages.length > 0) {
-        <div class="bg-white dark:bg-brand-surface rounded-xl border border-slate-200 dark:border-brand-border p-6">
-          <h3 class="font-bold mb-4">Galerie</h3>
-          <div class="grid grid-cols-2 gap-2">
-            @for (image of project.galleryImages.slice(0, 4); track $index) {
-            <div class="aspect-video rounded-lg bg-cover bg-center" [style.background-image]="'url(' + image + ')'">
-            </div>
-            }
-          </div>
-        </div>
-        }
       </div>
     </div>
     }
@@ -521,6 +507,30 @@
             </div>
             <h3 class="font-bold text-slate-900 dark:text-brand-text">{{ tech.name }}</h3>
             <p class="text-sm text-slate-500 dark:text-brand-muted mt-1">{{ tech.description }}</p>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+    }
+
+    <!-- Galerie Tab -->
+    @if (activeTab === 'maquettes' && project.mockupImages && project.mockupImages.length > 0) {
+    <div class="space-y-6">
+      <div class="bg-white dark:bg-brand-surface rounded-xl border border-slate-200 dark:border-brand-border p-6">
+        <h2 class="text-xl font-bold mb-2 flex items-center gap-2">
+          <i class="material-symbols-outlined text-brand-purple" aria-hidden="true">photo_library</i>
+          Galerie
+        </h2>
+        <p class="text-sm text-slate-500 dark:text-brand-muted mb-6">
+          Aperçu visuel des interfaces du projet.
+        </p>
+        <div class="flex flex-wrap justify-center gap-6">
+          @for (img of project.mockupImages; track $index) {
+          <div class="overflow-hidden transition-shadow"
+            [ngClass]="project.id === 'unio' ? '' : 'rounded-xl border border-slate-200 dark:border-brand-border shadow-md hover:shadow-xl bg-slate-50 dark:bg-brand-bg'">
+            <img [src]="img" [alt]="project.title + ' — image ' + ($index + 1)"
+              class="max-w-full h-auto block max-h-[80vh] w-auto" loading="lazy" />
           </div>
           }
         </div>
