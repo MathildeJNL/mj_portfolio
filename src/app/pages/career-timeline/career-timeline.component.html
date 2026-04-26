@@ -83,7 +83,7 @@
 
           <!-- Content Card Alternance -->
           <div
-            class="ml-20 bg-white dark:bg-brand-surface rounded-xl border border-slate-200 dark:border-brand-border overflow-hidden hover:shadow-lg transition-shadow">
+            class="ml-16 sm:ml-20 bg-white dark:bg-brand-surface rounded-xl border border-slate-200 dark:border-brand-border overflow-hidden hover:shadow-lg transition-shadow">
             <!-- Header Alternance -->
             <div class="px-6 py-4 border-b border-slate-200 dark:border-brand-border">
               <div class="flex flex-wrap items-center justify-between gap-2">
@@ -138,7 +138,7 @@
                   }
                   <!-- Tooltip -->
                   @if (item.education.organizationTooltip) {
-                  <div [id]="'tooltip-edu-' + item.education.id" role="tooltip" class="absolute bottom-full left-0 mb-2 w-72 p-3 rounded-xl
+                  <div [id]="'tooltip-edu-' + item.education.id" role="tooltip" class="absolute bottom-full left-0 mb-2 w-[min(18rem,calc(100vw-5rem))] p-3 rounded-xl
                            bg-brand-surface border border-brand-border text-brand-muted text-xs leading-relaxed
                            opacity-0 invisible group-hover:opacity-100 group-hover:visible
                            transition-all duration-200 z-50 shadow-xl pointer-events-none">
@@ -257,7 +257,7 @@
 
           <!-- Content Card -->
           <div
-            class="ml-20 bg-white dark:bg-brand-surface rounded-xl border border-slate-200 dark:border-brand-border overflow-hidden hover:shadow-lg transition-shadow">
+            class="ml-16 sm:ml-20 bg-white dark:bg-brand-surface rounded-xl border border-slate-200 dark:border-brand-border overflow-hidden hover:shadow-lg transition-shadow">
             <!-- Header -->
             <div class="px-6 py-4 border-b border-slate-200 dark:border-brand-border">
               <div class="flex flex-wrap items-center justify-between gap-2">
@@ -303,7 +303,7 @@
                 }
                 <!-- Tooltip : uniquement pour les formations avec un texte dédié -->
                 @if (item.event.type === 'education' && item.event.organizationTooltip) {
-                <div [id]="'tooltip-event-' + item.event.id" role="tooltip" class="absolute bottom-full left-0 mb-2 w-72 p-3 rounded-xl
+                <div [id]="'tooltip-event-' + item.event.id" role="tooltip" class="absolute bottom-full left-0 mb-2 w-[min(18rem,calc(100vw-5rem))] p-3 rounded-xl
                          bg-brand-surface border border-brand-border text-brand-muted text-xs leading-relaxed
                          opacity-0 invisible group-hover:opacity-100 group-hover:visible
                          transition-all duration-200 z-50 shadow-xl pointer-events-none">

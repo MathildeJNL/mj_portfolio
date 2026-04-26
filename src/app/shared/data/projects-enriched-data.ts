@@ -576,60 +576,68 @@ export const projectEnrichedData: Record<
     },
     'unio': {
         objectives: [
-            "Développer une application d'organisation de mariage et de vie en couple",
-            "Concevoir une interface intuitive pour partager listes, budgets et événements",
-            "Appliquer la même stack que Valkea (Java, Angular, Tailwind CSS, MySQL)",
-            "Explorer les fonctionnalités collaboratives en temps réel",
+            "Développer une application web dédiée à l'organisation d'un mariage",
+            "Permettre aux mariés de partager un lien unique aux invités donnant accès à toutes les informations de la journée",
+            "Proposer un espace d'inspiration pour les tenues",
+            "Mettre en place un RSVP personnalisé par invité pour éviter les +1 non désirés",
         ],
         context:
-            "Projet personnel en cours de conception, inspiré par le besoin d'une application centralisée pour l'organisation des grandes étapes de la vie en couple : mariage, voyage, budget partagé, listes de tâches communes. Conçu pour être le compagnon digital des couples.",
+            "Projet personnel imaginé à l'origine pour mon conjoint et moi, en vue de l'organisation de notre mariage. L'idée : envoyer aux invités un lien unique leur donnant accès à toutes les informations utiles (déroulé de la journée, lieu, dress code, inspirations de tenues) et leur permettre de confirmer leur présence via un RSVP personnalisé.",
         stakes: [
-            "Explorer les fonctionnalités collaboratives (partage en temps réel, notifications) tout en approfondissant la stack Java/Angular dans un contexte différent de Valkea.",
+            "Concevoir une expérience invité claire et soignée tout en gardant une vraie maîtrise pour les mariés (gestion fine des invités, suivi des réponses, message personnalisé selon le RSVP). Le tout sur une stack que je consolide : Java/Spring Boot, Angular, Tailwind CSS, MySQL.",
         ],
         actors: [
             {
-                role: 'Développeuse (moi-même)',
-                description: 'Conception UX/UI, architecture backend Java/Spring Boot et frontend Angular/Tailwind CSS.',
+                role: 'Développeuse & designer (moi-même)',
+                description: "Conception UX/UI, design des écrans, architecture backend Java/Spring Boot et frontend Angular/Tailwind CSS.",
             },
             {
-                role: 'Utilisateurs cibles',
-                description: 'Couples souhaitant organiser leur mariage et leur vie commune de manière collaborative et centralisée.',
+                role: 'Mariés (utilisateurs principaux)',
+                description: "On configure les informations de la journée, la liste des invités et les paramètres du RSVP.",
+            },
+            {
+                role: 'Invités',
+                description: "Reçoivent un lien personnalisé donnant accès au programme du mariage, aux inspirations de tenues et à leur RSVP individuel.",
             },
         ],
         results: {
             forStudent: [
-                'Approfondissement des fonctionnalités collaboratives (partage, notifications)',
-                'Exploration de la gestion des rôles et permissions (deux utilisateurs par compte)',
-                'Renforcement des compétences en design UI avec Tailwind CSS',
+                "Approfondissement de la stack Java/Spring Boot + Angular sur un cas d'usage concret",
+                "Conception d'une expérience invité simple et soignée (parcours, lisibilité, mobile-first)",
+                "Mise en place d'un système de liens personnalisés et de RSVP individuel",
+                "Renforcement des compétences en design UI avec Tailwind CSS",
             ],
         },
         future: {
-            status: 'En phase de conception. L\'architecture et les maquettes sont en cours de définition.',
+            status: "En phase de conception. L'architecture et les maquettes sont en cours de définition.",
             potentialEnhancements: [
-                'Application mobile (PWA)',
-                'Intégration avec des services de wedding planning (Pinterest, etc.)',
-                'Mode partage avec la famille et les amis',
-                'Gestion du budget et des dépenses partagées',
+                'Version PWA installable sur mobile',
+                "Section inspirations de tenues plus riche (mood boards, partage de photos)",
+                "Tableau de bord pour les mariés (suivi des réponses, relances)",
+                "Personnalisation graphique en fonction du thème du mariage",
             ],
         },
         reflection: {
             whatWorkedWell: [
-                'Idée validée par des retours d\'utilisateurs potentiels',
-                'Architecture similaire à Valkea : montée en compétences réutilisable',
+                "Périmètre clair et resserré : un mariage, des invités, un RSVP",
+                "Architecture similaire à Valkea : montée en compétences réutilisable",
+                "Expérience invité pensée mobile-first dès le départ",
             ],
             whatCouldBeImproved: [
                 'Spécifications fonctionnelles à affiner',
-                'UX à tester avec de vrais utilisateurs',
+                "UX du RSVP à tester avec de vrais invités",
+                "Personnalisation graphique encore limitée",
             ],
             lessonsLearned: [
-                'La réutilisation d\'une stack maîtrisée accélère le démarrage d\'un nouveau projet',
-                'La phase de conception est aussi importante que le développement',
+                "La réutilisation d'une stack maîtrisée accélère le démarrage d'un nouveau projet",
+                "La phase de conception est aussi importante que le développement",
+                "Partir d'un besoin personnel concret aide à garder le périmètre simple et utile",
             ],
-            wouldDoDifferently: 'Je commencerais par des interviews utilisateurs et des wireframes avant d\'écrire la première ligne de code.',
+            wouldDoDifferently: "À l'origine, ce projet est pensé pour mon conjoint et moi : je n'ai pas encore le recul nécessaire pour identifier ce que je referais autrement. Cette section pourra être enrichie une fois la première version utilisée pour de vrai.",
         },
         risks: [
-            'Gestion des données personnelles sensibles (RGPD)',
-            'Complexité des fonctionnalités collaboratives en temps réel',
+            'Gestion des données personnelles des invités (RGPD)',
+            "Sécurisation des liens personnalisés pour éviter tout accès non autorisé",
             'Maintenance et évolution sur le long terme',
         ],
     },
@@ -644,32 +652,28 @@ export const projectEnrichedData: Record<
             'S’intégrer dans une équipe agile et respecter les standards de production',
         ],
         context:
-            "Mission réalisée en alternance chez Worldline. L’extranet est un outil interne utilisé par les équipes pour piloter les configurations, les builds et le suivi des clients sur des environnements multiples. Le travail s’inscrit dans une codebase Angular/Node.js déjà existante et fait l’objet de mises en production régulières.",
+            "Mission réalisée en alternance chez Worldline. L’extranet est un outil interne utilisé par les équipes pour piloter les configurations, les builds et le suivi des clients sur des environnements multiples. Le travail s’inscrit dans une application Angular/Node.js déjà existante et fait l’objet de mises en production régulières.",
         stakes: [
-            "Apporter de la valeur métier rapidement sur un produit existant tout en montant en compétence sur un écosystème Angular/Node.js/MongoDB en environnement professionnel.",
+            "Les principaux défis venaient du fait que je devais utiliser Angular et Bootstrap, deux technologies que je découvrais. J’ai dû monter en compétence rapidement pour livrer les écrans attendus tout en respectant les standards de l’équipe.",
         ],
         actors: [
-            {
-                role: 'Tech Lead & équipe Worldline',
-                description: 'Encadrement technique, revues de code, validation des choix d’architecture et des livrables.',
-            },
             {
                 role: 'Product Owner / métier',
                 description: 'Définition des besoins fonctionnels, priorisation du backlog et validation des fonctionnalités livrées.',
             },
             {
-                role: 'Utilisateurs internes',
-                description: 'Équipes métier et exploitation utilisant l’extranet pour gérer les configurations et les clients au quotidien.',
+                role: 'Collègues développeurs',
+                description: 'Mes interlocuteurs au quotidien : ils utilisaient l’extranet pour gérer les configurations clients et me remontaient leurs besoins et retours d’usage.',
             },
             {
-                role: 'Développeuse (moi-même)',
-                description: 'Mise en œuvre des fonctionnalités frontend Angular et de l’API Node.js, corrections de bugs et améliorations UX.',
+                role: 'Développeuse & designer (moi-même)',
+                description: 'Seule en charge du projet : conception des écrans, design des interfaces, mise en œuvre frontend Angular et de l’API Node.js, corrections de bugs et améliorations UX.',
             },
         ],
         results: {
             forStudent: [
                 'Montée en compétence concrète sur Angular et TypeScript en environnement professionnel',
-                'Première expérience d’une codebase Node.js/MongoDB de production',
+                'Première expérience d’un projet Node.js/MongoDB de production',
                 'Découverte d’un workflow agile (sprints, revues de code, CI/CD)',
                 'Renforcement de la capacité à lire, comprendre et faire évoluer du code existant',
             ],
@@ -690,9 +694,9 @@ export const projectEnrichedData: Record<
         },
         reflection: {
             whatWorkedWell: [
-                'Intégration rapide dans une équipe et une codebase déjà en place',
+                'Intégration rapide dans une équipe et une structure de projet déjà en place',
                 'Bon usage des composants Angular pour factoriser les écrans de gestion',
-                'Communication régulière avec le tech lead et le PO sur les choix techniques',
+                'Communication régulière avec le PO et les collègues développeurs sur les choix techniques',
             ],
             whatCouldBeImproved: [
                 'Couverture de tests automatisés à renforcer',
@@ -705,12 +709,12 @@ export const projectEnrichedData: Record<
                 'Une bonne communication métier évite des développements inutiles',
             ],
             wouldDoDifferently:
-                "Avec mon expérience actuelle, je proposerais plus tôt des améliorations UX et des refactorings ciblés plutôt que d’accumuler de la dette technique sur les écrans existants.",
+                "Manquant d’expérience à l’époque, je n’avais pas découpé les écrans en composants et pages réutilisables. Cela a entraîné beaucoup de refactoring, une perte de temps importante et une certaine confusion dans la structure du projet. Aujourd’hui, je commencerais par poser une architecture claire de composants partagés avant d’écrire les premiers écrans.",
         },
         risks: [
             'Données clients sensibles (confidentialité, gestion fine des accès)',
             'Dépendance à un écosystème et des services internes Worldline',
-            'Dette technique potentielle sur une codebase ancienne',
+            'Dette technique potentielle sur un projet ancien',
         ],
     },
 };

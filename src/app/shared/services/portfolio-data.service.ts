@@ -251,9 +251,9 @@ export class PortfolioDataService {
       name: 'HTML / CSS',
       domain: 'technique',
       icon: 'code',
-      description: 'HTML5 sémantique, CSS3, Flexbox, Grid, animations, mobile-first',
+      description: 'HTML5, CSS3, Flexbox, Grid, animations, mobile-first',
       longDescription:
-        'Compétence fondatrice construite depuis la formation OpenClassrooms. Je crée des interfaces modernes, accessibles et responsive en HTML5 sémantique et CSS3, avec une approche mobile-first systématique.',
+        'Compétence fondatrice construite depuis la formation OpenClassrooms. Je crée des interfaces modernes, accessibles et responsive en HTML5 sémantique et CSS3.',
       level: 88,
       yearsExperience: 4,
       colorClass: 'text-brand-pink',
@@ -262,24 +262,25 @@ export class PortfolioDataService {
       barClass: 'bg-brand-pink',
       gradientClass: 'from-brand-pink to-brand-purple',
       skills: [
-        { name: 'HTML5 sémantique', level: 90, experience: '4 ans', description: 'Structure sémantique, accessibilité, formulaires' },
-        { name: 'CSS3 / Flexbox / Grid', level: 88, experience: '4 ans', description: 'Layouts complexes, animations, variables CSS' },
-        { name: 'Responsive Design', level: 88, experience: '4 ans', description: 'Media queries, mobile-first, breakpoints' },
-        { name: 'Animations CSS', level: 80, experience: '3 ans', description: 'Transitions, keyframes, will-change' },
-        { name: 'Tailwind CSS', level: 78, experience: '1 an', description: 'Utility-first CSS — utilisé dans ce portfolio Angular' },
+        { name: 'HTML5', level: 90, experience: '4 ans', description: 'Structure, accessibilité, formulaires' },
+        { name: 'CSS3 / Flexbox', level: 80, experience: '4 ans', description: 'Animations, variables CSS' },
+        { name: 'Responsive Design', level: 80, experience: '4 ans', description: 'Media queries, mobile-first, breakpoints' },
+        { name: 'Animations CSS', level: 70, experience: '3 ans', description: 'Transitions, keyframes, will-change' },
+        { name: 'Tailwind CSS', level: 40, experience: '5 mois', description: 'Utility-first CSS — utilisé dans ce portfolio Angular' },
       ],
-      keyStrengths: ['Responsive Design', 'Intégration pixel-perfect', 'Accessibilité', 'Mobile-first'],
+      keyStrengths: ['Responsive Design', 'Accessibilité', 'Mobile-first'],
       tools: ['VS Code', 'Chrome DevTools', 'Figma', 'Lighthouse'],
       relatedProjects: [
-        { id: 'openclassrooms-2', title: 'Booki - Maquette HTML/CSS', description: 'Intégration responsive depuis une maquette Figma' },
-        { id: 'openclassrooms-3', title: 'Ohmyfood - Animations CSS', description: 'Animations avancées et approche mobile-first' },
+        { id: 'portfolio', title: 'Portfolio Angular', description: 'Intégration responsive avec Tailwind CSS et HTML sémantique' },
+        { id: 'valkea', title: 'Valkea', description: 'Interface frontend Angular + Tailwind CSS' },
+        { id: 'unio', title: 'Unio', description: 'Design des écrans mariés/invités, mobile-first' },
       ],
       resources: [
         { title: 'MDN Web Docs', type: 'Documentation', url: 'https://developer.mozilla.org' },
         { title: 'CSS Tricks', type: 'Référence', url: 'https://css-tricks.com' },
       ],
       professionalDefinition:
-        "HTML et CSS sont les langages de base du web. HTML structure le contenu sémantiquement (titres, paragraphes, listes, formulaires), tandis que CSS contrôle l'apparence visuelle : couleurs, typographies, espacements, animations et responsive design. Maîtriser HTML/CSS, c'est garantir des interfaces accessibles, performantes et fidèles aux maquettes.",
+        "HTML et CSS sont les langages de base du web. HTML structure le contenu (titres, paragraphes, listes, formulaires), tandis que CSS contrôle l'apparence visuelle : couleurs, espacements, animations et responsive design. Maîtriser HTML/CSS, c'est garantir des interfaces accessibles et performantes.",
       anecdotes: frontendAnecdotes,
       selfCritique: frontendSelfCritique,
       evolution: frontendEvolution,
@@ -300,22 +301,25 @@ export class PortfolioDataService {
       barClass: 'bg-brand-purple',
       gradientClass: 'from-brand-purple to-brand-pink',
       skills: [
-        { name: 'Composants Angular', level: 80, experience: '2 ans', description: 'Smart/dumb components, lifecycle hooks, @Input/@Output' },
-        { name: 'Services & DI', level: 78, experience: '2 ans', description: 'Injection de dépendances, services partagés, singleton pattern' },
-        { name: 'Routing Angular', level: 76, experience: '2 ans', description: 'Routes lazily loaded, guards, paramètres de route' },
-        { name: 'RxJS / Observables', level: 65, experience: '2 ans', description: 'Streams asynchrones, opérateurs de base (map, filter, switchMap)' },
-        { name: 'Angular CLI', level: 80, experience: '2 ans', description: 'Génération de composants, build, tests' },
+        { name: 'Composants Angular', level: 80, experience: '2 ans', description: 'Création de composants réutilisables avec entrées et sorties' },
+        { name: 'Services & injection', level: 78, experience: '2 ans', description: 'Services partagés entre composants pour centraliser la logique' },
+        { name: 'Navigation entre pages', level: 76, experience: '2 ans', description: 'Mise en place des routes, chargement à la demande, paramètres d’URL' },
+        { name: 'Gestion des données asynchrones', level: 65, experience: '2 ans', description: 'Utilisation des Observables pour gérer les appels API et les événements' },
+        { name: 'Angular CLI', level: 80, experience: '2 ans', description: 'Outil en ligne de commande pour créer, builder et tester l’application' },
       ],
       keyStrengths: ['Architecture en composants', 'Data binding', 'Routing', 'Standalone components'],
       tools: ['Angular CLI', 'VS Code', 'npm', 'Chrome DevTools'],
       relatedProjects: [
         { id: 'portfolio', title: 'Portfolio Angular', description: 'Application complète développée en Angular standalone' },
+        { id: 'extranet', title: 'Extranet Worldline', description: 'Application interne Angular utilisée en production chez Worldline' },
+        { id: 'valkea', title: 'Valkea', description: 'Frontend Angular d’une application fullstack de suivi de santé animale' },
+        { id: 'unio', title: 'Unio', description: 'Interface Angular pour l’organisation de mariage' },
       ],
       resources: [
         { title: 'Angular Documentation', type: 'Documentation', url: 'https://angular.dev' },
       ],
       professionalDefinition:
-        "Angular est un framework front-end open-source développé par Google pour créer des Single Page Applications (SPA). Il fournit une architecture complète basée sur les composants, les services, le routing et la programmation réactive (RxJS). Sa structure opinionée et son typage TypeScript favorisent la maintenabilité et la scalabilité des applications d'entreprise.",
+        "Angular est un framework front-end développé par Google pour créer des Single Page Applications. Il s'appuie sur une architecture en composants, des services injectables et le langage TypeScript pour produire des applications maintenables.",
       anecdotes: frontendAnecdotes,
       selfCritique: frontendSelfCritique,
       evolution: frontendEvolution,
@@ -345,13 +349,15 @@ export class PortfolioDataService {
       tools: ['VS Code', 'tsc', 'tsconfig', 'ESLint'],
       relatedProjects: [
         { id: 'portfolio', title: 'Portfolio Angular', description: 'Développé entièrement en TypeScript avec typage strict' },
-        { id: 'openclassrooms-6', title: 'Piiquante - API sécurisée', description: 'API Node.js typée avec TypeScript' },
+        { id: 'extranet', title: 'Extranet Worldline', description: 'Frontend et backend Node.js typés en TypeScript' },
+        { id: 'valkea', title: 'Valkea', description: 'Frontend Angular en TypeScript' },
+        { id: 'unio', title: 'Unio', description: 'Frontend Angular en TypeScript' },
       ],
       resources: [
         { title: 'TypeScript Documentation', type: 'Documentation', url: 'https://www.typescriptlang.org/docs' },
       ],
       professionalDefinition:
-        "TypeScript est un sur-ensemble typé de JavaScript développé par Microsoft. Il ajoute le typage statique, les interfaces, les génériques et les décorateurs, permettant de détecter les erreurs à la compilation plutôt qu'à l'exécution. TypeScript est devenu incontournable dans les projets Angular et Node.js d'envergure grâce à l'amélioration de la qualité de code et de l'expérience développeur.",
+        "TypeScript est une version de JavaScript qui ajoute le typage : on précise à l'avance le type de chaque donnée (texte, nombre, objet…). Cela permet de détecter les erreurs avant même de lancer l'application et rend le code plus clair à relire et à faire évoluer.",
       anecdotes: frontendAnecdotes,
       selfCritique: frontendSelfCritique,
       evolution: frontendEvolution,
@@ -380,7 +386,8 @@ export class PortfolioDataService {
       keyStrengths: ['POO', 'Typage fort', 'Robustesse', 'Ecosystème riche'],
       tools: ['IntelliJ IDEA', 'Maven', 'JUnit', 'Postman'],
       relatedProjects: [
-        { id: 'worldline-api-migration', title: 'Migration API Worldline', description: 'Migration Node.js vers Java Spring Boot' },
+        { id: 'valkea', title: 'Valkea', description: 'Backend Java sur projet personnel fullstack' },
+        { id: 'unio', title: 'Unio', description: 'Backend Java pour l’organisation de mariage' },
       ],
       resources: [
         { title: 'Oracle Java Documentation', type: 'Documentation', url: 'https://docs.oracle.com/en/java' },
@@ -416,7 +423,8 @@ export class PortfolioDataService {
       keyStrengths: ['REST APIs', 'Sécurité', 'Persistance JPA', 'Injection de dépendances'],
       tools: ['IntelliJ IDEA', 'Maven', 'Postman', 'Spring Initializr'],
       relatedProjects: [
-        { id: 'worldline-api-migration', title: 'Migration API Worldline', description: 'API Spring Boot en production chez Worldline' },
+        { id: 'valkea', title: 'Valkea', description: 'API REST Spring Boot avec Spring Security' },
+        { id: 'unio', title: 'Unio', description: 'Architecture Spring Boot pour la gestion mariés/invités' },
       ],
       resources: [
         { title: 'Spring Boot Guides', type: 'Documentation', url: 'https://spring.io/guides' },
@@ -453,7 +461,11 @@ export class PortfolioDataService {
       tools: ['Git CLI', 'GitHub', 'GitLab', 'SourceTree'],
       relatedProjects: [
         { id: 'portfolio', title: 'Portfolio Angular', description: 'Versionné avec Git et hébergé sur GitHub' },
-        { id: 'worldline-portal', title: 'Portail Worldline', description: 'Travail quotidien avec GitLab et Merge Requests' },
+        { id: 'extranet', title: 'Extranet Worldline', description: 'Travail quotidien avec GitLab et Merge Requests' },
+        { id: 'valkea', title: 'Valkea', description: 'Suivi de version Git du projet personnel fullstack' },
+        { id: 'unio', title: 'Unio', description: 'Suivi de version Git du projet personnel mariage' },
+        { id: 'openclassrooms-6', title: 'Piiquante - API sécurisée', description: 'Versioning Git du projet de formation OpenClassrooms' },
+        { id: 'openclassrooms-7', title: 'Groupomania', description: 'Versioning Git du projet de formation OpenClassrooms' },
       ],
       resources: [
         { title: 'Git Documentation', type: 'Documentation', url: 'https://git-scm.com/doc' },
@@ -472,7 +484,7 @@ export class PortfolioDataService {
       icon: 'chat',
       description: "Savoir transmettre clairement ses idées à l'oral comme à l'écrit, à des publics techniques ou non techniques.",
       longDescription:
-        "Développée pendant 1 an en réception hôtelière, 3 ans d'alternance en pharmacie (conseil patient) et aujourd'hui chez Worldline où je traduis régulièrement des sujets techniques pour des interlocuteurs non techniques. La communication écrite est également un pilier de mon travail avec les documents Confluence et les revues de code.",
+        "Développée pendant 1 an en réception hôtelière, 3 ans d'alternance en pharmacie (conseil patient) et aujourd'hui chez Worldline où je traduis régulièrement des sujets techniques pour des interlocuteurs non techniques.",
       level: 88,
       yearsExperience: 6,
       colorClass: 'text-brand-teal',
@@ -483,14 +495,13 @@ export class PortfolioDataService {
       skills: [
         { name: 'Communication orale', level: 90, experience: '6 ans', description: "Relation client, présentation de sujets techniques en réunion d'équipe" },
         { name: 'Communication écrite', level: 85, experience: '4 ans', description: 'Documentation technique, e-mails, revues de code, rédaction de tickets' },
-        { name: 'Vulgarisation technique', level: 85, experience: '2 ans', description: "Traduction de concepts techniques pour des interlocuteurs métiers chez Worldline" },
+        { name: 'Vulgarisation technique', level: 85, experience: '2 ans', description: "Traduction de concepts techniques pour des interlocuteurs métiers." },
         { name: 'Écoute active', level: 92, experience: '6 ans', description: 'Développée au contact des patients et clients : comprendre les besoins avant de répondre' },
       ],
       keyStrengths: ['Vulgarisation', 'Écoute active', 'Pédagogie', 'Clarté à l\'écrit'],
       tools: ['Confluence', 'Slack', 'Microsoft Teams', 'GitLab (merge requests)'],
       relatedProjects: [
-        { id: 'openclassrooms-4', title: 'Chouette Agence - SEO', description: 'Rédaction d\'un rapport d\'audit compréhensible par un client non technique' },
-        { id: 'portfolio', title: 'Portfolio Angular', description: 'Présentation structurée et pédagogique du parcours et des projets' },
+        { id: 'extranet', title: 'Extranet Worldline', description: 'Échanges réguliers avec le PO et les collègues développeurs' },
       ],
       resources: [
         { title: 'La communication non violente', type: 'Livre', url: 'https://fr.wikipedia.org/wiki/Communication_non_violente' },
@@ -525,8 +536,7 @@ export class PortfolioDataService {
       keyStrengths: ['Esprit collectif', 'Partage de connaissances', 'Respect des engagements', 'Fiabilité'],
       tools: ['GitLab', 'Jira', 'Confluence', 'Microsoft Teams'],
       relatedProjects: [
-        { id: 'worldline-portal', title: 'Portail Worldline', description: "Développement en équipe agile avec revues de code systématiques" },
-        { id: 'worldline-api-migration', title: 'Migration API Worldline', description: "Collaboration étroite avec les architectes et testeurs" },
+        { id: 'extranet', title: 'Extranet Worldline', description: "Développement en équipe agile avec revues de code et PO" },
       ],
       resources: [
         { title: 'Scrum Guide', type: 'Documentation', url: 'https://scrumguides.org/' },
@@ -560,7 +570,10 @@ export class PortfolioDataService {
       keyStrengths: ['Curiosité', 'Résilience', 'Polyvalence', 'Apprentissage continu'],
       tools: ['Documentation officielle', 'MDN', 'OpenClassrooms', 'Udemy'],
       relatedProjects: [
-        { id: 'worldline-api-migration', title: 'Migration API Worldline', description: "Prise en main rapide d'une stack existante et de ses contraintes" },
+        { id: 'portfolio', title: 'Portfolio Angular', description: "Apprentissage en autonomie d’Angular standalone et de Tailwind CSS sur un projet personnel" },
+        { id: 'extranet', title: 'Extranet Worldline', description: "Découverte et prise en main rapide d’Angular et Bootstrap en environnement professionnel" },
+        { id: 'valkea', title: 'Valkea', description: "Application fullstack de suivi de santé pour animaux de compagnie : profils, vaccinations, rappels vétérinaires" },
+        { id: 'unio', title: 'Unio', description: "Nouveau projet fullstack avec un domaine fonctionnel inédit (organisation de mariage)" },
       ],
       resources: [
         { title: 'Mindset (Carol Dweck)', type: 'Livre', url: 'https://fr.wikipedia.org/wiki/Carol_Dweck' },
@@ -594,8 +607,10 @@ export class PortfolioDataService {
       keyStrengths: ['Exigence', 'Qualité', 'Traçabilité', 'Fiabilité'],
       tools: ['ESLint', 'Prettier', 'Lighthouse', 'Jest', 'GitLab CI'],
       relatedProjects: [
-        { id: 'openclassrooms-5', title: 'Piiquante - API sécurisée', description: "Implémentation rigoureuse des bonnes pratiques de sécurité" },
-        { id: 'openclassrooms-4', title: 'Chouette Agence - SEO', description: "Audit structuré, corrections mesurées et documentées" },
+        { id: 'portfolio', title: 'Portfolio Angular', description: "Conventions de code, lint, typage strict et structure cohérente" },
+        { id: 'extranet', title: 'Extranet Worldline', description: "Code en production : exigence sur les revues, conventions et qualité" },
+        { id: 'valkea', title: 'Valkea', description: "Architecture fullstack soignée : séparation des couches et conventions" },
+        { id: 'unio', title: 'Unio', description: "Conception structurée et documentée avant le développement" },
       ],
       resources: [
         { title: 'Clean Code (Robert C. Martin)', type: 'Livre', url: 'https://fr.wikipedia.org/wiki/Robert_Cecil_Martin' },
@@ -610,12 +625,12 @@ export class PortfolioDataService {
 
   readonly certifications: Certification[] = [
     {
-      name: 'Brevet Professionnel Préparateur en Pharmacie',
-      issuer: "CFA Pharmacie d'Orléans",
-      date: '2021',
-      icon: 'medication',
-      colorClass: 'text-brand-green',
-      bgClass: 'bg-brand-green/20',
+      name: "Bachelor Concepteur Développeur d'Applications",
+      issuer: 'CESI',
+      date: '2024',
+      icon: 'code',
+      colorClass: 'text-brand-blue',
+      bgClass: 'bg-brand-blue/20',
     },
     {
       name: 'Développeur Web - Titre RNCP Niveau 5',
@@ -626,12 +641,12 @@ export class PortfolioDataService {
       bgClass: 'bg-brand-purple/20',
     },
     {
-      name: "Bachelor Concepteur Développeur d'Applications",
-      issuer: 'CESI',
-      date: '2024',
-      icon: 'code',
-      colorClass: 'text-brand-blue',
-      bgClass: 'bg-brand-blue/20',
+      name: 'Brevet Professionnel Préparateur en Pharmacie',
+      issuer: "CFA Pharmacie d'Orléans",
+      date: '2021',
+      icon: 'medication',
+      colorClass: 'text-brand-green',
+      bgClass: 'bg-brand-green/20',
     },
   ];
 
@@ -788,9 +803,84 @@ export class PortfolioDataService {
         { id: 'angular', name: 'Angular' },
         { id: 'typescript', name: 'TypeScript' },
         { id: 'git', name: 'Git' },
+        { id: 'adaptability', name: 'Adaptabilité' },
         { id: 'rigor', name: 'Rigueur' },
       ],
       ...projectEnrichedData['portfolio'],
+    },
+    {
+      id: 'extranet',
+      title: 'Extranet — Portail de gestion client Worldline',
+      subtitle: 'Projet professionnel — Worldline',
+      description:
+        "Application web interne développée chez Worldline pour la gestion des configurations et déploiements clients.",
+      longDescription:
+        "Dans le cadre de mon alternance chez Worldline, j'ai participé au développement d'un extranet permettant aux équipes internes de gérer les configurations, les builds et le suivi des clients. L'application offre une interface Angular/Bootstrap pour visualiser et administrer les données stockées en MongoDB, via une API Node.js/TypeScript.",
+      imageUrl: 'assets/images/Logo_Worldline_-_2021.svg',
+      galleryImages: [
+        'assets/images/projects/extranet/desktop_customer_builds.png',
+        'assets/images/projects/extranet/desktop_customer_configurations.png',
+        'assets/images/projects/extranet/desktop_customer_configurations_details.png',
+        'assets/images/projects/extranet/desktop_customer_configurations_error.png',
+        'assets/images/projects/extranet/web_customers.png',
+      ],
+      mockupImages: [
+        'assets/images/projects/extranet/desktop_customer_builds.png',
+        'assets/images/projects/extranet/desktop_customer_configurations.png',
+        'assets/images/projects/extranet/desktop_customer_configurations_details.png',
+        'assets/images/projects/extranet/desktop_customer_configurations_error.png',
+        'assets/images/projects/extranet/web_customers.png',
+      ],
+      tags: ['TypeScript', 'Angular', 'Bootstrap', 'Node.js', 'MongoDB'],
+      categories: ['frontend', 'backend'],
+      year: 2024,
+      duration: 'En cours',
+      role: 'Développeuse Fullstack',
+      teamSize: 'Équipe agile',
+      status: 'En cours',
+      metrics: [
+        { label: 'Frontend', value: 'Angular', icon: 'code' },
+        { label: 'Backend', value: 'Node.js', icon: 'dns' },
+        { label: 'DB', value: 'MongoDB', icon: 'storage' },
+        { label: 'Contexte', value: 'Worldline', icon: 'apartment' },
+      ],
+      challenges: [
+        {
+          title: 'Interface de gestion complexe',
+          description: 'Concevoir des vues claires pour administrer des configurations techniques variées et volumineuses.',
+        },
+        {
+          title: 'Intégration dans un écosystème existant',
+          description: "Respecter les conventions de l'équipe Worldline et s'intégrer à une base de code Angular et Node.js en production.",
+        },
+      ],
+      solutions: [
+        'Utilisation de composants Angular réutilisables et Bootstrap pour une UI cohérente',
+        'API Node.js/TypeScript avec Express pour exposer les données MongoDB',
+        'Pagination, filtres et recherche côté client pour gérer de grands volumes de données',
+      ],
+      technologies: [
+        { name: 'Angular', category: 'Frontend', description: 'Framework SPA pour les interfaces de gestion' },
+        { name: 'TypeScript', category: 'Frontend', description: 'Typage strict côté client et serveur' },
+        { name: 'Bootstrap', category: 'UI', description: 'Framework CSS pour les composants et la mise en page' },
+        { name: 'Node.js', category: 'Backend', description: "Environnement d'exécution serveur" },
+        { name: 'MongoDB', category: 'Base de données', description: 'Stockage NoSQL des données clients et configurations' },
+      ],
+      milestones: [
+        { date: '2024', title: 'Intégration équipe', description: "Prise en main de la codebase existante chez Worldline" },
+        { date: '2024-2025', title: 'Développement features', description: 'Développement de nouvelles fonctionnalités de gestion' },
+      ],
+      links: {},
+      relatedSkillCategories: [
+        { id: 'angular', name: 'Angular' },
+        { id: 'typescript', name: 'TypeScript' },
+        { id: 'git', name: 'Git' },
+        { id: 'communication', name: 'Communication' },
+        { id: 'teamwork', name: "Travail d'équipe" },
+        { id: 'adaptability', name: 'Adaptabilité' },
+        { id: 'rigor', name: 'Rigueur' },
+      ],
+      ...projectEnrichedData['extranet'],
     },
     {
       id: 'valkea',
@@ -861,6 +951,8 @@ export class PortfolioDataService {
         { id: 'typescript', name: 'TypeScript' },
         { id: 'html-css', name: 'HTML & CSS' },
         { id: 'git', name: 'Git' },
+        { id: 'adaptability', name: 'Adaptabilité' },
+        { id: 'rigor', name: 'Rigueur' },
       ],
       ...projectEnrichedData['valkea'],
     },
@@ -931,6 +1023,8 @@ export class PortfolioDataService {
         { id: 'typescript', name: 'TypeScript' },
         { id: 'html-css', name: 'HTML & CSS' },
         { id: 'git', name: 'Git' },
+        { id: 'adaptability', name: 'Adaptabilité' },
+        { id: 'rigor', name: 'Rigueur' },
       ],
       ...projectEnrichedData['unio'],
     },
@@ -1032,78 +1126,6 @@ export class PortfolioDataService {
       ],
       ...projectEnrichedData['openclassrooms-7'],
     },
-    {
-      id: 'extranet',
-      title: 'Extranet — Portail de gestion client Worldline',
-      subtitle: 'Projet professionnel — Worldline',
-      description:
-        "Application web interne développée chez Worldline pour la gestion des configurations et déploiements clients.",
-      longDescription:
-        "Dans le cadre de mon alternance chez Worldline, j'ai participé au développement d'un extranet permettant aux équipes internes de gérer les configurations, les builds et le suivi des clients. L'application offre une interface Angular/Bootstrap pour visualiser et administrer les données stockées en MongoDB, via une API Node.js/TypeScript.",
-      imageUrl: 'assets/images/Logo_Worldline_-_2021.svg',
-      galleryImages: [
-        'assets/images/projects/extranet/desktop_customer_builds.png',
-        'assets/images/projects/extranet/desktop_customer_configurations.png',
-        'assets/images/projects/extranet/desktop_customer_configurations_details.png',
-        'assets/images/projects/extranet/desktop_customer_configurations_error.png',
-        'assets/images/projects/extranet/web_customers.png',
-      ],
-      mockupImages: [
-        'assets/images/projects/extranet/desktop_customer_builds.png',
-        'assets/images/projects/extranet/desktop_customer_configurations.png',
-        'assets/images/projects/extranet/desktop_customer_configurations_details.png',
-        'assets/images/projects/extranet/desktop_customer_configurations_error.png',
-        'assets/images/projects/extranet/web_customers.png',
-      ],
-      tags: ['TypeScript', 'Angular', 'Bootstrap', 'Node.js', 'MongoDB'],
-      categories: ['frontend', 'backend'],
-      year: 2024,
-      duration: 'En cours',
-      role: 'Développeuse Fullstack',
-      teamSize: 'Équipe agile',
-      status: 'En cours',
-      metrics: [
-        { label: 'Frontend', value: 'Angular', icon: 'code' },
-        { label: 'Backend', value: 'Node.js', icon: 'dns' },
-        { label: 'DB', value: 'MongoDB', icon: 'storage' },
-        { label: 'Contexte', value: 'Worldline', icon: 'apartment' },
-      ],
-      challenges: [
-        {
-          title: 'Interface de gestion complexe',
-          description: 'Concevoir des vues claires pour administrer des configurations techniques variées et volumineuses.',
-        },
-        {
-          title: 'Intégration dans un écosystème existant',
-          description: "Respecter les conventions de l'équipe Worldline et s'intégrer à une base de code Angular et Node.js en production.",
-        },
-      ],
-      solutions: [
-        'Utilisation de composants Angular réutilisables et Bootstrap pour une UI cohérente',
-        'API Node.js/TypeScript avec Express pour exposer les données MongoDB',
-        'Pagination, filtres et recherche côté client pour gérer de grands volumes de données',
-      ],
-      technologies: [
-        { name: 'Angular', category: 'Frontend', description: 'Framework SPA pour les interfaces de gestion' },
-        { name: 'TypeScript', category: 'Frontend', description: 'Typage strict côté client et serveur' },
-        { name: 'Bootstrap', category: 'UI', description: 'Framework CSS pour les composants et la mise en page' },
-        { name: 'Node.js', category: 'Backend', description: "Environnement d'exécution serveur" },
-        { name: 'MongoDB', category: 'Base de données', description: 'Stockage NoSQL des données clients et configurations' },
-      ],
-      milestones: [
-        { date: '2024', title: 'Intégration équipe', description: "Prise en main de la codebase existante chez Worldline" },
-        { date: '2024-2025', title: 'Développement features', description: 'Développement de nouvelles fonctionnalités de gestion' },
-      ],
-      links: {},
-      relatedSkillCategories: [
-        { id: 'angular', name: 'Angular' },
-        { id: 'typescript', name: 'TypeScript' },
-        { id: 'git', name: 'Git' },
-        { id: 'teamwork', name: "Travail d'équipe" },
-        { id: 'adaptability', name: 'Adaptabilité' },
-      ],
-      ...projectEnrichedData['extranet'],
-    },
   ];
 
   // ─────────────────────────── CAREER TIMELINE ───────────────────────────
@@ -1145,9 +1167,12 @@ export class PortfolioDataService {
       bgClass: 'bg-brand-blue/20',
       linkedTo: '2',
       relatedSkillCategories: [
-        { id: 'frontend', name: 'Frontend' },
-        { id: 'backend', name: 'Backend & APIs' },
-        { id: 'tools', name: 'Outils & Workflow' },
+        { id: 'angular', name: 'Angular' },
+        { id: 'typescript', name: 'TypeScript' },
+        { id: 'java', name: 'Java' },
+        { id: 'spring', name: 'Spring' },
+        { id: 'git', name: 'Git' },
+        { id: 'teamwork', name: "Travail d'équipe" },
       ],
     },
     {
@@ -1175,9 +1200,11 @@ export class PortfolioDataService {
       bgClass: 'bg-brand-green/20',
       linkedTo: '1',
       relatedSkillCategories: [
-        { id: 'frontend', name: 'Frontend' },
-        { id: 'backend', name: 'Backend & APIs' },
-        { id: 'tools', name: 'Outils & Workflow' },
+        { id: 'angular', name: 'Angular' },
+        { id: 'typescript', name: 'TypeScript' },
+        { id: 'java', name: 'Java' },
+        { id: 'spring', name: 'Spring' },
+        { id: 'git', name: 'Git' },
       ],
     },
     {
@@ -1204,9 +1231,10 @@ export class PortfolioDataService {
       bgClass: 'bg-brand-blue/20',
       linkedTo: '4',
       relatedSkillCategories: [
-        { id: 'backend', name: 'Backend & APIs' },
-        { id: 'tools', name: 'Outils & Workflow' },
-        { id: 'frontend', name: 'Frontend' },
+        { id: 'angular', name: 'Angular' },
+        { id: 'git', name: 'Git' },
+        { id: 'adaptability', name: 'Adaptabilité' },
+        { id: 'rigor', name: 'Rigueur' },
       ],
     },
     {
@@ -1233,8 +1261,10 @@ export class PortfolioDataService {
       bgClass: 'bg-brand-green/20',
       linkedTo: '3',
       relatedSkillCategories: [
-        { id: 'backend', name: 'Backend & APIs' },
-        { id: 'tools', name: 'Outils & Workflow' },
+        { id: 'java', name: 'Java' },
+        { id: 'spring', name: 'Spring' },
+        { id: 'git', name: 'Git' },
+        { id: 'rigor', name: 'Rigueur' },
       ],
     },
     {
@@ -1260,9 +1290,11 @@ export class PortfolioDataService {
       colorClass: 'text-brand-green',
       bgClass: 'bg-brand-green/20',
       relatedSkillCategories: [
-        { id: 'frontend', name: 'Frontend' },
-        { id: 'backend', name: 'Backend & APIs' },
-        { id: 'databases', name: 'Bases de données' },
+        { id: 'html-css', name: 'HTML & CSS' },
+        { id: 'angular', name: 'Angular' },
+        { id: 'java', name: 'Java' },
+        { id: 'spring', name: 'Spring' },
+        { id: 'git', name: 'Git' },
       ],
     },
     {
@@ -1287,18 +1319,13 @@ export class PortfolioDataService {
       colorClass: 'text-brand-green',
       bgClass: 'bg-brand-green/20',
       relatedProjects: [
-        { id: 'openclassrooms-2', title: 'Booki - Maquette HTML/CSS', description: '' },
-        { id: 'openclassrooms-3', title: 'Ohmyfood - Animations CSS', description: '' },
-        { id: 'openclassrooms-4', title: 'Chouette Agence - SEO', description: '' },
-        { id: 'openclassrooms-5', title: 'Kanap - E-commerce JS', description: '' },
         { id: 'openclassrooms-6', title: 'Piiquante - API sécurisée', description: '' },
         { id: 'openclassrooms-7', title: 'Groupomania - Réseau social', description: '' },
       ],
       relatedSkillCategories: [
-        { id: 'frontend', name: 'Frontend' },
-        { id: 'backend', name: 'Backend & APIs' },
-        { id: 'databases', name: 'Bases de données' },
-        { id: 'design', name: 'Design & Intégration' },
+        { id: 'html-css', name: 'HTML & CSS' },
+        { id: 'typescript', name: 'TypeScript' },
+        { id: 'git', name: 'Git' },
       ],
     },
     {
@@ -1498,11 +1525,16 @@ export class PortfolioDataService {
     {
       label: 'Projets',
       path: '/projects',
-      children: this.projects.map((p) => ({
-        label: p.title,
-        path: `/projects/${p.id}`,
-        icon: 'folder_open',
-      })),
+      children: (() => {
+        const order = ['portfolio', 'extranet', 'valkea', 'unio', 'openclassrooms-6', 'openclassrooms-7'];
+        return [...this.projects]
+          .sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id))
+          .map((p) => ({
+            label: p.title,
+            path: `/projects/${p.id}`,
+            icon: 'folder_open',
+          }));
+      })(),
     },
     { label: 'Parcours', path: '/timeline' },
   ];
@@ -1555,7 +1587,7 @@ export class PortfolioDataService {
   readonly aboutProfessionalProject = {
     title: 'Mon projet professionnel',
     paragraphs: [
-      "Mon objectif à court terme est d'obtenir mon Mastère Expert en Ingénierie du Logiciel et de consolider mes compétences full-stack (Angular, Java/Spring Boot) au sein de Worldline. Je souhaite maîtriser l'ensemble de la chaîne de développement, du frontend au déploiement.",
+      "Mon objectif à court terme est d'obtenir mon Mastère Expert en Ingénierie du Logiciel et de consolider mes compétences full-stack (Angular, Java/Spring Boot) au sein de Worldline. Je souhaite maîtriser l'ensemble de la chaîne de développement.",
       "À moyen terme, j'aspire à évoluer vers un rôle de développeuse senior polyvalente, capable de prendre en charge des projets de bout en bout et de contribuer à l'architecture technique des solutions. L'accompagnement des profils juniors fait aussi partie de mes ambitions.",
       "Mon projet personnel actuel est \"Valkea\", une application de suivi de santé pour animaux de compagnie. Ce projet me permet d'explorer de nouvelles technologies et de mettre en pratique les bonnes pratiques d'architecture apprises en formation.",
     ],

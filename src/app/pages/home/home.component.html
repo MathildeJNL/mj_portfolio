@@ -216,7 +216,7 @@
           <p class="text-sm text-slate-500 dark:text-brand-muted mb-4">
             {{ project.description }}
           </p>
-          <div class="flex gap-2">
+          <div class="flex flex-wrap gap-2">
             @for (tag of project.tags; track tag) {
             <small
               class="tag-hover px-2 py-1 bg-slate-50 dark:bg-brand-bg text-xs rounded text-slate-500 dark:text-brand-muted border border-slate-200 dark:border-brand-border">
