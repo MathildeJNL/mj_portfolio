@@ -7,7 +7,6 @@ import { PortfolioDataService } from '../../shared/services/portfolio-data.servi
 
 @Component({
   selector: 'app-contact',
-  standalone: true,
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],

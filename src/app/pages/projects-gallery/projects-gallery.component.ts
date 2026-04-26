@@ -7,7 +7,6 @@ import { ButtonComponent } from '../../shared';
 
 @Component({
   selector: 'app-projects-gallery',
-  standalone: true,
   imports: [CommonModule, RouterLink, FormsModule, ButtonComponent],
   templateUrl: './projects-gallery.component.html',
   styleUrls: ['./projects-gallery.component.scss'],

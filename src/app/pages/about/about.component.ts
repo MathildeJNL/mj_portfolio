@@ -6,7 +6,6 @@ import { ButtonComponent } from '../../shared';
 
 @Component({
     selector: 'app-about',
-    standalone: true,
     imports: [CommonModule, RouterLink, ButtonComponent],
     templateUrl: './about.component.html',
     styleUrls: ['./about.component.scss'],

@@ -3,7 +3,6 @@ import { SvgComponent } from '../svg/svg.component';
 
 @Component({
     selector: 'app-button',
-    standalone: true,
     imports: [SvgComponent],
     templateUrl: './button.component.html',
 })

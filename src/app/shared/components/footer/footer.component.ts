@@ -4,7 +4,6 @@ import { PortfolioDataService } from '../../services/portfolio-data.service';
 
 @Component({
   selector: 'app-footer',
-  standalone: true,
   imports: [CommonModule],
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],

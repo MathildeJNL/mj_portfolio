@@ -4,7 +4,6 @@ import { Filter } from '../../models';
 
 @Component({
   selector: 'app-filter-bar',
-  standalone: true,
   imports: [CommonModule],
   templateUrl: './filter-bar.component.html',
 })

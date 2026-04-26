@@ -10,7 +10,6 @@ import { CtaButton, SkillCategory } from '../../shared/models';
 
 @Component({
   selector: 'app-skills-overview',
-  standalone: true,
   imports: [CommonModule, RouterLink, HeroSectionComponent, StatCardComponent, FilterBarComponent, SectionComponent, CtaSectionComponent],
   templateUrl: './skills-overview.component.html',
   styleUrls: ['./skills-overview.component.scss'],

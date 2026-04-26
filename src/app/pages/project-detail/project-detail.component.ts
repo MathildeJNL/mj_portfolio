@@ -5,7 +5,6 @@ import { PortfolioDataService, ProjectDetail } from '../../shared/services/portf
 
 @Component({
   selector: 'app-project-detail',
-  standalone: true,
   imports: [CommonModule, RouterLink],
   templateUrl: './project-detail.component.html',
   styleUrls: ['./project-detail.component.scss'],
@@ -18,10 +17,20 @@ export class ProjectDetailComponent implements OnInit {
   project: ProjectDetail | null = null;
   activeTab = 'overview';
 
-  readonly tabs = [
+  readonly baseTabs = [
     { id: 'overview', label: "Vue d'ensemble", icon: 'visibility' },
     { id: 'technical', label: 'Technique', icon: 'code' },
   ];
+
+  get tabs(): { id: string; label: string; icon: string }[] {
+    if (this.project?.mockupImages && this.project.mockupImages.length > 0) {
+      return [
+        ...this.baseTabs,
+        { id: 'maquettes', label: 'Galerie', icon: 'photo_library' },
+      ];
+    }
+    return this.baseTabs;
+  }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {

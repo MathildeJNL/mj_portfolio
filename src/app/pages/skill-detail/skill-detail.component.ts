@@ -6,7 +6,6 @@ import { SkillCategory } from '../../shared/models';
 
 @Component({
   selector: 'app-skill-detail',
-  standalone: true,
   imports: [CommonModule, RouterLink],
   templateUrl: './skill-detail.component.html',
   styleUrls: ['./skill-detail.component.scss'],

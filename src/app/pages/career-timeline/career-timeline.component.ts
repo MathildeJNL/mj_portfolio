@@ -18,7 +18,6 @@ interface TimelineItem {
 
 @Component({
   selector: 'app-career-timeline',
-  standalone: true,
   imports: [CommonModule, ButtonComponent, RouterLink],
   templateUrl: './career-timeline.component.html',
   styleUrls: ['./career-timeline.component.scss'],

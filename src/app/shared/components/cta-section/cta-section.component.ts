@@ -6,7 +6,6 @@ import { ButtonComponent } from '../button/button.component';
 
 @Component({
   selector: 'app-cta-section',
-  standalone: true,
   imports: [CommonModule, ButtonComponent],
   templateUrl: './cta-section.component.html',
 })

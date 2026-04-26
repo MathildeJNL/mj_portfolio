@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-icon-badge',
-  standalone: true,
   imports: [CommonModule],
   templateUrl: './icon-badge.component.html',
 })
