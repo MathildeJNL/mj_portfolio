@@ -1,37 +1,43 @@
 /**
- * Génère src/environments/environment.prod.ts à partir des variables
- * d'environnement (Vercel ou .env local).
+ * Script for generating Angular environment files
+ * Used during Vercel deployment to create environment files from
+ * environment variables defined in the Vercel dashboard.
  *
- * Variables attendues :
- *   - EMAILJS_SERVICE_ID
- *   - EMAILJS_TEMPLATE_ID
- *   - EMAILJS_PUBLIC_KEY
+ * Required Vercel variables:
+ *  - EMAILJS_SERVICE_ID
+ *  - EMAILJS_TEMPLATE_ID
+ *  - EMAILJS_PUBLIC_KEY
  */
-const fs = require('node:fs');
-const path = require('node:path');
+
+const fs = require('fs');
+const path = require('path');
+
+const missing = ['EMAILJS_SERVICE_ID', 'EMAILJS_TEMPLATE_ID', 'EMAILJS_PUBLIC_KEY'].filter(
+    (key) => !process.env[key]
+);
+
+if (missing.length > 0) {
+    console.error(`[generate-env] Variables d'environnement manquantes : ${missing.join(', ')}`);
+    process.exit(1);
+}
 
 const { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_PUBLIC_KEY } = process.env;
 
-if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
-  console.error(
-    '\n[generate-env] Variables manquantes. Définir EMAILJS_SERVICE_ID, ' +
-    'EMAILJS_TEMPLATE_ID et EMAILJS_PUBLIC_KEY dans Vercel > Settings > Environment Variables.\n'
-  );
-  process.exit(1);
+const envDir = path.join(__dirname, '..', 'src', 'environments');
+if (!fs.existsSync(envDir)) {
+    fs.mkdirSync(envDir, { recursive: true });
 }
 
-const target = path.resolve(__dirname, '..', 'src', 'environments', 'environment.prod.ts');
-const content = `// Fichier généré automatiquement par scripts/generate-env.js — NE PAS COMMITTER
-export const environment = {
-  production: true,
+const devContent = `export const environment = {
+  production: false,
   emailjs: {
-    serviceId: ${JSON.stringify(EMAILJS_SERVICE_ID)},
-    templateId: ${JSON.stringify(EMAILJS_TEMPLATE_ID)},
-    publicKey: ${JSON.stringify(EMAILJS_PUBLIC_KEY)},
-  },
+    serviceId: '${EMAILJS_SERVICE_ID}',
+    templateId: '${EMAILJS_TEMPLATE_ID}',
+    publicKey: '${EMAILJS_PUBLIC_KEY}'
+  }
 };
 `;
 
-fs.mkdirSync(path.dirname(target), { recursive: true });
-fs.writeFileSync(target, content, 'utf8');
-console.log(`[generate-env] ${target} écrit.`);
+fs.writeFileSync(path.join(envDir, 'environment.ts'), devContent);
+
+console.log('[generate-env] environment.ts généré avec succès.');
