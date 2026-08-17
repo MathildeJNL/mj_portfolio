@@ -22,18 +22,27 @@ import {
 } from '../models';
 
 import {
-  frontendAnecdotes,
-  frontendSelfCritique,
-  frontendEvolution,
-  backendAnecdotes,
-  backendSelfCritique,
-  backendEvolution,
+  htmlCssAnecdotes,
+  htmlCssSelfCritique,
+  htmlCssEvolution,
+  angularAnecdotes,
+  angularSelfCritique,
+  angularEvolution,
+  typescriptAnecdotes,
+  typescriptSelfCritique,
+  typescriptEvolution,
+  javaAnecdotes,
+  javaSelfCritique,
+  javaEvolution,
+  springAnecdotes,
+  springSelfCritique,
+  springEvolution,
   databasesAnecdotes,
   databasesSelfCritique,
   databasesEvolution,
   toolsAnecdotes,
   toolsSelfCritique,
-  toolsEvolution,
+  gitEvolution,
   designAnecdotes,
   designSelfCritique,
   designEvolution,
@@ -223,7 +232,7 @@ export class PortfolioDataService {
     },
     {
       id: 'extranet',
-      title: 'Extranet — Portail de gestion client Worldline',
+      title: 'Portail de gestion des configurations client',
       description: "Application web interne développée chez Worldline pour la gestion des configurations et déploiements clients.",
       imageUrl: 'assets/images/Logo_Worldline_-_2021.svg',
       tags: ['TypeScript', 'Angular', 'Bootstrap', 'Node.js', 'MongoDB'],
@@ -253,7 +262,7 @@ export class PortfolioDataService {
       icon: 'code',
       description: 'HTML5, CSS3, Flexbox, Grid, animations, mobile-first',
       longDescription:
-        'Compétence fondatrice construite depuis la formation OpenClassrooms. Je crée des interfaces modernes, accessibles et responsive en HTML5 sémantique et CSS3.',
+        "HTML et CSS constituent le point de départ de mon travail sur une interface. Depuis ma formation OpenClassrooms, je les utilise pour transformer une maquette ou une intention graphique en pages structurées, lisibles et adaptées à tous les écrans. Je porte une attention particulière à la sémantique du HTML, à la hiérarchie des contenus, aux contrastes et au comportement responsive. Flexbox, Grid et les media queries me permettent de construire des mises en page solides, tandis que les transitions restent au service de la compréhension. Sur ce portfolio, cette compétence m'aide autant à soigner l'identité visuelle qu'à maintenir une expérience cohérente sur mobile et sur ordinateur.",
       level: 88,
       yearsExperience: 4,
       colorClass: 'text-brand-pink',
@@ -280,10 +289,10 @@ export class PortfolioDataService {
         { title: 'CSS Tricks', type: 'Référence', url: 'https://css-tricks.com' },
       ],
       professionalDefinition:
-        "HTML et CSS sont les langages de base du web. HTML structure le contenu (titres, paragraphes, listes, formulaires), tandis que CSS contrôle l'apparence visuelle : couleurs, espacements, animations et responsive design. Maîtriser HTML/CSS, c'est garantir des interfaces accessibles et performantes.",
-      anecdotes: frontendAnecdotes,
-      selfCritique: frontendSelfCritique,
-      evolution: frontendEvolution,
+        "Je définis HTML et CSS comme le socle qui transforme un contenu en interface compréhensible et utilisable. HTML donne du sens à la structure, tandis que CSS organise la présentation, l'adaptation aux écrans et les retours visuels nécessaires à l'utilisateur. Dans un contexte professionnel où une application doit fonctionner sur de nombreux supports et rester accessible, cette compétence ne se limite pas à reproduire une maquette : elle consiste à construire une base robuste que l'équipe pourra maintenir et enrichir.",
+      anecdotes: htmlCssAnecdotes,
+      selfCritique: htmlCssSelfCritique,
+      evolution: htmlCssEvolution,
     },
     {
       id: 'angular',
@@ -292,7 +301,7 @@ export class PortfolioDataService {
       icon: 'web',
       description: 'Framework SPA, composants, services, routing, RxJS, Angular CLI',
       longDescription:
-        "Angular est mon framework JavaScript principal, utilisé chez Worldline et dans ce portfolio. Je crée des applications SPA maintenables avec une architecture en composants, des services injectables et une gestion réactive via RxJS.",
+        "Angular est aujourd'hui mon framework front-end principal. Je l'utilise dans un contexte professionnel chez Worldline ainsi que sur mes projets personnels, notamment ce portfolio et Valkea. Mon travail ne se limite pas à créer des écrans : je découpe les besoins en composants réutilisables, je centralise la logique dans des services et j'organise la navigation pour que l'application reste compréhensible lorsqu'elle évolue. RxJS me permet de gérer les appels asynchrones et les échanges de données sans disperser les responsabilités. Cette pratique m'a appris à reprendre une base de code existante, à respecter ses conventions et à privilégier des solutions simples à relire, à tester et à maintenir en équipe.",
       level: 75,
       yearsExperience: 2,
       colorClass: 'text-brand-purple',
@@ -311,7 +320,7 @@ export class PortfolioDataService {
       tools: ['Angular CLI', 'VS Code', 'npm', 'Chrome DevTools'],
       relatedProjects: [
         { id: 'portfolio', title: 'Portfolio Angular', description: 'Application complète développée en Angular standalone' },
-        { id: 'extranet', title: 'Extranet Worldline', description: 'Application interne Angular utilisée en production chez Worldline' },
+        { id: 'extranet', title: 'Portail de gestion des configurations client', description: 'Application interne Angular utilisée en production chez Worldline' },
         { id: 'valkea', title: 'Valkea', description: 'Frontend Angular d’une application fullstack de suivi de santé animale' },
         { id: 'unio', title: 'Unio', description: 'Interface Angular pour l’organisation de mariage' },
       ],
@@ -319,10 +328,10 @@ export class PortfolioDataService {
         { title: 'Angular Documentation', type: 'Documentation', url: 'https://angular.dev' },
       ],
       professionalDefinition:
-        "Angular est un framework front-end développé par Google pour créer des Single Page Applications. Il s'appuie sur une architecture en composants, des services injectables et le langage TypeScript pour produire des applications maintenables.",
-      anecdotes: frontendAnecdotes,
-      selfCritique: frontendSelfCritique,
-      evolution: frontendEvolution,
+        "Je considère Angular comme un cadre d'architecture pour construire des applications front-end composées de nombreux écrans, flux de données et règles de navigation. Ses composants, ses services injectables et son routage aident à attribuer une responsabilité claire à chaque partie du code. Dans mes projets actuels, cette organisation est particulièrement utile pour faire évoluer une application métier sans dupliquer la logique et pour permettre à plusieurs développeurs d'intervenir sur une base commune.",
+      anecdotes: angularAnecdotes,
+      selfCritique: angularSelfCritique,
+      evolution: angularEvolution,
     },
     {
       id: 'typescript',
@@ -331,7 +340,7 @@ export class PortfolioDataService {
       icon: 'data_object',
       description: 'Typage statique, interfaces, génériques, Angular + Node.js',
       longDescription:
-        "TypeScript est mon langage principal, que j'utilise aussi bien côté frontend (Angular) que côté backend (Node.js/Express). Le typage statique améliore la qualité du code, la détection d'erreurs à la compilation et la maintenabilité.",
+        "TypeScript accompagne la majorité de mes développements récents, aussi bien côté front-end avec Angular que côté back-end avec Node.js et Express. J'utilise les types, les interfaces et les modèles pour rendre explicite la forme des données échangées entre les composants, les services et les API. Cette précision facilite la détection des erreurs avant l'exécution et sécurise les évolutions d'une fonctionnalité. Elle améliore également la lecture du code par les autres développeurs, car les contrats sont visibles directement dans le projet. Dans l'extranet Worldline comme dans ce portfolio, TypeScript me sert donc moins à ajouter de la complexité qu'à rendre le code plus prévisible, plus facile à refactoriser et plus durable.",
       level: 72,
       yearsExperience: 2,
       colorClass: 'text-brand-blue',
@@ -349,7 +358,7 @@ export class PortfolioDataService {
       tools: ['VS Code', 'tsc', 'tsconfig', 'ESLint'],
       relatedProjects: [
         { id: 'portfolio', title: 'Portfolio Angular', description: 'Développé entièrement en TypeScript avec typage strict' },
-        { id: 'extranet', title: 'Extranet Worldline', description: 'Frontend et backend Node.js typés en TypeScript' },
+        { id: 'extranet', title: 'Portail de gestion des configurations client', description: 'Frontend et backend Node.js typés en TypeScript' },
         { id: 'valkea', title: 'Valkea', description: 'Frontend Angular en TypeScript' },
         { id: 'unio', title: 'Unio', description: 'Frontend Angular en TypeScript' },
       ],
@@ -357,10 +366,10 @@ export class PortfolioDataService {
         { title: 'TypeScript Documentation', type: 'Documentation', url: 'https://www.typescriptlang.org/docs' },
       ],
       professionalDefinition:
-        "TypeScript est une version de JavaScript qui ajoute le typage : on précise à l'avance le type de chaque donnée (texte, nombre, objet…). Cela permet de détecter les erreurs avant même de lancer l'application et rend le code plus clair à relire et à faire évoluer.",
-      anecdotes: frontendAnecdotes,
-      selfCritique: frontendSelfCritique,
-      evolution: frontendEvolution,
+        "Je définis TypeScript comme un outil de modélisation qui rend explicites les données et les contrats manipulés par une application JavaScript. Le typage détecte une partie des incohérences avant l'exécution, mais il sert surtout à communiquer l'intention du code aux autres développeurs. Dans les applications front-end et Node.js sur lesquelles je travaille, cette précision facilite les refactorings, sécurise les échanges avec les API et limite les suppositions sur la forme des données.",
+      anecdotes: typescriptAnecdotes,
+      selfCritique: typescriptSelfCritique,
+      evolution: typescriptEvolution,
     },
     {
       id: 'java',
@@ -369,7 +378,7 @@ export class PortfolioDataService {
       icon: 'coffee',
       description: 'Programmation orientée objet, Java 11+, APIs REST, JUnit',
       longDescription:
-        "Java est ma principale compétence backend, apprise à la Wild Code School et pratiquée chez Worldline. Je développe des applications robustes et typées, en suivant les principes de la programmation orientée objet.",
+        "Java est le langage sur lequel j'ai construit mes bases en développement back-end à la Wild Code School, puis que j'ai approfondi pendant mon parcours en alternance et sur Valkea. Je m'appuie sur la programmation orientée objet pour séparer les responsabilités, représenter clairement les données métier et faire évoluer les fonctionnalités sans fragiliser l'ensemble. Le typage fort m'oblige à expliciter mes choix et facilite la détection d'incohérences pendant le développement. J'utilise également Maven pour organiser les dépendances et JUnit pour vérifier les comportements importants. Cette compétence me permet d'aborder un besoin côté serveur avec une méthode structurée, depuis la modélisation jusqu'à l'exposition des données par une API.",
       level: 65,
       yearsExperience: 2,
       colorClass: 'text-brand-amber',
@@ -394,10 +403,10 @@ export class PortfolioDataService {
         { title: 'Baeldung', type: 'Tutoriel', url: 'https://www.baeldung.com' },
       ],
       professionalDefinition:
-        "Java est un langage de programmation orienté objet, statiquement typé, largement utilisé dans les applications d'entreprise. Connu pour sa portabilité (JVM), sa robustesse et son vaste écosystème, Java est le langage de référence pour les architectures backend en entreprise, notamment avec l'écosystème Spring.",
-      anecdotes: backendAnecdotes,
-      selfCritique: backendSelfCritique,
-      evolution: backendEvolution,
+        "Je définis Java comme un langage qui permet de représenter des règles métier de manière explicite grâce au typage statique et à la conception objet. Sa structure impose davantage de décisions en amont que JavaScript, mais elle apporte aussi des repères solides pour relire, tester et faire évoluer un service. Dans mon projet professionnel, Java occupe une place importante pour les applications back-end qui doivent rester fiables sur la durée et être comprises par une équipe entière.",
+      anecdotes: javaAnecdotes,
+      selfCritique: javaSelfCritique,
+      evolution: javaEvolution,
     },
     {
       id: 'spring',
@@ -406,7 +415,7 @@ export class PortfolioDataService {
       icon: 'eco',
       description: 'Spring Boot, Spring Security, Spring Data, APIs REST',
       longDescription:
-        "Spring Boot est le framework Java que j'utilise chez Worldline pour créer des APIs REST. Je configure la sécurité avec Spring Security, gère la persistance avec Spring Data JPA, et structure les applications selon le pattern MVC.",
+        "Spring Boot est le framework avec lequel je transforme mes connaissances Java en applications back-end concrètes. Je structure les fonctionnalités autour de contrôleurs, de services et de couches d'accès aux données afin que chaque partie conserve une responsabilité identifiable. Spring Data JPA facilite la persistance et les requêtes, tandis que Spring Security apporte un cadre pour traiter l'authentification et les autorisations. Sur mes projets, dont Valkea, cette organisation me permet de construire des API REST cohérentes avec les besoins du front-end Angular. Je progresse encore sur les usages avancés de l'écosystème, mais je sais aujourd'hui concevoir une base claire, diagnostiquer un comportement et faire évoluer une fonctionnalité sans contourner l'architecture existante.",
       level: 62,
       yearsExperience: 2,
       colorClass: 'text-brand-green',
@@ -431,10 +440,10 @@ export class PortfolioDataService {
         { title: 'Baeldung Spring', type: 'Tutoriel', url: 'https://www.baeldung.com/spring-tutorial' },
       ],
       professionalDefinition:
-        "Spring est un framework Java open-source qui simplifie le développement d'applications d'entreprise. Spring Boot en particulier permet de créer des microservices et APIs REST avec une configuration minimale. Il intègre la sécurité (Spring Security), la persistance (Spring Data JPA) et un serveur web embarqué, rendant le déploiement simple et autonome.",
-      anecdotes: backendAnecdotes,
-      selfCritique: backendSelfCritique,
-      evolution: backendEvolution,
+        "Je considère Spring comme l'écosystème qui transforme un modèle Java en service applicatif exploitable : API, accès aux données, configuration et sécurité. Spring Boot accélère la mise en place de cette infrastructure, mais sa bonne utilisation demande de comprendre les responsabilités que le framework automatise. Dans mes projets actuels, je l'utilise pour organiser des API REST en couches distinctes et préparer des services capables d'être testés, sécurisés puis déployés de façon reproductible.",
+      anecdotes: springAnecdotes,
+      selfCritique: springSelfCritique,
+      evolution: springEvolution,
     },
     {
       id: 'git',
@@ -443,7 +452,7 @@ export class PortfolioDataService {
       icon: 'merge_type',
       description: 'Versionning, branches, merge requests, GitHub, GitLab CI',
       longDescription:
-        "Git est un outil quotidien depuis mes premiers projets OpenClassrooms. Je maîtrise les workflows de collaboration (feature branches, pull/merge requests, code reviews) et la CI/CD avec GitLab, pratiqués intensément chez Worldline.",
+        "Git fait partie de mon quotidien depuis mes premiers projets OpenClassrooms et structure désormais ma manière de développer. Je crée des branches dédiées, je prépare des commits ciblés et je relis l'historique afin qu'une modification puisse être comprise ou isolée facilement. Chez Worldline, les merge requests et les revues de code m'ont appris à présenter mes choix, à intégrer des retours et à résoudre les conflits sans perdre le travail de l'équipe. J'utilise également GitLab dans un environnement associé à des pipelines d'intégration et de déploiement. Au-delà des commandes, je considère Git comme un outil de collaboration et de traçabilité qui sécurise les évolutions d'un projet.",
       level: 83,
       yearsExperience: 4,
       colorClass: 'text-brand-teal',
@@ -461,7 +470,7 @@ export class PortfolioDataService {
       tools: ['Git CLI', 'GitHub', 'GitLab', 'SourceTree'],
       relatedProjects: [
         { id: 'portfolio', title: 'Portfolio Angular', description: 'Versionné avec Git et hébergé sur GitHub' },
-        { id: 'extranet', title: 'Extranet Worldline', description: 'Travail quotidien avec GitLab et Merge Requests' },
+        { id: 'extranet', title: 'Portail de gestion des configurations client', description: 'Travail quotidien avec GitLab et Merge Requests' },
         { id: 'valkea', title: 'Valkea', description: 'Suivi de version Git du projet personnel fullstack' },
         { id: 'unio', title: 'Unio', description: 'Suivi de version Git du projet personnel mariage' },
         { id: 'openclassrooms-6', title: 'Piiquante - API sécurisée', description: 'Versioning Git du projet de formation OpenClassrooms' },
@@ -472,10 +481,10 @@ export class PortfolioDataService {
         { title: 'Atlassian Git Tutorials', type: 'Tutoriel', url: 'https://www.atlassian.com/git/tutorials' },
       ],
       professionalDefinition:
-        "Git est un système de contrôle de version distribué qui trace et gère les modifications du code source. Il permet à plusieurs développeurs de collaborer sur un projet, de gérer des branches de fonctionnalités, et de revenir à des états précédents du code. Git, couplé à des plateformes comme GitHub ou GitLab, est devenu le standard de l'industrie pour la gestion du code et la CI/CD.",
+        "Je définis Git comme la mémoire partagée d'un projet logiciel. Il ne sert pas seulement à sauvegarder du code : il permet de comprendre pourquoi une modification a été introduite, d'isoler un travail en cours et de confronter une proposition au regard de l'équipe avant son intégration. Dans mon environnement professionnel actuel, un historique clair et une merge request bien préparée participent directement à la qualité, à la transmission du contexte et à la réduction des régressions.",
       anecdotes: toolsAnecdotes,
       selfCritique: toolsSelfCritique,
-      evolution: toolsEvolution,
+      evolution: gitEvolution,
     },
     {
       id: 'communication',
@@ -484,7 +493,7 @@ export class PortfolioDataService {
       icon: 'chat',
       description: "Savoir transmettre clairement ses idées à l'oral comme à l'écrit, à des publics techniques ou non techniques.",
       longDescription:
-        "Développée pendant 1 an en réception hôtelière, 3 ans d'alternance en pharmacie (conseil patient) et aujourd'hui chez Worldline où je traduis régulièrement des sujets techniques pour des interlocuteurs non techniques.",
+        "Ma communication s'est construite dans des environnements où il faut d'abord comprendre l'interlocuteur avant de lui répondre. En réception hôtelière, j'ai appris à accueillir, reformuler une demande et rester claire dans des situations variées. Pendant trois années en pharmacie, le conseil aux patients m'a demandé d'adapter mon vocabulaire et de transmettre une information précise avec attention. Chez Worldline, j'applique ces réflexes aux échanges avec le Product Owner et les développeurs : je clarifie le besoin, j'explique mes choix et je documente ce qui doit être partagé. Cette expérience me permet de relier les enjeux techniques et fonctionnels sans supposer que tous les interlocuteurs disposent du même niveau d'information.",
       level: 88,
       yearsExperience: 6,
       colorClass: 'text-brand-teal',
@@ -501,13 +510,13 @@ export class PortfolioDataService {
       keyStrengths: ['Vulgarisation', 'Écoute active', 'Pédagogie', 'Clarté à l\'écrit'],
       tools: ['Confluence', 'Slack', 'Microsoft Teams', 'GitLab (merge requests)'],
       relatedProjects: [
-        { id: 'extranet', title: 'Extranet Worldline', description: 'Échanges réguliers avec le PO et les collègues développeurs' },
+        { id: 'extranet', title: 'Portail de gestion des configurations client', description: 'Échanges réguliers avec le PO et les collègues développeurs' },
       ],
       resources: [
         { title: 'La communication non violente', type: 'Livre', url: 'https://fr.wikipedia.org/wiki/Communication_non_violente' },
       ],
       professionalDefinition:
-        "La communication est la compétence humaine de transmettre une information, une idée ou une émotion de manière claire, adaptée à son interlocuteur. Elle combine oral, écrit, écoute et vulgarisation. En contexte professionnel, bien communiquer permet de faire avancer les projets, lever les incompréhensions et renforcer la confiance entre collègues et parties prenantes.",
+        "Je définis la communication comme la capacité à faire circuler une information de façon suffisamment claire pour permettre une compréhension ou une décision. Elle commence par l'écoute et la reformulation avant de mobiliser l'oral, l'écrit ou la vulgarisation. Dans mon travail actuel, elle me permet de clarifier un besoin avec le Product Owner, d'expliquer un choix technique à l'équipe et de signaler un blocage avant qu'il ne ralentisse l'ensemble du projet.",
       anecdotes: communicationAnecdotes,
       selfCritique: communicationSelfCritique,
       evolution: communicationEvolution,
@@ -519,7 +528,7 @@ export class PortfolioDataService {
       icon: 'groups',
       description: "Collaborer efficacement au sein d'une équipe, partager l'information et avancer vers un objectif commun.",
       longDescription:
-        "Pratiqué quotidiennement chez Worldline dans une équipe agile : daily stand-up, revues de code, pair programming et rétrospectives. Avant cela, le service en hôtellerie-restauration et la pharmacie m'ont appris la coordination en équipe sous pression, avec une exigence de qualité constante.",
+        "Le travail d'équipe est une continuité dans mon parcours, même si les contextes ont beaucoup changé. En hôtellerie-restauration puis en pharmacie, j'ai appris à coordonner mes actions avec celles des autres, à transmettre rapidement une information utile et à rester fiable lors des périodes soutenues. Chez Worldline, cette collaboration prend la forme de points quotidiens, de revues de code, de pair programming et de rétrospectives. Je partage l'avancement comme les difficultés afin que les décisions puissent être prises collectivement. Je veille aussi à accueillir les retours avec recul : une remarque sur le code n'est pas personnelle, elle contribue à produire une solution plus lisible et plus sûre pour toute l'équipe.",
       level: 85,
       yearsExperience: 5,
       colorClass: 'text-brand-blue',
@@ -536,13 +545,13 @@ export class PortfolioDataService {
       keyStrengths: ['Esprit collectif', 'Partage de connaissances', 'Respect des engagements', 'Fiabilité'],
       tools: ['GitLab', 'Jira', 'Confluence', 'Microsoft Teams'],
       relatedProjects: [
-        { id: 'extranet', title: 'Extranet Worldline', description: "Développement en équipe agile avec revues de code et PO" },
+        { id: 'extranet', title: 'Portail de gestion des configurations client', description: "Développement en équipe agile avec revues de code et PO" },
       ],
       resources: [
         { title: 'Scrum Guide', type: 'Documentation', url: 'https://scrumguides.org/' },
       ],
       professionalDefinition:
-        "Le travail d'équipe consiste à coopérer avec d'autres personnes pour atteindre un objectif commun, en partageant information et responsabilités. Il suppose écoute, respect, engagement et une certaine humilité. Dans le développement logiciel, il se matérialise par les revues de code, le pair programming, les cérémonies agiles et le partage documentaire.",
+        "Je définis le travail d'équipe comme la capacité à contribuer à un objectif commun sans limiter sa responsabilité à sa propre tâche. Il implique de partager le contexte, de demander ou proposer de l'aide et d'accepter que la solution finale bénéficie de plusieurs points de vue. Dans le développement logiciel, cette compétence se manifeste quotidiennement dans les revues de code, les échanges de conception, les cérémonies agiles et la documentation laissée aux personnes qui reprendront le travail.",
       anecdotes: teamworkAnecdotes,
       selfCritique: teamworkSelfCritique,
       evolution: teamworkEvolution,
@@ -554,7 +563,7 @@ export class PortfolioDataService {
       icon: 'autorenew',
       description: "Capacité à évoluer dans des environnements et contextes différents, à apprendre rapidement et à rebondir face au changement.",
       longDescription:
-        "Mon parcours illustre cette compétence : hôtellerie, pharmacie puis reconversion vers le développement web. Chez Worldline, je passe régulièrement d'un contexte front-end Angular à un contexte back-end Java/Spring Boot, en intégrant de nouveaux outils selon les projets.",
+        "Mon adaptabilité se traduit d'abord par un parcours allant de l'hôtellerie à la pharmacie, puis au développement web. Chaque transition m'a demandé d'acquérir un nouveau vocabulaire, de comprendre de nouvelles contraintes et de retrouver rapidement de l'autonomie. Dans mes missions techniques, je peux passer d'une interface Angular à une problématique back-end en Java ou Spring Boot, puis découvrir un outil nécessaire au projet. Je commence par observer l'existant, consulter la documentation et vérifier ma compréhension avec l'équipe avant d'agir. Cette méthode me permet d'apprendre sans perdre de vue le besoin initial et de rester efficace lorsque le contexte, la technologie ou les priorités évoluent.",
       level: 88,
       yearsExperience: 7,
       colorClass: 'text-brand-purple',
@@ -571,7 +580,7 @@ export class PortfolioDataService {
       tools: ['Documentation officielle', 'MDN', 'OpenClassrooms', 'Udemy'],
       relatedProjects: [
         { id: 'portfolio', title: 'Portfolio Angular', description: "Apprentissage en autonomie d’Angular standalone et de Tailwind CSS sur un projet personnel" },
-        { id: 'extranet', title: 'Extranet Worldline', description: "Découverte et prise en main rapide d’Angular et Bootstrap en environnement professionnel" },
+        { id: 'extranet', title: 'Portail de gestion des configurations client', description: "Découverte et prise en main rapide d’Angular et Bootstrap en environnement professionnel" },
         { id: 'valkea', title: 'Valkea', description: "Application fullstack de suivi de santé pour animaux de compagnie : profils, vaccinations, rappels vétérinaires" },
         { id: 'unio', title: 'Unio', description: "Nouveau projet fullstack avec un domaine fonctionnel inédit (organisation de mariage)" },
       ],
@@ -579,7 +588,7 @@ export class PortfolioDataService {
         { title: 'Mindset (Carol Dweck)', type: 'Livre', url: 'https://fr.wikipedia.org/wiki/Carol_Dweck' },
       ],
       professionalDefinition:
-        "L'adaptabilité est la capacité à évoluer dans des environnements variés, à apprendre de nouveaux outils et à accepter le changement. Dans un métier du numérique où les technologies changent vite, cette compétence est essentielle : elle permet de rester pertinent, de s'intégrer rapidement dans une nouvelle équipe ou un nouveau projet, et de transformer les imprévus en opportunités.",
+        "Je définis l'adaptabilité comme la capacité à rester utile lorsque le contexte, les outils ou les priorités changent. Elle ne consiste pas à tout accepter immédiatement, mais à identifier ce qui doit être appris, les contraintes qui ne peuvent pas être modifiées et les personnes capables d'apporter du contexte. Dans un métier du numérique en évolution continue, cette démarche me permet d'entrer progressivement dans une nouvelle stack sans négliger la qualité attendue par l'équipe.",
       anecdotes: adaptabilityAnecdotes,
       selfCritique: adaptabilitySelfCritique,
       evolution: adaptabilityEvolution,
@@ -591,7 +600,7 @@ export class PortfolioDataService {
       icon: 'verified',
       description: 'Attention aux détails, exigence de qualité et respect des procédures, indispensables au développement logiciel.',
       longDescription:
-        "Compétence forgée en pharmacie (préparations, contrôles, traçabilité) et désormais appliquée au développement : code propre, tests, revues, conventions de nommage, documentation. Je préfère livrer un peu plus tard mais livrer juste.",
+        "J'ai d'abord développé ma rigueur en pharmacie, où les préparations, les contrôles et la traçabilité ne laissent pas de place à l'approximation. Dans le développement, je transpose cette exigence à la lecture du besoin, au nommage, à la structure du code et à la vérification des cas limites. Les tests, les outils de lint, les revues de code et la documentation constituent pour moi des points de contrôle complémentaires. Je prends également le temps de reproduire un problème avant de le corriger, puis de vérifier que la solution n'introduit pas de régression visible. Cette attention aux détails vise un résultat simple : livrer un comportement fiable et laisser un code que l'équipe pourra comprendre et faire évoluer.",
       level: 87,
       yearsExperience: 5,
       colorClass: 'text-brand-green',
@@ -608,7 +617,7 @@ export class PortfolioDataService {
       tools: ['ESLint', 'Prettier', 'Lighthouse', 'Jest', 'GitLab CI'],
       relatedProjects: [
         { id: 'portfolio', title: 'Portfolio Angular', description: "Conventions de code, lint, typage strict et structure cohérente" },
-        { id: 'extranet', title: 'Extranet Worldline', description: "Code en production : exigence sur les revues, conventions et qualité" },
+        { id: 'extranet', title: 'Portail de gestion des configurations client', description: "Code en production : exigence sur les revues, conventions et qualité" },
         { id: 'valkea', title: 'Valkea', description: "Architecture fullstack soignée : séparation des couches et conventions" },
         { id: 'unio', title: 'Unio', description: "Conception structurée et documentée avant le développement" },
       ],
@@ -616,7 +625,7 @@ export class PortfolioDataService {
         { title: 'Clean Code (Robert C. Martin)', type: 'Livre', url: 'https://fr.wikipedia.org/wiki/Robert_Cecil_Martin' },
       ],
       professionalDefinition:
-        "La rigueur est l'exigence constante de qualité, de précision et de respect des procédures. Dans le développement logiciel, elle se traduit par du code propre, des tests, une documentation à jour, le respect des conventions d'équipe et une attention particulière aux détails. C'est une compétence indispensable pour livrer des produits fiables et maintenables.",
+        "Je définis la rigueur comme la capacité à appliquer le niveau de vérification adapté aux conséquences d'une erreur. Dans le développement logiciel, elle se traduit par la compréhension du besoin, la relecture, les tests, le respect des conventions et la traçabilité des décisions. Dans mon contexte professionnel actuel, cette compétence protège les utilisateurs contre les régressions tout en laissant à l'équipe un code qu'elle peut comprendre et maintenir.",
       anecdotes: rigorAnecdotes,
       selfCritique: rigorSelfCritique,
       evolution: rigorEvolution,
@@ -669,7 +678,7 @@ export class PortfolioDataService {
       id: 'portfolio',
       title: 'Concevoir un portfolio professionnel avec Angular',
       description:
-        "Création d'un portfolio moderne, responsive et maintenable pour présenter mon parcours, mes compétences et mes projets selon la grille d'évaluation.",
+        "Création d'un portfolio moderne, responsive et maintenable pour présenter mon parcours, mes compétences et mes projets.",
       imageUrl: 'assets/images/logo.png',
       tags: ['Angular', 'Tailwind CSS', 'SEO', 'Accessibilité'],
       categories: ['frontend'],
@@ -725,7 +734,7 @@ export class PortfolioDataService {
     },
     {
       id: 'extranet',
-      title: 'Extranet — Portail de gestion client Worldline',
+      title: 'Portail de gestion des configurations client',
       description:
         "Application web interne développée chez Worldline pour la gestion des configurations et déploiements clients.",
       imageUrl: 'assets/images/Logo_Worldline_-_2021.svg',
@@ -743,9 +752,9 @@ export class PortfolioDataService {
       title: 'Concevoir un portfolio professionnel avec Angular',
       subtitle: 'Projet personnel',
       description:
-        "Développement de ce portfolio pour présenter mon profil, mes compétences et mes réalisations dans un format structuré, performant et adapté aux attentes de la grille d'évaluation.",
+        "Développement de ce portfolio pour présenter mon profil, mes compétences et mes expériences dans un format structuré, performant et accessible.",
       longDescription:
-        "Ce portfolio a été conçu comme une application Angular complète servant à la fois de vitrine professionnelle et de démonstration technique. L'objectif était de structurer l'information de façon claire pour des recruteurs et évaluateurs, tout en garantissant une expérience fluide sur mobile et desktop, un bon niveau d'accessibilité, et une architecture de contenu facile à faire évoluer.",
+        "J'ai conçu ce portfolio comme une application Angular à part entière, et pas uniquement comme une succession de pages de présentation. L'objectif est de permettre à un visiteur de comprendre rapidement mon parcours, puis d'accéder à un niveau de détail plus concret sur mes compétences et mes expériences. J'ai centralisé les données afin de séparer le contenu des composants et de faciliter les futures mises à jour. Le responsive design, la navigation, les contrastes et les modes clair et sombre ont été travaillés pour conserver une lecture confortable sur différents supports. Ce projet continu me sert aussi de terrain d'expérimentation : chaque évolution m'amène à arbitrer entre richesse du contenu, cohérence visuelle, accessibilité et simplicité de maintenance.",
       imageUrl: 'assets/images/logo.png',
       galleryImages: ['assets/images/logo.png'],
       tags: [],
@@ -764,20 +773,20 @@ export class PortfolioDataService {
       ],
       challenges: [
         {
-          title: "Structurer la grille d’évaluation",
+          title: "Structurer un contenu riche",
           description:
-            "Transformer des attendus pédagogiques parfois dispersés en rubriques lisibles et convaincantes pour un visiteur externe.",
+            "Le portfolio rassemble des expériences, des compétences et des projets dont le niveau de détail varie fortement. Le défi consistait à construire une hiérarchie qui donne une vision rapide du profil tout en permettant au visiteur d'approfondir chaque sujet sans se perdre.",
         },
         {
           title: "Équilibrer contenu et lisibilité",
           description:
-            "Donner assez de profondeur sur les compétences et projets sans surcharger l’interface ni perdre en clarté.",
+            "L'ajout de contenus plus rédigés pouvait rapidement alourdir les cartes et casser le rythme visuel. J'ai donc dû distinguer les informations utiles dans les aperçus de celles qui gagnent à être développées dans les pages de détail.",
         },
       ],
       solutions: [
-        "Centralisation des données du portfolio dans un service unique et des fichiers enrichis dédiés",
-        "Création de pages de détail pour les projets et les compétences afin de rendre visibles les critères de grille",
-        "Mise en place d’une UI responsive avec mode sombre/clair et contenus pensés pour les recruteurs",
+        "J'ai centralisé les données principales dans un service et isolé les contenus éditoriaux détaillés dans des fichiers dédiés. Cette séparation évite de disperser le texte dans les composants et simplifie les mises à jour.",
+        "J'ai conservé des cartes synthétiques pour la découverte, puis créé des pages de détail où le contexte, les exemples, le recul critique et les perspectives peuvent être expliqués sans contraindre la lecture générale.",
+        "J'ai construit une interface responsive avec des composants cohérents et des modes clair et sombre. Les aperçus sont volontairement limités en hauteur afin de préserver l'alignement des cartes malgré l'enrichissement des textes.",
       ],
       technologies: [
         { name: 'Angular', category: 'Frontend', description: "Architecture de l’application, routing et composants" },
@@ -789,12 +798,12 @@ export class PortfolioDataService {
         {
           date: '2024',
           title: 'Première mise en ligne',
-          description: 'Création de la base du portfolio et structuration des pages principales',
+          description: "J'ai commencé par définir l'identité visuelle, les principales routes et les composants communs nécessaires à la navigation. Cette première version a permis de mettre en ligne un support fonctionnel présentant mon profil, mes compétences, mon parcours et une sélection de projets.",
         },
         {
           date: '2026',
           title: 'Enrichissement éditorial',
-          description: 'Ajout des rubriques détaillées liées à la grille ISCOD/VISIPLUS pour les projets et compétences',
+          description: "J'ai ensuite restructuré les contenus détaillés afin que chaque compétence soit accompagnée d'une définition, d'une preuve, d'une autocritique et d'une perspective d'évolution. Les expériences ont également été développées comme des études de cas décrivant leur contexte, leurs objectifs, les décisions prises, les résultats et le recul acquis.",
         },
       ],
       links: { github: 'https://github.com/MathildeJNL/mj_portfolio' },
@@ -810,12 +819,12 @@ export class PortfolioDataService {
     },
     {
       id: 'extranet',
-      title: 'Extranet — Portail de gestion client Worldline',
+      title: 'Portail de gestion des configurations client',
       subtitle: 'Projet professionnel — Worldline',
       description:
         "Application web interne développée chez Worldline pour la gestion des configurations et déploiements clients.",
       longDescription:
-        "Dans le cadre de mon alternance chez Worldline, j'ai participé au développement d'un extranet permettant aux équipes internes de gérer les configurations, les builds et le suivi des clients. L'application offre une interface Angular/Bootstrap pour visualiser et administrer les données stockées en MongoDB, via une API Node.js/TypeScript.",
+        "Dans le cadre de mon alternance chez Worldline, je contribue à un extranet utilisé par les équipes internes pour gérer les clients, leurs configurations et leurs builds. J'interviens sur une application existante : je dois donc comprendre les parcours déjà en place, respecter les conventions du projet et intégrer chaque évolution sans perturber les usages quotidiens. Le front-end repose sur Angular et Bootstrap, tandis que l'API est développée avec Node.js et TypeScript autour de données stockées dans MongoDB. Mes missions couvrent la création et l'amélioration d'écrans de gestion, le traitement des retours utilisateurs et la correction d'anomalies. Ce projet m'a surtout appris à faire évoluer un produit métier en production, en échangeant régulièrement avec le Product Owner et les développeurs tout en respectant la confidentialité des données manipulées.",
       imageUrl: 'assets/images/Logo_Worldline_-_2021.svg',
       galleryImages: [
         'assets/images/projects/extranet/desktop_customer_builds.png',
@@ -847,17 +856,17 @@ export class PortfolioDataService {
       challenges: [
         {
           title: 'Interface de gestion complexe',
-          description: 'Concevoir des vues claires pour administrer des configurations techniques variées et volumineuses.',
+          description: "Les équipes doivent consulter et modifier des configurations techniques dont la quantité et la structure peuvent varier selon les clients. Il fallait rendre ces données compréhensibles sans masquer les informations nécessaires aux opérations.",
         },
         {
           title: 'Intégration dans un écosystème existant',
-          description: "Respecter les conventions de l'équipe Worldline et s'intégrer à une base de code Angular et Node.js en production.",
+          description: "Je suis intervenue sur une application Angular et Node.js déjà utilisée en interne. Chaque évolution devait respecter l'architecture, les conventions et les processus de revue existants afin d'éviter les régressions et de rester maintenable par l'équipe.",
         },
       ],
       solutions: [
-        'Utilisation de composants Angular réutilisables et Bootstrap pour une UI cohérente',
-        'API Node.js/TypeScript avec Express pour exposer les données MongoDB',
-        'Pagination, filtres et recherche côté client pour gérer de grands volumes de données',
+        "J'ai découpé les écrans en composants Angular réutilisables et utilisé les conventions Bootstrap déjà présentes. Cette approche maintient une interface cohérente et réduit les écarts entre des parcours fonctionnels proches.",
+        "Les échanges avec MongoDB passent par une API Node.js et TypeScript structurée avec Express. Le typage et la séparation des responsabilités rendent les données attendues plus explicites entre le serveur et l'interface.",
+        "J'ai utilisé des mécanismes de pagination, de filtrage et de recherche pour limiter la quantité d'informations affichée simultanément. L'utilisateur peut ainsi retrouver une configuration précise sans parcourir manuellement l'ensemble des données.",
       ],
       technologies: [
         { name: 'Angular', category: 'Frontend', description: 'Framework SPA pour les interfaces de gestion' },
@@ -867,8 +876,16 @@ export class PortfolioDataService {
         { name: 'MongoDB', category: 'Base de données', description: 'Stockage NoSQL des données clients et configurations' },
       ],
       milestones: [
-        { date: '2024', title: 'Intégration équipe', description: "Prise en main de la codebase existante chez Worldline" },
-        { date: '2024-2025', title: 'Développement features', description: 'Développement de nouvelles fonctionnalités de gestion' },
+        {
+          date: '2024',
+          title: "Prise en main de l'application",
+          description: "Mon arrivée a d'abord été consacrée à la compréhension de l'architecture Angular et Node.js, des conventions de l'équipe et des principaux parcours métier. J'ai commencé par des corrections ciblées afin d'observer le cycle complet d'une modification, depuis la clarification du besoin jusqu'à la revue de code et à la mise en production.",
+        },
+        {
+          date: '2024-2026',
+          title: 'Évolutions fonctionnelles et stabilisation',
+          description: "J'ai progressivement pris en charge des écrans et des fonctionnalités de gestion plus complets, notamment autour de la recherche, du filtrage et de la consultation des configurations. Les retours du Product Owner et des utilisateurs internes m'ont ensuite conduite à ajuster les parcours, corriger des anomalies et consolider les composants partagés.",
+        },
       ],
       links: {},
       relatedSkillCategories: [
@@ -889,7 +906,7 @@ export class PortfolioDataService {
       description:
         "Application fullstack de suivi de santé pour animaux de compagnie : profils, vaccinations, rappels vétérinaires.",
       longDescription:
-        "Valkea est une application fullstack développée en Java/Spring Boot (backend) et Angular/Tailwind CSS (frontend) avec MySQL comme base de données. Elle permet à un propriétaire d'animaux de centraliser toutes les informations médicales : vaccinations, traitements, rendez-vous vétérinaires et rappels de soins.",
+        "Valkea est né d'un besoin personnel : regrouper au même endroit les informations de santé de mon husky plutôt que de les disperser entre plusieurs supports. L'application doit permettre de créer un ou plusieurs profils d'animaux, puis de suivre les vaccinations, les traitements, les rendez-vous vétérinaires et les rappels de soins. Je développe le back-end en Java avec Spring Boot et je modélise les données dans MySQL ; l'interface est construite avec Angular et Tailwind CSS. Ce projet me conduit à réfléchir au parcours complet d'une donnée, depuis sa saisie jusqu'à son affichage, ainsi qu'à la sécurité des accès. Toujours en développement, Valkea me permet de consolider ma stack fullstack sur un cas d'usage concret dont je peux éprouver moi-même la pertinence.",
       imageUrl: 'assets/images/valkea_logo.png',
       galleryImages: [
         'assets/images/projects/valkea1.png',
@@ -920,17 +937,17 @@ export class PortfolioDataService {
       challenges: [
         {
           title: 'Architecture fullstack',
-          description: 'Concevoir une architecture Spring Boot/Angular propre et maintenable de A à Z.',
+          description: "Valkea est développé sans base applicative préexistante : je dois définir la séparation entre l'interface, l'API et la base de données. Les choix initiaux doivent rester assez simples pour avancer, mais assez structurés pour accueillir de nouveaux types de suivis.",
         },
         {
           title: 'Gestion des rappels',
-          description: 'Mettre en place un système de notifications et de rappels pour les soins vétérinaires.',
+          description: "Un rappel doit être rattaché au bon animal, au bon soin et à une date fiable, puis rester compréhensible lorsqu'il est modifié ou terminé. Cette fonctionnalité demande donc une modélisation précise avant même de traiter l'envoi d'une notification.",
         },
       ],
       solutions: [
-        "API REST Spring Boot avec Spring Security pour l'authentification",
-        'Frontend Angular avec composants réutilisables et Tailwind CSS',
-        'Base de données MySQL modélisée pour la gestion multi-animaux',
+        "Je construis une API REST avec Spring Boot en séparant les contrôleurs, les services et la persistance. Spring Security fournit le cadre d'authentification nécessaire pour protéger les données propres à chaque utilisateur.",
+        "L'interface Angular est organisée en composants correspondant aux parcours principaux, tandis que Tailwind CSS m'aide à conserver des règles visuelles communes et un affichage adapté au mobile.",
+        "Le schéma MySQL relie les utilisateurs, les animaux et leurs informations de suivi. Cette modélisation relationnelle évite la duplication des données et prépare la gestion de plusieurs animaux par compte.",
       ],
       technologies: [
         { name: 'Java', category: 'Backend', description: 'Langage principal du backend' },
@@ -941,7 +958,16 @@ export class PortfolioDataService {
         { name: 'MySQL', category: 'Base de données', description: 'Base de données relationnelle' },
       ],
       milestones: [
-        { date: '2025', title: 'Démarrage', description: "Conception de l'architecture et premiers développements" },
+        {
+          date: '2025',
+          title: 'Cadrage du besoin et conception',
+          description: "J'ai commencé par identifier les informations réellement utiles au suivi d'un animal, puis j'ai défini les relations entre les comptes, les profils et les données médicales. Ce cadrage a servi de base au modèle MySQL, aux objets Java et aux premiers parcours imaginés pour l'interface Angular.",
+        },
+        {
+          date: 'En cours',
+          title: 'Construction du socle full-stack',
+          description: "Le développement porte actuellement sur l'authentification, la gestion des profils animaux et l'organisation des premières données de suivi. J'avance par fonctionnalités verticales afin de vérifier les échanges entre Angular, l'API Spring Boot et la base avant d'ajouter les rappels et les traitements plus avancés.",
+        },
       ],
       links: {},
       relatedSkillCategories: [
@@ -963,7 +989,7 @@ export class PortfolioDataService {
       description:
         "Application dédiée aux couples pour organiser leur vie commune : mariage, budget, listes partagées, événements.",
       longDescription:
-        "Unio est une application fullstack en cours de conception, pensée pour accompagner les couples dans les grandes étapes de leur vie commune. L'application proposera un espace partagé pour l'organisation du mariage, la gestion du budget, les listes de tâches et les événements importants.",
+        "Unio est un projet personnel actuellement en phase de conception, imaginé à l'origine pour organiser notre mariage. L'application proposera aux mariés un espace centralisé pour préparer les informations de la journée, gérer les invités et suivre les réponses. Chaque invité pourra recevoir un lien personnalisé donnant accès au programme, au lieu, au dress code, à des inspirations de tenues et à un formulaire de réponse individuel. L'enjeu est de rendre le parcours simple sur mobile tout en laissant aux organisateurs un contrôle précis sur les informations partagées. La stack envisagée associe Java et Spring Boot au back-end, Angular et Tailwind CSS pour l'interface, ainsi que MySQL pour les données. Les écrans présentés traduisent donc une intention fonctionnelle et graphique qui guidera les prochaines étapes du développement.",
       imageUrl: 'assets/images/rings.jpg',
       galleryImages: [
         'assets/images/projects/unio_home.png',
@@ -992,17 +1018,17 @@ export class PortfolioDataService {
       challenges: [
         {
           title: 'Fonctionnalités collaboratives',
-          description: 'Concevoir un espace partagé entre deux utilisateurs avec synchronisation en temps réel.',
+          description: "Le projet doit permettre aux mariés d'administrer les informations tout en proposant à chaque invité un accès limité et personnalisé. La conception doit donc clarifier les rôles, les droits et le cycle de vie d'une réponse avant le développement.",
         },
         {
           title: 'UX orientée couple',
-          description: 'Créer une interface intuitive et apaisante pour des moments de vie importants.',
+          description: "Les invités consulteront principalement le site depuis leur téléphone et ne doivent pas avoir besoin d'apprendre son fonctionnement. Le défi consiste à rendre immédiatement visibles les informations importantes sans transformer la page en formulaire administratif.",
         },
       ],
       solutions: [
-        'Architecture Spring Boot avec gestion de rôles partenaires',
-        'Composants Angular dédiés au partage et à la collaboration',
-        'Design Tailwind CSS doux et élégant adapté à la thématique',
+        "L'architecture prévue avec Spring Boot distinguera les droits des organisateurs et l'accès individuel des invités. Les liens personnalisés devront être contrôlés côté serveur plutôt que reposer uniquement sur l'affichage du front-end.",
+        "Les écrans Angular sont conçus autour de parcours séparés : configuration par les mariés, consultation des informations et réponse de l'invité. Ce découpage limite le nombre d'actions présentées à chaque utilisateur.",
+        "La maquette Tailwind CSS privilégie une hiérarchie simple, des zones tactiles confortables et une ambiance visuelle cohérente avec l'événement. Ces choix seront validés sur mobile avant l'implémentation complète.",
       ],
       technologies: [
         { name: 'Java', category: 'Backend', description: 'Langage principal du backend' },
@@ -1013,7 +1039,16 @@ export class PortfolioDataService {
         { name: 'MySQL', category: 'Base de données', description: 'Base de données relationnelle' },
       ],
       milestones: [
-        { date: '2026', title: 'Conception', description: 'Phase de conception UX/UI et architecture' },
+        {
+          date: '2026',
+          title: 'Cadrage fonctionnel',
+          description: "J'ai délimité une première version centrée sur les informations pratiques du mariage, les liens personnalisés et la réponse individuelle des invités. Cette étape m'a permis de distinguer les besoins indispensables des idées qui pourront être étudiées seulement après une première utilisation.",
+        },
+        {
+          date: 'En cours',
+          title: 'Maquettes et préparation de l’architecture',
+          description: "Je conçois actuellement les écrans mobiles des mariés et des invités tout en précisant les rôles, les droits d'accès et le cycle de vie d'une réponse. L'architecture Angular et Spring Boot sera engagée une fois ces règles suffisamment claires pour éviter que la technique ne fixe prématurément le fonctionnement du service.",
+        },
       ],
       links: { github: '' },
       relatedSkillCategories: [
@@ -1034,7 +1069,7 @@ export class PortfolioDataService {
       subtitle: 'Projet Formation OpenClassrooms',
       description: "Création d'une API REST sécurisée avec NodeJS et MongoDB.",
       longDescription:
-        "Pour le projet \"Piiquante\", l'objectif était de concevoir le backend entier d'une application web d'avis de sauces pimentées. L'API devait permettre aux utilisateurs de s'inscrire, de se connecter, d'ajouter ou de modifier leurs propres sauces, et de \"liker\" ou \"disliker\" les sauces des autres.",
+        "Piiquante est un projet de formation centré sur la conception du back-end d'une application de notation de sauces pimentées. À partir d'un front-end fourni, j'ai construit une API REST avec Node.js, Express et MongoDB pour gérer les comptes utilisateurs, les sauces et leurs interactions. Le travail portait notamment sur l'authentification par jeton, le hachage des mots de passe, l'autorisation des modifications et la gestion sécurisée des images. J'ai également mis en place les opérations de création, de lecture, de mise à jour et de suppression, ainsi que le mécanisme de like et de dislike. Ce projet m'a fait comprendre qu'une API ne se résume pas à exposer des routes : elle doit contrôler les données reçues, protéger les ressources et renvoyer des réponses cohérentes au client.",
       imageUrl: 'assets/images/projects/piiquante.png',
       galleryImages: [],
       tags: ['NodeJS', 'MongoDB', 'Sécurité', 'API'],
@@ -1052,14 +1087,17 @@ export class PortfolioDataService {
         {
           title: 'Sécurité',
           description:
-            'Mettre en place des pratiques sécurisées (hachage de mot de passe, tokens JWT, protection contre les injections).',
+            "L'API gère des comptes utilisateurs et autorise l'ajout, la modification ou la suppression de contenus. Il fallait donc vérifier l'identité de l'utilisateur, protéger les mots de passe et empêcher qu'une personne modifie une ressource qui ne lui appartient pas.",
         },
-        { title: 'Mongoose', description: 'Modéliser et interagir avec une base NoSQL MongoDB depuis Node.' },
+        {
+          title: 'Modélisation avec Mongoose',
+          description: "MongoDB offre une structure souple, mais l'application avait besoin de règles claires pour les utilisateurs, les sauces et les votes. Les schémas Mongoose devaient garantir la cohérence des données tout en restant adaptés aux opérations de l'API.",
+        },
       ],
       solutions: [
-        'Implémentation de bcrypt pour le hachage sécurisé des mots de passe',
-        'Délivrance et vérification de requêtes via JsonWebToken (JWT)',
-        "Structuration d'un CRUD via le framework Express",
+        "J'ai utilisé bcrypt pour hacher les mots de passe avant leur enregistrement. L'API ne conserve ainsi jamais le mot de passe original et compare uniquement sa version sécurisée lors de la connexion.",
+        "Après authentification, un jeton JWT est transmis au client puis vérifié par un middleware sur les routes protégées. L'identifiant issu du jeton sert aussi à contrôler la propriété d'une sauce avant toute modification.",
+        "J'ai organisé le CRUD avec Express, des contrôleurs dédiés et des modèles Mongoose. La gestion des images et des erreurs est intégrée au parcours afin que chaque route renvoie une réponse adaptée au client.",
       ],
       technologies: [
         { name: 'Node.js', category: 'Backend', description: "Environnement d'exécution serveur" },
@@ -1070,15 +1108,25 @@ export class PortfolioDataService {
       milestones: [
         {
           date: 'Juillet 2022',
-          title: 'Réalisation',
-          description: 'Déploiement du serveur sécurisé avec base connectée',
+          title: 'Analyse du front-end fourni',
+          description: "J'ai commencé par examiner les appels attendus par l'interface afin d'identifier les routes, les formats de données et les règles d'autorisation que l'API devait respecter. Cette analyse a guidé la modélisation des utilisateurs et des sauces dans MongoDB.",
+        },
+        {
+          date: 'Juillet 2022',
+          title: 'Construction et sécurisation de l’API',
+          description: "J'ai développé les opérations de création, de consultation, de modification et de suppression avec Node.js, Express et Mongoose. J'ai ensuite protégé les parcours sensibles avec l'authentification par jeton, le hachage des mots de passe et la vérification du propriétaire d'une ressource.",
+        },
+        {
+          date: 'Juillet 2022',
+          title: 'Vérification et livraison',
+          description: "J'ai testé les principaux scénarios depuis l'interface fournie, y compris l'ajout d'images et les interactions de vote, puis corrigé les réponses incohérentes de l'API. Le livrable final réunissait un serveur connecté à MongoDB et les contrôles de sécurité demandés par le cahier des charges.",
         },
       ],
       links: { github: 'https://github.com/MathildeJNL/MathildeJeannolle_6_01072022' },
       relatedSkillCategories: [
         { id: 'git', name: 'Git' },
       ],
-      ...projectEnrichedData['openclassrooms-6'],
+      ...projectEnrichedData['openclassrooms-5'],
     },
     {
       id: 'openclassrooms-7',
@@ -1086,7 +1134,7 @@ export class PortfolioDataService {
       subtitle: 'Projet Formation OpenClassrooms',
       description: "Développement d'un réseau social interne avec VueJS (CRUD) et Base de données SQL.",
       longDescription:
-        "Ce projet final \"Groupomania\" englobait le frontend et le backend. L'intitulé demandait de créer un réseau social interne pour les employés d'une entreprise, leur permettant de s'authentifier, publier des articles, interagir et modérer le contenu.",
+        "Groupomania constituait le projet final de mon parcours OpenClassrooms et réunissait pour la première fois l'ensemble des couches d'une application. L'objectif était de créer un réseau social interne sur lequel les collaborateurs d'une entreprise pouvaient créer un compte, publier du contenu, interagir avec les publications et signaler ou modérer les échanges. J'ai développé l'interface avec Vue.js, puis une API Node.js et Express reliée à une base MySQL par Sequelize. Ce travail m'a demandé de penser conjointement la structure relationnelle des données, les règles d'autorisation et les parcours affichés côté client. En menant seule ce projet de bout en bout, j'ai appris à anticiper les dépendances entre front-end et back-end et à garder une architecture cohérente jusqu'à la livraison.",
       imageUrl: 'assets/images/projects/groupomania1.png',
       galleryImages: [],
       tags: ['VueJS', 'SQL', 'CRUD'],
@@ -1100,16 +1148,16 @@ export class PortfolioDataService {
       challenges: [
         {
           title: 'Full Stack',
-          description: "Gérer de bout en bout l'application: de la base de données à l'intégration frontend.",
+          description: "Groupomania réunissait une interface Vue.js, une API Node.js et une base MySQL. Je devais faire évoluer ces trois couches ensemble et vérifier qu'une décision de modèle ou d'autorisation restait cohérente jusque dans le parcours affiché à l'utilisateur.",
         },
         {
           title: 'Structure de données Relationnelle',
-          description: 'Gérer les relations de bases de données en SQL pour les auteurs et les publications.',
+          description: "Les comptes, les publications et les interactions sont liés entre eux et doivent rester cohérents lorsqu'un contenu ou un utilisateur est supprimé. La difficulté consistait à définir les relations et les contraintes avant de les traduire avec Sequelize.",
         },
       ],
       solutions: [
-        "Utilisation du framework Vue.js pour créer l'interface utilisateur réactive",
-        "Création d'une architecture Node.js / Express couplée à une base MySQL/Sequelize",
+        "J'ai construit avec Vue.js des vues correspondant aux principaux parcours : authentification, consultation du fil, création de contenu et interactions. Les appels à l'API mettent ensuite l'interface à jour en fonction des droits et des réponses reçues.",
+        "Le serveur Node.js et Express expose des routes séparées par domaine fonctionnel, reliées à MySQL avec Sequelize. Cette organisation centralise les règles d'accès et garde la logique de persistance en dehors des composants Vue.",
       ],
       technologies: [
         { name: 'Vue.js', category: 'Frontend', description: 'Framework JavaScript progressif' },
@@ -1117,7 +1165,21 @@ export class PortfolioDataService {
         { name: 'MySQL', category: 'Base de données', description: 'SGBD Relationnel' },
       ],
       milestones: [
-        { date: 'Juillet 2022', title: 'Réalisation', description: 'Livrable Fullstack du projet Groupomania' },
+        {
+          date: 'Juillet 2022',
+          title: 'Conception des données et des parcours',
+          description: "J'ai commencé par traduire le cahier des charges en parcours d'authentification, de publication et de modération. La structure MySQL a ensuite été conçue pour relier les utilisateurs, les publications et leurs interactions avant le développement des écrans.",
+        },
+        {
+          date: 'Juillet 2022',
+          title: 'Développement full-stack',
+          description: "J'ai construit l'API Node.js et Express, relié les modèles à MySQL avec Sequelize puis développé l'interface Vue.js. J'ai avancé fonctionnalité par fonctionnalité pour vérifier que les mêmes règles d'autorisation et les mêmes états étaient compris par le front-end et le serveur.",
+        },
+        {
+          date: 'Juillet 2022',
+          title: 'Tests et présentation finale',
+          description: "J'ai vérifié manuellement les parcours principaux, corrigé les incohérences entre les couches et préparé une démonstration du produit complet. Cette livraison a clôturé mon parcours OpenClassrooms et m'a permis de présenter une application conçue de bout en bout.",
+        },
       ],
       links: { github: 'https://github.com/MathildeJNL/MathildeJeannolle_7_22072022' },
       relatedSkillCategories: [
@@ -1153,6 +1215,8 @@ export class PortfolioDataService {
       startDate: '2024-10',
       endDate: null,
       current: true,
+      status: 'Alternante',
+      responsibility: "Développeuse web intégrée à une équipe produit, responsable de l'analyse et du développement des évolutions qui me sont confiées.",
       description:
         "Développement d'applications web full-stack dans le cadre d'un Mastère Expert en Ingénierie du Logiciel.",
       highlights: [
@@ -1166,6 +1230,13 @@ export class PortfolioDataService {
       colorClass: 'text-brand-blue',
       bgClass: 'bg-brand-blue/20',
       linkedTo: '2',
+      relatedProjects: [
+        {
+          id: 'extranet',
+          title: 'Portail de gestion des configurations client',
+          description: "Application interne Angular et Node.js développée dans le cadre de mon alternance.",
+        },
+      ],
       relatedSkillCategories: [
         { id: 'angular', name: 'Angular' },
         { id: 'typescript', name: 'TypeScript' },
@@ -1187,6 +1258,8 @@ export class PortfolioDataService {
       startDate: '2024-10',
       endDate: '2026-09',
       current: true,
+      institutionDescription:
+        "L'ISCOD est une école spécialisée dans les métiers du digital. Son parcours en alternance associe enseignements à distance, projets professionnalisants et mise en pratique continue en entreprise.",
       description:
         "Formation en alternance couvrant l'architecture logicielle, le développement full-stack, DevOps et la gestion de projet.",
       highlights: [
@@ -1218,6 +1291,8 @@ export class PortfolioDataService {
       startDate: '2023-09',
       endDate: '2024-09',
       current: false,
+      status: 'Alternante',
+      responsibility: "Contributrice aux activités d'automatisation, de supervision et de fiabilisation des environnements.",
       description: 'Mission SRE (Site Reliability Engineering) avec automatisation et monitoring des systèmes.',
       highlights: [
         'Automatisation avec Python et Bash',
@@ -1249,6 +1324,8 @@ export class PortfolioDataService {
       startDate: '2023-09',
       endDate: '2024-09',
       current: false,
+      institutionDescription:
+        "CESI est un établissement d'enseignement supérieur tourné vers l'ingénierie et l'entreprise. La pédagogie donne une place importante aux projets, à la conception logicielle et à l'autonomie.",
       description: "Formation intensive d'un an en développement logiciel, de la conception au déploiement.",
       highlights: [
         'Programmation orientée objet avec Java',
@@ -1278,6 +1355,8 @@ export class PortfolioDataService {
       startDate: '2023-05',
       endDate: '2023-07',
       current: false,
+      institutionDescription:
+        "La Wild Code School est une école spécialisée dans les métiers du numérique. Cette formation intensive repose sur la pratique, les projets collectifs et l'apprentissage des méthodes de travail agiles.",
       description: 'Formation intensive de 3 mois au métier de développeur Java full-stack.',
       highlights: [
         'Front-end : HTML/CSS, JavaScript, Angular',
@@ -1309,6 +1388,8 @@ export class PortfolioDataService {
       startDate: '2021-11',
       endDate: '2022-08',
       current: false,
+      institutionDescription:
+        "OpenClassrooms propose des parcours professionnalisants en ligne construits autour de projets concrets et accompagnés par un mentor. Chaque expérience de projet permet de valider une compétence directement applicable en entreprise.",
       description: 'Formation diplômante en développement web (équivalent Bac+2).',
       highlights: [
         'Développement front-end et back-end',
@@ -1333,10 +1414,13 @@ export class PortfolioDataService {
       type: 'job',
       title: 'Apprentie Préparatrice en Pharmacie',
       organization: 'Pharmacie Lefèvre',
+      organizationLogo: 'assets/images/Pharmacy_Green_Cross2.png',
       location: 'Olivet, Centre-Val de Loire',
       startDate: '2018-09',
       endDate: '2021-08',
       current: false,
+      status: 'Alternante',
+      responsibility: "Préparatrice en pharmacie sous la responsabilité du pharmacien, au contact direct des patients et des opérations quotidiennes de l'officine.",
       description: 'Préparation et délivrance de médicaments, conseil aux patients pendant 3 ans en alternance.',
       highlights: [
         'Délivrance de médicaments et conseils patients',
@@ -1358,10 +1442,14 @@ export class PortfolioDataService {
       type: 'education',
       title: 'Brevet Professionnel Préparateur en Pharmacie',
       organization: "CFA Pharmacie d'Orléans",
+      organizationUrl: 'https://www.cfapharmacie.com/campus-orleans/',
+      organizationLogo: 'assets/images/cfa_pharmacie_logo.svg',
       location: 'Orléans, France',
       startDate: '2018-09',
       endDate: '2021-08',
       current: false,
+      institutionDescription:
+        "Le CFA Pharmacie d'Orléans est spécialisé dans la formation aux métiers de la pharmacie d'officine. Son enseignement articule connaissances scientifiques, travaux pratiques et expérience quotidienne auprès des patients.",
       description: 'Formation en alternance de 3 ans en préparation pharmaceutique.',
       highlights: ['Formation théorique et pratique', 'Diplôme obtenu avec succès'],
       icon: 'school',
@@ -1379,10 +1467,14 @@ export class PortfolioDataService {
       type: 'job',
       title: 'Apprentie Réceptionniste',
       organization: 'Hôtel Ibis Styles Mulsanne',
+      organizationUrl: 'https://all.accor.com/booking/fr/ibis/hotel/A8Q1?destination=mulsanne-france&compositions=1&dateIn=2026-07-21&dateOut=2026-07-22&nights=1&hideWDR=false&accessibleRoom=false',
+      organizationLogo: 'assets/images/ibis_styles_logo.svg',
       location: 'Mulsanne, Pays de la Loire',
       startDate: '2017-09',
       endDate: '2018-08',
       current: false,
+      status: 'Alternante',
+      responsibility: "Réceptionniste chargée de l'accueil, du suivi des réservations et de la continuité du service auprès des clients.",
       description: 'Accueil des clients et gestion des réservations en hôtellerie pendant 1 an.',
       highlights: ['Accueil et relation client', 'Gestion des réservations', 'Obtention de la Mention Complémentaire'],
       icon: 'work',
@@ -1399,11 +1491,16 @@ export class PortfolioDataService {
       id: '10',
       type: 'education',
       title: 'MC Accueil et Réception',
-      organization: 'CFA de Tours',
+      organization: 'La Cité des Formations — Tours Loire Valley',
+      organizationUrl: 'https://www.cite-formations-tours.fr/',
+      organizationLogo: 'assets/images/logo_citedesformations_white.png',
+      organizationLogoMonochrome: true,
       location: 'Tours, France',
       startDate: '2017-09',
       endDate: '2018-08',
       current: false,
+      institutionDescription:
+        "La Cité des Formations est un centre de formation d'apprentis interprofessionnel implanté à Tours. La formation suivie préparait aux métiers de l'accueil hôtelier en combinant techniques de réception, communication, langues étrangères et gestion du séjour client.",
       description: 'Mention Complémentaire en accueil et réception hôtelière.',
       highlights: ['Formation en alternance', 'Diplôme obtenu avec succès'],
       icon: 'school',
@@ -1420,10 +1517,15 @@ export class PortfolioDataService {
       type: 'education',
       title: 'Bac Pro Commercialisation et Service en Restauration',
       organization: "Lycée des Métiers de l'Hôtellerie et du Tourisme du Val de Loire",
+      organizationUrl: 'https://lycee-hotellerie-tourisme.fr/',
+      organizationLogo: 'assets/images/lycee_hotellerie_logo.png',
+      organizationLogoMonochrome: true,
       location: 'Blois, Centre-Val de Loire',
       startDate: '2014-09',
       endDate: '2017-06',
       current: false,
+      institutionDescription:
+        "Le lycée des métiers de l'hôtellerie et du tourisme du Val de Loire forme aux exigences du service et de la relation client. Les enseignements associent pratique professionnelle, organisation et culture de l'accueil.",
       description: 'Formation en commercialisation et service en restauration.',
       highlights: ['Service en salle et relation client', 'Diplôme obtenu avec succès'],
       icon: 'school',
@@ -1568,7 +1670,7 @@ export class PortfolioDataService {
       colorClass: 'text-brand-green',
       bgClass: 'bg-brand-green/20',
       paragraphs: [
-        "Je crois profondément en un développement responsable et conscient. Chaque ligne de code a un impact : sur l'utilisateur, sur l'équipe, sur l'environnement. J'apporte un soin particulier à la qualité, la maintenabilité et la durabilité de mes réalisations.",
+        "Je crois profondément en un développement responsable et conscient. Chaque ligne de code a un impact : sur l'utilisateur, sur l'équipe, sur l'environnement. J'apporte un soin particulier à la qualité, la maintenabilité et la durabilité de mes projets.",
         "Mon parcours en pharmacie m'a inculqué la rigueur et l'exigence dans le moindre détail — des qualités que j'applique au quotidien dans le développement : tests, revues de code et documentation.",
       ],
     },

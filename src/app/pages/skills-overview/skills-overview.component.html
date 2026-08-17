@@ -1,6 +1,6 @@
 ﻿<!-- Hero Section -->
-<app-hero-section badgeIcon="insights" badgeLabel="Expertise" title="Compétences & " titleHighlight="Analytics"
-  description="Une vue d'ensemble de mes compétences techniques, certifications et domaines d'expertise. Cliquez sur une catégorie pour voir le détail."
+<app-hero-section badgeIcon="insights" badgeLabel="Expertise" title="Compétences & " titleHighlight="mise en pratique"
+  description="Au-delà d'une liste de technologies, cette rubrique explique comment j'ai acquis chaque compétence, dans quels contextes je l'utilise et ce qu'elle apporte concrètement à mes projets."
   maxWidth="1200px" [hasContent]="true">
   <!-- Stats -->
   <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
@@ -114,7 +114,9 @@
           class="text-lg font-bold mb-2 group-hover:text-brand-blue transition-colors text-slate-900 dark:text-brand-text">
           {{
           category.name }}</h3>
-        <p class="text-sm text-slate-500 dark:text-brand-muted mb-4">{{ category.description }}</p>
+        <p class="text-sm text-slate-500 dark:text-brand-muted mb-4 leading-relaxed line-clamp-5">
+          {{ category.longDescription || category.description }}
+        </p>
 
         <!-- Progress Bar -->
         <div class="w-full h-2 bg-slate-200 dark:bg-brand-bg rounded-full overflow-hidden mb-4">
@@ -142,7 +144,7 @@
 
         <!-- View More -->
         <div class="mt-4 pt-4 border-t border-slate-200 dark:border-brand-border flex items-center justify-between">
-          <small class="text-sm text-slate-500 dark:text-brand-muted">Voir le détail</small>
+          <small class="text-sm text-slate-500 dark:text-brand-muted">Lire l'analyse et les exemples</small>
           <i class="material-symbols-outlined text-brand-blue opacity-0 group-hover:opacity-100 transition-opacity"
             aria-hidden="true">
             arrow_forward

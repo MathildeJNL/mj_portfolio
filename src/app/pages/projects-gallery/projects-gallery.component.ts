@@ -35,6 +35,7 @@ export class ProjectsGalleryComponent {
         (p) =>
           p.title.toLowerCase().includes(query) ||
           p.description.toLowerCase().includes(query) ||
+          this.getEditorialDescription(p).toLowerCase().includes(query) ||
           p.tags.some((t) => t.toLowerCase().includes(query)),
       );
     }
@@ -58,6 +59,10 @@ export class ProjectsGalleryComponent {
 
   getCategoryIcon(categoryId: string): string {
     return this.categories.find((c) => c.id === categoryId)?.icon || 'folder';
+  }
+
+  getEditorialDescription(project: ProjectGalleryItem): string {
+    return this.data.getProjectDetailById(project.id)?.longDescription ?? project.description;
   }
 
   goToContact(): void {

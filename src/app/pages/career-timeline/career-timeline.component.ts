@@ -5,15 +5,14 @@ import { PortfolioDataService } from '../../shared/services/portfolio-data.servi
 import { ButtonComponent } from '../../shared';
 import { TimelineEvent } from '../../shared/models';
 
-interface TimelineItem {
-  id: string;
-  type: 'alternance' | 'standalone';
-  startDate: string;
-  endDate: string | null;
-  current: boolean;
-  education?: TimelineEvent;
-  job?: TimelineEvent;
-  event?: TimelineEvent;
+interface TimelineSection {
+  id: 'job' | 'education';
+  title: string;
+  intro: string;
+  icon: string;
+  colorClass: string;
+  bgClass: string;
+  events: TimelineEvent[];
 }
 
 @Component({
@@ -30,6 +29,7 @@ export class CareerTimelineComponent {
 
   readonly filters = this.data.timelineFilters;
   readonly timelineEvents = this.data.timelineEvents;
+  readonly expandedEventIds = new Set<string>();
 
   goToSkills(): void {
     this.router.navigate(['/skills']);
@@ -39,75 +39,52 @@ export class CareerTimelineComponent {
     this.router.navigate(['/contact']);
   }
 
-  get filteredEvents(): TimelineEvent[] {
-    if (this.activeFilter === 'all') return this.timelineEvents;
-    return this.timelineEvents.filter((e) => e.type === this.activeFilter);
-  }
+  get visibleSections(): TimelineSection[] {
+    const sections: TimelineSection[] = [
+      {
+        id: 'job',
+        title: 'Expériences professionnelles',
+        intro:
+          "Mes expériences en entreprise, les responsabilités qui m'ont été confiées et les projets auxquels j'ai contribué.",
+        icon: 'work',
+        colorClass: 'text-brand-blue',
+        bgClass: 'bg-brand-blue/10',
+        events: this.timelineEvents.filter((event) => event.type === 'job'),
+      },
+      {
+        id: 'education',
+        title: 'Formations',
+        intro:
+          "Les diplômes et formations qui ont accompagné mon évolution professionnelle, de l'accueil au développement logiciel.",
+        icon: 'school',
+        colorClass: 'text-brand-green',
+        bgClass: 'bg-brand-green/10',
+        events: this.timelineEvents.filter((event) => event.type === 'education'),
+      },
+    ];
 
-  get groupedTimelineItems(): TimelineItem[] {
-    const processed = new Set<string>();
-    const items: TimelineItem[] = [];
-    const eventsToProcess = this.filteredEvents;
-
-    for (const event of eventsToProcess) {
-      if (processed.has(event.id)) continue;
-
-      if (event.linkedTo) {
-        const linkedEvent = this.timelineEvents.find((e) => e.id === event.linkedTo);
-        const linkedInFiltered = eventsToProcess.find((e) => e.id === event.linkedTo);
-
-        if (linkedEvent && linkedInFiltered && !processed.has(linkedEvent.id)) {
-          const education = event.type === 'education' ? event : linkedEvent;
-          const job = event.type === 'job' ? event : linkedEvent;
-
-          items.push({
-            id: `alternance-${event.id}-${linkedEvent.id}`,
-            type: 'alternance',
-            startDate: event.startDate,
-            endDate: event.endDate,
-            current: event.current || linkedEvent.current,
-            education,
-            job,
-          });
-
-          processed.add(event.id);
-          processed.add(linkedEvent.id);
-        } else {
-          items.push({
-            id: `standalone-${event.id}`,
-            type: 'standalone',
-            startDate: event.startDate,
-            endDate: event.endDate,
-            current: event.current,
-            event,
-          });
-          processed.add(event.id);
-        }
-      } else {
-        items.push({
-          id: `standalone-${event.id}`,
-          type: 'standalone',
-          startDate: event.startDate,
-          endDate: event.endDate,
-          current: event.current,
-          event,
-        });
-        processed.add(event.id);
-      }
-    }
-
-    return items;
+    if (this.activeFilter === 'all') return sections;
+    return sections.filter((section) => section.id === this.activeFilter);
   }
 
   setFilter(filter: string): void {
     this.activeFilter = filter;
   }
 
-  formatDateRange(event: TimelineEvent): string {
-    return this.data.formatDateRange(event);
+  toggleDetails(eventId: string): void {
+    if (this.expandedEventIds.has(eventId)) {
+      this.expandedEventIds.delete(eventId);
+      return;
+    }
+
+    this.expandedEventIds.add(eventId);
   }
 
-  getTypeLabel(type: string): string {
-    return this.data.getTypeLabel(type);
+  isExpanded(eventId: string): boolean {
+    return this.expandedEventIds.has(eventId);
+  }
+
+  formatDateRange(event: TimelineEvent): string {
+    return this.data.formatDateRange(event);
   }
 }

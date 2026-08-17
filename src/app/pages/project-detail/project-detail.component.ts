@@ -46,4 +46,48 @@ export class ProjectDetailComponent implements OnInit {
   getStatusColor(status: string): string {
     return this.data.getStatusColor(status);
   }
+
+  joinParagraph(parts: string[] | undefined): string {
+    return (parts ?? []).map((part) => this.asSentence(part)).join(' ');
+  }
+
+  getChallengesParagraph(challenges: ProjectDetail['challenges']): string {
+    return challenges
+      .map((challenge) => this.asSentence(`${challenge.title} : ${challenge.description}`))
+      .join(' ');
+  }
+
+  getActorsParagraph(actors: NonNullable<ProjectDetail['actors']>): string {
+    return actors
+      .map((actor) => this.asSentence(`${actor.role} : ${actor.description}`))
+      .join(' ');
+  }
+
+  getReflectionParagraph(reflection: NonNullable<ProjectDetail['reflection']>): string {
+    const paragraphs = [
+      reflection.whatWorkedWell.length
+        ? `Plusieurs aspects ont bien fonctionné au cours de cette expérience. ${this.joinParagraph(reflection.whatWorkedWell)}`
+        : '',
+      reflection.whatCouldBeImproved.length
+        ? `Cette analyse met également en évidence des axes d'amélioration. ${this.joinParagraph(reflection.whatCouldBeImproved)}`
+        : '',
+      reflection.lessonsLearned.length
+        ? `J'en retiens plusieurs enseignements pour mes prochains projets. ${this.joinParagraph(reflection.lessonsLearned)}`
+        : '',
+      reflection.wouldDoDifferently
+        ? `Avec le recul, ${this.lowercaseFirst(reflection.wouldDoDifferently)}`
+        : '',
+    ];
+
+    return paragraphs.filter(Boolean).join(' ');
+  }
+
+  private asSentence(value: string): string {
+    const sentence = value.trim();
+    return /[.!?…]$/.test(sentence) ? sentence : `${sentence}.`;
+  }
+
+  private lowercaseFirst(value: string): string {
+    return value ? `${value.charAt(0).toLocaleLowerCase('fr-FR')}${value.slice(1)}` : value;
+  }
 }

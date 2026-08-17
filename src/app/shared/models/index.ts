@@ -73,6 +73,8 @@ export interface SkillAnecdote {
   action: string;
   result: string;
   addedValue: string;
+  /** Expérience détaillée qui apporte la preuve évoquée dans l'anecdote */
+  relatedProject?: { id: string; title: string };
 }
 
 /** Self-critique on skill mastery */
@@ -87,6 +89,7 @@ export interface SkillSelfCritique {
 export interface SkillEvolution {
   futureLevel: number;
   targetDate: string;
+  summary?: string;
   trainingPlans: string[];
   nextSteps: string[];
 }
@@ -195,10 +198,15 @@ export interface TimelineEvent {
   organization: string;
   organizationUrl?: string;
   organizationLogo?: string;
+  organizationLogoMonochrome?: boolean;
   location: string;
   startDate: string;
   endDate: string | null;
   current: boolean;
+  /** Statut occupé pendant une expérience (alternante, salariée, etc.) */
+  status?: string;
+  /** Niveau de responsabilité exercé dans l'organisation */
+  responsibility?: string;
   description: string;
   highlights: string[];
   technologies?: string[];
@@ -206,6 +214,8 @@ export interface TimelineEvent {
   colorClass: string;
   bgClass: string;
   linkedTo?: string;
+  /** Présentation éditoriale de l'établissement de formation */
+  institutionDescription?: string;
   organizationTooltip?: string;
   relatedProjects?: ProjectRef[];
   relatedSkillCategories?: { id: string; name: string }[];

@@ -21,8 +21,8 @@
     </h1>
 
     <p class="text-lg text-slate-500 dark:text-brand-muted max-w-2xl mx-auto">
-      Découvrez une sélection de projets techniques sur lesquels j'ai travaillé, de l'infrastructure cloud aux
-      applications full-stack.
+      Chaque expérience est présentée comme une étude de cas : son contexte, les besoins auxquels elle répond, les
+      choix effectués, les difficultés rencontrées et les enseignements que j'en ai tirés.
     </p>
   </div>
 </section>
@@ -94,7 +94,7 @@
           <!-- Content Overlay -->
           <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
             <h3 class="text-2xl font-bold mb-2 group-hover:text-brand-blue transition-colors">{{ project.title }}</h3>
-            <p class="text-sm text-white/70 line-clamp-2">{{ project.description }}</p>
+            <p class="text-sm text-white/80 line-clamp-3 leading-relaxed">{{ getEditorialDescription(project) }}</p>
           </div>
         </div>
 
@@ -179,8 +179,8 @@
         <!-- Content -->
         <div class="p-5 flex-1 flex flex-col">
           <h3 class="text-lg font-bold mb-2 group-hover:text-brand-blue transition-colors">{{ project.title }}</h3>
-          <p class="text-sm text-slate-500 dark:text-brand-muted mb-4 line-clamp-2 flex-1">
-            {{ project.description }}
+          <p class="text-sm text-slate-500 dark:text-brand-muted mb-4 leading-relaxed line-clamp-5 flex-1">
+            {{ getEditorialDescription(project) }}
           </p>
 
           <div class="flex flex-wrap gap-2">
@@ -194,6 +194,12 @@
               +{{ project.tags.length - 3 }}
             </small>
             }
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-slate-200 dark:border-brand-border flex items-center justify-between">
+            <small class="font-semibold text-brand-blue">Lire l'étude de cas</small>
+            <i class="material-symbols-outlined text-brand-blue text-lg group-hover:translate-x-1 transition-transform"
+              aria-hidden="true">arrow_forward</i>
           </div>
         </div>
       </a>

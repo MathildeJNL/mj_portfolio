@@ -163,143 +163,104 @@
 
         <!-- Challenges -->
         <div class="bg-white dark:bg-brand-surface rounded-xl border border-slate-200 dark:border-brand-border p-6">
-          <h2 class="text-xl font-bold mb-4 flex items-center gap-2">
-            <i class="material-symbols-outlined text-brand-amber" aria-hidden="true">warning</i>
-            Défis rencontrés
-          </h2>
-          <div class="space-y-4">
-            @for (challenge of project.challenges; track challenge.title) {
-            <div class="p-4 rounded-lg bg-brand-amber/10 border border-brand-amber/20">
-              <h3 class="font-bold text-slate-900 dark:text-brand-text mb-1">{{ challenge.title }}</h3>
-              <p class="text-sm text-slate-500 dark:text-brand-muted">{{ challenge.description }}</p>
-            </div>
-            }
-          </div>
+          <h2 class="text-xl font-bold mb-4">Défis rencontrés</h2>
+          <p class="text-base text-slate-600 dark:text-brand-muted leading-7">
+            {{ getChallengesParagraph(project.challenges) }}
+          </p>
         </div>
 
         <!-- Solutions -->
         <div class="bg-white dark:bg-brand-surface rounded-xl border border-slate-200 dark:border-brand-border p-6">
-          <h2 class="text-xl font-bold mb-4 flex items-center gap-2">
-            <i class="material-symbols-outlined text-brand-green" aria-hidden="true">lightbulb</i>
-            Solutions apportées
-          </h2>
-          <ul class="space-y-3">
-            @for (solution of project.solutions; track solution) {
-            <li class="flex items-start gap-3">
-              <i class="material-symbols-outlined text-brand-green text-xl shrink-0" aria-hidden="true">check_circle</i>
-              <p class="text-sm text-slate-500 dark:text-brand-muted">{{ solution }}</p>
-            </li>
-            }
-          </ul>
+          <h2 class="text-xl font-bold mb-4">Solutions apportées</h2>
+          <p class="text-base text-slate-600 dark:text-brand-muted leading-7">
+            {{ joinParagraph(project.solutions) }}
+          </p>
         </div>
 
         <!-- Objectives -->
         @if (project.objectives && project.objectives.length > 0) {
         <div class="bg-white dark:bg-brand-surface rounded-xl border border-slate-200 dark:border-brand-border p-6">
-          <h2 class="text-xl font-bold mb-4 flex items-center gap-2">
-            <i class="material-symbols-outlined text-brand-blue" aria-hidden="true">flag</i>
-            Objectifs du projet
-          </h2>
-          <ul class="space-y-3">
-            @for (objective of project.objectives; track objective) {
-            <li class="flex items-start gap-3">
-              <i class="material-symbols-outlined text-brand-blue text-xl shrink-0" aria-hidden="true">arrow_right</i>
-              <p class="text-sm text-slate-600 dark:text-brand-muted">{{ objective }}</p>
-            </li>
-            }
-          </ul>
+          <h2 class="text-xl font-bold mb-4">Objectifs du projet</h2>
+          <p class="text-base text-slate-600 dark:text-brand-muted leading-7">
+            {{ joinParagraph(project.objectives) }}
+          </p>
         </div>
         }
 
         <!-- Context & Stakes -->
         @if (project.context || project.stakes) {
         <div class="bg-white dark:bg-brand-surface rounded-xl border border-slate-200 dark:border-brand-border p-6">
-          <h2 class="text-xl font-bold mb-4 flex items-center gap-2">
-            <i class="material-symbols-outlined text-brand-blue" aria-hidden="true">info</i>
-            Contexte & Enjeux
-          </h2>
+          <h2 class="text-xl font-bold mb-4">Contexte & Enjeux</h2>
           @if (project.context) {
           <div class="mb-4">
             <h3 class="text-sm font-bold uppercase tracking-wide text-slate-400 dark:text-brand-muted mb-2">Contexte
             </h3>
-            <p class="text-sm text-slate-600 dark:text-brand-muted leading-relaxed">{{ project.context }}</p>
+            <p class="text-base text-slate-600 dark:text-brand-muted leading-7">{{ project.context }}</p>
           </div>
           }
           @if (project.stakes) {
           <div>
             <h3 class="text-sm font-bold uppercase tracking-wide text-slate-400 dark:text-brand-muted mb-2">Enjeux</h3>
-            <p class="text-sm text-slate-600 dark:text-brand-muted leading-relaxed">{{ project.stakes }}</p>
+            <p class="text-base text-slate-600 dark:text-brand-muted leading-7">{{ joinParagraph(project.stakes) }}</p>
           </div>
           }
+        </div>
+        }
+
+        <!-- Experience stages -->
+        @if (project.milestones && project.milestones.length > 0) {
+        <div class="bg-white dark:bg-brand-surface rounded-xl border border-slate-200 dark:border-brand-border p-6">
+          <h2 class="text-xl font-bold mb-4">Déroulement de l'expérience</h2>
+          <p class="text-base text-slate-600 dark:text-brand-muted leading-7 mb-6">
+            Ces étapes présentent la progression du travail, depuis le cadrage du besoin jusqu'aux principaux
+            résultats obtenus ou aux développements encore prévus.
+          </p>
+          <div class="space-y-6">
+            @for (milestone of project.milestones; track milestone.date + milestone.title) {
+            <article class="border-l-2 border-brand-blue/30 pl-5">
+              <small class="text-sm font-semibold text-brand-blue">{{ milestone.date }}</small>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-brand-text mt-1 mb-2">{{ milestone.title }}</h3>
+              <p class="text-base text-slate-600 dark:text-brand-muted leading-7">{{ milestone.description }}</p>
+            </article>
+            }
+          </div>
         </div>
         }
 
         <!-- Actors & Interactions -->
         @if (project.actors && project.actors.length > 0) {
         <div class="bg-white dark:bg-brand-surface rounded-xl border border-slate-200 dark:border-brand-border p-6">
-          <h2 class="text-xl font-bold mb-4 flex items-center gap-2">
-            <i class="material-symbols-outlined text-brand-blue" aria-hidden="true">groups</i>
-            Acteurs & Interactions
-          </h2>
-          <div class="space-y-4">
-            @for (actor of project.actors; track actor.role) {
-            <div class="flex gap-4 p-4 rounded-lg bg-slate-50 dark:bg-brand-bg">
-              <div class="w-10 h-10 rounded-full bg-brand-blue/10 flex items-center justify-center shrink-0">
-                <i class="material-symbols-outlined text-brand-blue" aria-hidden="true">person</i>
-              </div>
-              <div class="flex-1">
-                <h3 class="font-bold text-slate-900 dark:text-brand-text mb-1">{{ actor.role }}</h3>
-                <p class="text-sm text-slate-600 dark:text-brand-muted">{{ actor.description }}</p>
-              </div>
-            </div>
-            }
-          </div>
+          <h2 class="text-xl font-bold mb-4">Acteurs & Interactions</h2>
+          <p class="text-base text-slate-600 dark:text-brand-muted leading-7">
+            {{ getActorsParagraph(project.actors) }}
+          </p>
         </div>
         }
 
         <!-- Results -->
         @if (project.results) {
         <div class="bg-white dark:bg-brand-surface rounded-xl border border-slate-200 dark:border-brand-border p-6">
-          <h2 class="text-xl font-bold mb-4 flex items-center gap-2">
-            <i class="material-symbols-outlined text-brand-green" aria-hidden="true">celebration</i>
-            Résultats du projet
-          </h2>
+          <h2 class="text-xl font-bold mb-4">Apports de l'expérience</h2>
 
           @if (project.results.forStudent && project.results.forStudent.length > 0) {
           <div class="mb-6">
-            <h3
-              class="text-sm font-bold uppercase tracking-wide text-slate-400 dark:text-brand-muted mb-3 flex items-center gap-2">
-              <i class="material-symbols-outlined text-base" aria-hidden="true">school</i>
-              Pour l'étudiant
+            <h3 class="text-sm font-bold uppercase tracking-wide text-slate-400 dark:text-brand-muted mb-3">
+              Ce que cette expérience m'a apporté
             </h3>
-            <ul class="space-y-2">
-              @for (result of project.results.forStudent; track result) {
-              <li class="flex items-start gap-2 text-sm text-slate-600 dark:text-brand-muted">
-                <i class="material-symbols-outlined text-brand-green text-base shrink-0"
-                  aria-hidden="true">check_circle</i>
-                {{ result }}
-              </li>
-              }
-            </ul>
+            <p class="text-base text-slate-600 dark:text-brand-muted leading-7">
+              {{ joinParagraph(project.results.forStudent) }}
+            </p>
           </div>
           }
 
           @if (project.results.forCompany && project.results.forCompany.length > 0) {
           <div>
-            <h3
-              class="text-sm font-bold uppercase tracking-wide text-slate-400 dark:text-brand-muted mb-3 flex items-center gap-2">
-              <i class="material-symbols-outlined text-base" aria-hidden="true">business</i>
-              Pour l'entreprise
+            <h3 class="text-sm font-bold uppercase tracking-wide text-slate-400 dark:text-brand-muted mb-3">
+              Apport dans le contexte professionnel
             </h3>
-            <ul class="space-y-2">
-              @for (result of project.results.forCompany; track result) {
-              <li class="flex items-start gap-2 text-sm text-slate-600 dark:text-brand-muted">
-                <i class="material-symbols-outlined text-brand-teal text-base shrink-0"
-                  aria-hidden="true">check_circle</i>
-                {{ result }}
-              </li>
-              }
-            </ul>
+            <p class="text-base text-slate-600 dark:text-brand-muted leading-7">
+              {{ joinParagraph(project.results.forCompany) }}
+            </p>
           </div>
           }
         </div>
@@ -308,26 +269,17 @@
         <!-- Future -->
         @if (project.future) {
         <div class="bg-gradient-to-br from-brand-teal/10 to-brand-blue/10 rounded-xl border border-brand-teal/20 p-6">
-          <h2 class="text-xl font-bold mb-4 flex items-center gap-2 text-slate-900 dark:text-brand-text">
-            <i class="material-symbols-outlined text-brand-teal" aria-hidden="true">rocket_launch</i>
-            Futur du projet
-          </h2>
-          <p class="text-sm text-slate-600 dark:text-brand-muted leading-relaxed mb-4">{{ project.future.status }}</p>
+          <h2 class="text-xl font-bold mb-4 text-slate-900 dark:text-brand-text">Perspectives d'évolution</h2>
+          <p class="text-base text-slate-600 dark:text-brand-muted leading-7 mb-4">{{ project.future.status }}</p>
 
           @if (project.future.potentialEnhancements && project.future.potentialEnhancements.length > 0) {
           <div class="mt-4 pt-4 border-t border-brand-teal/20">
             <h3 class="text-sm font-bold uppercase tracking-wide text-slate-400 dark:text-brand-muted mb-3">
               Améliorations potentielles
             </h3>
-            <ul class="space-y-2">
-              @for (enhancement of project.future.potentialEnhancements; track enhancement) {
-              <li class="flex items-start gap-2 text-sm text-slate-600 dark:text-brand-muted">
-                <i class="material-symbols-outlined text-brand-teal text-base shrink-0"
-                  aria-hidden="true">add_circle</i>
-                {{ enhancement }}
-              </li>
-              }
-            </ul>
+            <p class="text-base text-slate-600 dark:text-brand-muted leading-7">
+              {{ joinParagraph(project.future.potentialEnhancements) }}
+            </p>
           </div>
           }
         </div>
@@ -336,100 +288,20 @@
         <!-- Critical Reflection -->
         @if (project.reflection) {
         <div class="bg-white dark:bg-brand-surface rounded-xl border border-slate-200 dark:border-brand-border p-6">
-          <h2 class="text-xl font-bold mb-6 flex items-center gap-2">
-            <i class="material-symbols-outlined text-brand-blue" aria-hidden="true">psychology</i>
-            Réflexion critique
-          </h2>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- What Worked Well -->
-            @if (project.reflection.whatWorkedWell && project.reflection.whatWorkedWell.length > 0) {
-            <div class="p-4 rounded-lg bg-brand-green/5 border border-brand-green/20">
-              <h3 class="font-bold text-brand-green mb-3 flex items-center gap-2">
-                <i class="material-symbols-outlined" aria-hidden="true">thumb_up</i>
-                Ce qui a bien fonctionné
-              </h3>
-              <ul class="space-y-2">
-                @for (item of project.reflection.whatWorkedWell; track item) {
-                <li class="text-sm text-slate-600 dark:text-brand-muted flex items-start gap-2">
-                  <i class="material-symbols-outlined text-brand-green text-base shrink-0" aria-hidden="true">done</i>
-                  {{ item }}
-                </li>
-                }
-              </ul>
-            </div>
-            }
-
-            <!-- What Could Be Improved -->
-            @if (project.reflection.whatCouldBeImproved && project.reflection.whatCouldBeImproved.length > 0) {
-            <div class="p-4 rounded-lg bg-brand-amber/5 border border-brand-amber/20">
-              <h3 class="font-bold text-brand-amber mb-3 flex items-center gap-2">
-                <i class="material-symbols-outlined" aria-hidden="true">construction</i>
-                Points d'amélioration
-              </h3>
-              <ul class="space-y-2">
-                @for (item of project.reflection.whatCouldBeImproved; track item) {
-                <li class="text-sm text-slate-600 dark:text-brand-muted flex items-start gap-2">
-                  <i class="material-symbols-outlined text-brand-amber text-base shrink-0"
-                    aria-hidden="true">priority_high</i>
-                  {{ item }}
-                </li>
-                }
-              </ul>
-            </div>
-            }
-          </div>
-
-          <!-- Lessons Learned -->
-          @if (project.reflection.lessonsLearned && project.reflection.lessonsLearned.length > 0) {
-          <div class="mt-6 p-4 rounded-lg bg-brand-blue/5 border border-brand-blue/20">
-            <h3 class="font-bold text-brand-blue mb-3 flex items-center gap-2">
-              <i class="material-symbols-outlined" aria-hidden="true">school</i>
-              Leçons apprises
-            </h3>
-            <ul class="space-y-2">
-              @for (lesson of project.reflection.lessonsLearned; track lesson) {
-              <li class="text-sm text-slate-600 dark:text-brand-muted flex items-start gap-2">
-                <i class="material-symbols-outlined text-brand-blue text-base shrink-0"
-                  aria-hidden="true">arrow_right</i>
-                {{ lesson }}
-              </li>
-              }
-            </ul>
-          </div>
-          }
-
-          <!-- Would Do Differently -->
-          @if (project.reflection.wouldDoDifferently) {
-          <div
-            class="mt-6 p-4 rounded-lg bg-slate-50 dark:bg-brand-bg border border-slate-200 dark:border-brand-border">
-            <h3 class="font-bold text-slate-900 dark:text-brand-text mb-2 flex items-center gap-2">
-              <i class="material-symbols-outlined text-brand-blue" aria-hidden="true">sync</i>
-              Avec le recul, je ferais différemment
-            </h3>
-            <p class="text-sm text-slate-600 dark:text-brand-muted leading-relaxed">{{
-              project.reflection.wouldDoDifferently }}</p>
-          </div>
-          }
+          <h2 class="text-xl font-bold mb-4">Réflexion critique</h2>
+          <p class="text-base text-slate-600 dark:text-brand-muted leading-7">
+            {{ getReflectionParagraph(project.reflection) }}
+          </p>
         </div>
         }
 
         <!-- Risks -->
         @if (project.risks && project.risks.length > 0) {
         <div class="bg-white dark:bg-brand-surface rounded-xl border border-slate-200 dark:border-brand-border p-6">
-          <h2 class="text-xl font-bold mb-4 flex items-center gap-2">
-            <i class="material-symbols-outlined text-red-500" aria-hidden="true">warning</i>
-            Risques identifiés
-          </h2>
-          <div class="space-y-3">
-            @for (risk of project.risks; track risk) {
-            <div
-              class="flex items-start gap-3 p-4 rounded-lg bg-red-50/50 dark:bg-red-900/5 border border-red-200/50 dark:border-red-500/20">
-              <i class="material-symbols-outlined text-red-500 text-lg shrink-0" aria-hidden="true">error</i>
-              <p class="text-sm text-slate-600 dark:text-brand-muted">{{ risk }}</p>
-            </div>
-            }
-          </div>
+          <h2 class="text-xl font-bold mb-4">Risques identifiés</h2>
+          <p class="text-base text-slate-600 dark:text-brand-muted leading-7">
+            {{ joinParagraph(project.risks) }}
+          </p>
         </div>
         }
       </div>
@@ -447,33 +319,12 @@
             @for (actor of project.actors; track actor.role) {
             <div class="p-3 rounded-lg bg-slate-50 dark:bg-brand-bg">
               <p class="text-sm font-bold text-slate-900 dark:text-brand-text">{{ actor.role }}</p>
-              <p class="text-xs text-slate-500 dark:text-brand-muted mt-1">{{ actor.description }}</p>
+              <p class="text-sm text-slate-500 dark:text-brand-muted mt-1 leading-relaxed">{{ actor.description }}</p>
             </div>
             }
           </div>
         </div>
         }
-        <!-- Compétences associées -->
-        @if (project.relatedSkillCategories && project.relatedSkillCategories.length > 0) {
-        <div class="bg-white dark:bg-brand-surface rounded-xl border border-slate-200 dark:border-brand-border p-6">
-          <h3 class="font-bold mb-4 flex items-center gap-2">
-            <i class="material-symbols-outlined text-brand-blue" aria-hidden="true">insights</i>
-            Compétences associées
-          </h3>
-          <div class="space-y-2">
-            @for (skill of project.relatedSkillCategories; track skill.id) {
-            <a [routerLink]="['/skills', skill.id]"
-              class="flex items-center gap-3 p-3 rounded-lg bg-slate-50 dark:bg-brand-bg border border-slate-200 dark:border-brand-border hover:border-brand-blue hover:bg-brand-blue/5 transition-all group">
-              <i class="material-symbols-outlined text-brand-blue text-lg" aria-hidden="true">chevron_right</i>
-              <small
-                class="text-sm font-medium text-slate-500 dark:text-brand-muted group-hover:text-brand-blue transition-colors">{{
-                skill.name }}</small>
-            </a>
-            }
-          </div>
-        </div>
-        }
-
         <!-- Testimonial -->
         @if (project.testimonial) {
         <div class="bg-gradient-to-br from-brand-blue/10 to-brand-teal/10 rounded-xl border border-brand-blue/20 p-6">
@@ -488,6 +339,29 @@
 
       </div>
     </div>
+
+    @if (project.relatedSkillCategories && project.relatedSkillCategories.length > 0) {
+    <div class="mt-8 bg-white dark:bg-brand-surface rounded-xl border border-slate-200 dark:border-brand-border p-6">
+      <h2 class="text-xl font-bold mb-3 flex items-center gap-2">
+        <i class="material-symbols-outlined text-brand-blue" aria-hidden="true">insights</i>
+        Compétences mobilisées
+      </h2>
+      <p class="text-base text-slate-600 dark:text-brand-muted leading-7 mb-5">
+        Ces compétences ont été mobilisées au cours de l'expérience. Chaque lien présente ma définition, une preuve
+        concrète, mon niveau de maîtrise et les axes de progression que je me suis fixés.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        @for (skill of project.relatedSkillCategories; track skill.id) {
+        <a [routerLink]="['/skills', skill.id]"
+          class="flex items-center gap-3 p-4 rounded-lg bg-slate-50 dark:bg-brand-bg border border-slate-200 dark:border-brand-border hover:border-brand-blue hover:bg-brand-blue/5 transition-all group">
+          <span class="text-sm font-semibold text-slate-700 dark:text-brand-text group-hover:text-brand-blue transition-colors">
+            {{ skill.name }}
+          </span>
+        </a>
+        }
+      </div>
+    </div>
+    }
     }
 
     <!-- Technical Tab -->
@@ -506,7 +380,7 @@
               </small>
             </div>
             <h3 class="font-bold text-slate-900 dark:text-brand-text">{{ tech.name }}</h3>
-            <p class="text-sm text-slate-500 dark:text-brand-muted mt-1">{{ tech.description }}</p>
+            <p class="text-base text-slate-500 dark:text-brand-muted mt-1 leading-relaxed">{{ tech.description }}</p>
           </div>
           }
         </div>
@@ -522,7 +396,7 @@
           <i class="material-symbols-outlined text-brand-purple" aria-hidden="true">photo_library</i>
           Galerie
         </h2>
-        <p class="text-sm text-slate-500 dark:text-brand-muted mb-6">
+        <p class="text-base text-slate-500 dark:text-brand-muted mb-6 leading-relaxed">
           Aperçu visuel des interfaces du projet.
         </p>
         <div class="flex flex-wrap justify-center gap-6">
