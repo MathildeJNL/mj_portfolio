@@ -30,7 +30,7 @@
 <!-- Search & Filters -->
 <section class="px-4 md:px-8 pt-8 pb-8">
   <div class="max-w-[1200px] mx-auto">
-    <div class="flex flex-col md:flex-row gap-4 justify-between items-start md:items-center">
+    <div class="flex flex-col gap-4 items-start">
       <!-- Search -->
       <div class="relative w-full md:w-80">
         <i class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 dark:text-brand-muted"
@@ -39,15 +39,6 @@
           class="w-full pl-12 pr-4 py-3 rounded-lg border bg-white dark:bg-brand-surface border-slate-200 dark:border-brand-border focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 transition-all outline-none" />
       </div>
 
-      <!-- Sort -->
-      <div class="flex items-center gap-3">
-        <small class="text-sm text-slate-500 dark:text-brand-muted">Trier par:</small>
-        <select [(ngModel)]="sortBy" aria-label="Trier par"
-          class="px-4 py-2 rounded-lg border bg-white dark:bg-brand-surface border-slate-200 dark:border-brand-border focus:border-brand-blue outline-none text-sm">
-          <option value="recent">Plus récent</option>
-          <option value="featured">Mis en avant</option>
-        </select>
-      </div>
     </div>
 
     <!-- Categories -->
@@ -67,67 +58,8 @@
   </div>
 </section>
 
-<!-- Featured Projects -->
-@if (activeCategory === 'all' && !searchQuery) {
-<section class="py-8 px-4 md:px-8 bg-white dark:bg-brand-surface">
-  <div class="max-w-[1200px] mx-auto">
-    <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-      <i class="material-symbols-outlined text-brand-amber" aria-hidden="true">star</i>
-      Projets mis en avant
-    </h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      @for (project of featuredProjects.slice(0, 3); track project.id) {
-      <a [routerLink]="['/projects', project.id]"
-        class="group relative overflow-hidden rounded-2xl bg-white dark:bg-brand-surface border border-slate-200 dark:border-brand-border hover:shadow-2xl transition-all duration-300">
-        <!-- Image -->
-        <div class="h-64 w-full bg-cover bg-center relative" [style.background-image]="'url(' + project.imageUrl + ')'">
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent dark:from-brand-bg/80 dark:via-brand-bg/40">
-          </div>
-
-          <!-- Featured Badge -->
-          <div class="absolute top-4 right-4">
-            <small class="px-3 py-1 bg-brand-amber text-white text-xs font-bold rounded-full">Featured</small>
-          </div>
-
-          <!-- Content Overlay -->
-          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-            <h3 class="text-2xl font-bold mb-2 group-hover:text-brand-blue transition-colors">{{ project.title }}</h3>
-            <p class="text-sm text-white/80 line-clamp-3 leading-relaxed">{{ getEditorialDescription(project) }}</p>
-          </div>
-        </div>
-
-        <!-- Footer -->
-        <div class="p-6">
-          <div class="flex flex-wrap gap-2 mb-4">
-            @for (tag of project.tags.slice(0, 4); track tag) {
-            <small class="px-2 py-1 bg-brand-blue/10 text-slate-900 dark:text-brand-text text-xs rounded font-medium">{{
-              tag }}</small>
-            }
-          </div>
-
-          @if (project.metrics) {
-          <div class="flex gap-6">
-            @for (metric of project.metrics; track metric.label) {
-            <div>
-              <p class="text-xl font-bold text-slate-900 dark:text-brand-text">{{ metric.value }}</p>
-              <p class="text-xs text-slate-500 dark:text-brand-muted">{{ metric.label }}</p>
-            </div>
-            }
-          </div>
-          }
-        </div>
-      </a>
-      }
-    </div>
-  </div>
-</section>
-}
-
 <!-- All Projects Grid -->
-<section class="py-12 px-4 md:px-8"
-  [ngClass]="{ 'bg-white dark:bg-brand-surface': activeCategory !== 'all' || searchQuery }">
+<section class="py-12 px-4 md:px-8 bg-white dark:bg-brand-surface">
   <div class="max-w-[1200px] mx-auto">
     @if (activeCategory !== 'all' || searchQuery) {
     <h2 class="text-2xl font-bold mb-6">
@@ -152,7 +84,15 @@
       <a [routerLink]="['/projects', project.id]"
         class="group rounded-xl overflow-hidden bg-white dark:bg-brand-surface border border-slate-200 dark:border-brand-border hover:shadow-xl transition-all duration-300 flex flex-col">
         <!-- Image -->
-        <div class="h-48 w-full bg-cover bg-center relative" [style.background-image]="'url(' + project.imageUrl + ')'">
+        <div class="h-48 w-full relative overflow-hidden flex items-center justify-center"
+          [ngClass]="project.id === 'portfolio'
+            ? 'bg-gradient-to-br from-slate-900 via-slate-800 to-brand-blue/80'
+            : 'bg-slate-100 dark:bg-brand-bg'">
+          <img [src]="project.imageUrl" [alt]="'Aperçu du projet ' + project.title" loading="lazy" decoding="async"
+            class="transition-transform duration-300 group-hover:scale-[1.03]"
+            [ngClass]="project.id === 'portfolio'
+              ? 'w-24 h-24 sm:w-28 sm:h-28 object-contain rounded-xl shadow-xl'
+              : 'w-full h-full object-cover'" />
           <div
             class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
             <small class="px-4 py-2 bg-white text-slate-900 font-bold rounded-full text-sm">Voir le
@@ -169,11 +109,6 @@
             </small>
           </div>
 
-          @if (project.featured) {
-          <div class="absolute top-3 right-3">
-            <i class="material-symbols-outlined text-brand-amber" aria-hidden="true">star</i>
-          </div>
-          }
         </div>
 
         <!-- Content -->

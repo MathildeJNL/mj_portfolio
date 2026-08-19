@@ -17,7 +17,6 @@ export class ProjectsGalleryComponent {
 
   searchQuery = '';
   activeCategory = 'all';
-  sortBy = 'recent';
 
   readonly categories = this.data.projectCategories;
   readonly projects = this.data.projects;
@@ -40,17 +39,7 @@ export class ProjectsGalleryComponent {
       );
     }
 
-    if (this.sortBy === 'recent') {
-      filtered = [...filtered].sort((a, b) => b.year - a.year);
-    } else if (this.sortBy === 'featured') {
-      filtered = [...filtered].sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
-    }
-
-    return filtered;
-  }
-
-  get featuredProjects(): ProjectGalleryItem[] {
-    return this.projects.filter((p) => p.featured);
+    return [...filtered].sort((a, b) => b.year - a.year);
   }
 
   setCategory(category: string): void {

@@ -19,9 +19,17 @@
     </nav>
 
     <!-- Hero Image -->
-    <div class="w-full h-64 md:h-80 rounded-2xl bg-cover bg-center mb-8 relative overflow-hidden"
-      [style.background-image]="'url(' + project.imageUrl + ')'">
+    <div class="w-full h-56 sm:h-64 md:h-80 rounded-2xl mb-8 relative overflow-hidden flex items-center justify-center"
+      [ngClass]="project.id === 'portfolio'
+        ? 'bg-gradient-to-br from-slate-900 via-slate-800 to-brand-blue/80'
+        : 'bg-slate-100 dark:bg-brand-bg'">
+      <img [src]="project.imageUrl" [alt]="'Aperçu du projet ' + project.title" decoding="async"
+        [ngClass]="project.id === 'portfolio'
+          ? 'w-28 h-28 sm:w-36 sm:h-36 object-contain rounded-2xl shadow-2xl'
+          : 'w-full h-full object-cover'" />
+      @if (project.id !== 'portfolio') {
       <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent dark:from-brand-bg/60"></div>
+      }
 
       <!-- Status Badge -->
       <div class="absolute top-4 right-4">

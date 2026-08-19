@@ -64,191 +64,235 @@
 
 <!-- Timeline -->
 <section class="py-12 px-4 md:px-8 bg-white dark:bg-brand-surface">
-  <div class="max-w-[900px] mx-auto space-y-16">
-    @for (section of visibleSections; track section.id) {
-    <section [attr.aria-labelledby]="'heading-' + section.id">
-      <header class="mb-8">
-        <div class="flex items-center gap-3 mb-2">
-          <div class="w-10 h-10 rounded-lg flex items-center justify-center" [ngClass]="section.bgClass">
-            <i class="material-symbols-outlined text-xl" [ngClass]="section.colorClass" aria-hidden="true">{{ section.icon }}</i>
-          </div>
-          <h2 [id]="'heading-' + section.id" class="text-2xl font-bold text-slate-900 dark:text-brand-text">
-            {{ section.title }}
-          </h2>
+  <div class="max-w-[1200px] mx-auto">
+    <div class="timeline-headings" aria-hidden="true">
+      <div class="timeline-heading timeline-heading--job">
+        <span class="timeline-heading__icon bg-brand-blue/10 text-brand-blue">
+          <i class="material-symbols-outlined" aria-hidden="true">work</i>
+        </span>
+        <div>
+          <p class="text-lg font-bold text-slate-900 dark:text-brand-text">En entreprise</p>
+          <p class="text-sm text-slate-500 dark:text-brand-muted">Expériences et responsabilités</p>
         </div>
-        <p class="text-sm text-slate-500 dark:text-brand-muted max-w-2xl">{{ section.intro }}</p>
-      </header>
+      </div>
+      <div class="timeline-heading timeline-heading--education">
+        <span class="timeline-heading__icon bg-brand-green/10 text-brand-green">
+          <i class="material-symbols-outlined" aria-hidden="true">school</i>
+        </span>
+        <div>
+          <p class="text-lg font-bold text-slate-900 dark:text-brand-text">En formation</p>
+          <p class="text-sm text-slate-500 dark:text-brand-muted">Diplômes et apprentissages</p>
+        </div>
+      </div>
+    </div>
 
-      <div class="relative">
-        <div class="absolute left-6 top-0 bottom-0 w-0.5 bg-slate-200 dark:bg-brand-border"></div>
+    <div class="timeline-list">
+      @for (row of timelineRows; track row.id) {
+      <div class="timeline-row">
+        <div class="timeline-marker" aria-hidden="true">
+          <i class="material-symbols-outlined">{{ getRowIcon(row) }}</i>
+        </div>
 
-        <div class="space-y-10">
-          @for (event of section.events; track event.id) {
-          <article class="relative">
-            <div
-              class="absolute left-6 -translate-x-1/2 w-12 h-12 rounded-full flex items-center justify-center border-4 border-white dark:border-brand-surface z-10 bg-white dark:bg-brand-bg">
-              <i class="material-symbols-outlined text-xl" [ngClass]="section.colorClass" aria-hidden="true">{{ section.icon }}</i>
-            </div>
-
-            <div
-              class="ml-16 sm:ml-20 bg-white dark:bg-brand-surface rounded-xl border border-slate-200 dark:border-brand-border overflow-hidden hover:shadow-lg transition-shadow">
-              <div class="px-5 sm:px-6 py-4 border-b border-slate-200 dark:border-brand-border">
-                <div class="flex flex-wrap items-center justify-between gap-2">
-                  <div class="flex items-center gap-2">
-                    <small class="px-2 py-0.5 rounded text-xs font-medium" [ngClass]="section.bgClass + ' ' + section.colorClass">
-                      {{ section.id === 'job' ? 'Expérience' : 'Formation' }}
-                    </small>
-                    @if (event.current) {
-                    <small class="px-2 py-0.5 rounded bg-brand-amber/20 text-brand-amber text-xs font-medium">En cours</small>
-                    }
-                  </div>
-                  <small class="text-sm text-slate-500 dark:text-brand-muted">{{ formatDateRange(event) }}</small>
-                </div>
-              </div>
-
-              <div class="p-5 sm:p-6">
-                <h3 class="text-xl font-bold text-slate-900 dark:text-brand-text mb-3">{{ event.title }}</h3>
-
-                <div class="flex flex-wrap items-center gap-x-5 gap-y-3 mb-3">
-                  @if (event.organizationUrl) {
-                  <a [href]="event.organizationUrl" target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 font-medium text-sm" [ngClass]="section.colorClass">
-                    @if (event.organizationLogo) {
-                    <img [src]="event.organizationLogo" [alt]="'Logo ' + event.organization"
-                      class="w-12 h-8 shrink-0 object-contain border-0 outline-none shadow-none rounded-none bg-transparent p-0"
-                      [ngClass]="event.organizationLogoMonochrome ? 'brightness-0 dark:invert' : ''" />
-                    } @else {
-                    <i class="material-symbols-outlined text-xl" aria-hidden="true">{{ section.icon }}</i>
-                    }
-                    {{ event.organization }}
-                    <i class="material-symbols-outlined text-base" aria-hidden="true">open_in_new</i>
-                  </a>
-                  } @else {
-                  <span class="inline-flex items-center gap-2 font-medium text-sm" [ngClass]="section.colorClass">
-                    @if (event.organizationLogo) {
-                    <img [src]="event.organizationLogo" [alt]="'Logo ' + event.organization"
-                      class="w-12 h-8 shrink-0 object-contain border-0 outline-none shadow-none rounded-none bg-transparent p-0"
-                      [ngClass]="event.organizationLogoMonochrome ? 'brightness-0 dark:invert' : ''" />
-                    } @else {
-                    <i class="material-symbols-outlined text-xl" aria-hidden="true">{{ section.icon }}</i>
-                    }
-                    {{ event.organization }}
-                  </span>
-                  }
-
-                  <span class="inline-flex items-center gap-1 text-sm text-slate-500 dark:text-brand-muted">
-                    <i class="material-symbols-outlined text-base" aria-hidden="true">location_on</i>
-                    {{ event.location }}
-                  </span>
-                </div>
-
-                <button type="button" (click)="toggleDetails(event.id)"
-                  class="inline-flex items-center gap-2 text-sm font-semibold" [ngClass]="section.colorClass"
-                  [attr.aria-expanded]="isExpanded(event.id)" [attr.aria-controls]="'details-' + section.id + '-' + event.id">
-                  {{ isExpanded(event.id)
-                  ? (section.id === 'job' ? 'Masquer les missions' : 'Réduire la présentation')
-                  : (section.id === 'job' ? 'Afficher les missions' : 'Découvrir la formation') }}
-                  <i class="material-symbols-outlined text-lg transition-transform"
-                    [ngClass]="isExpanded(event.id) ? 'rotate-180' : ''" aria-hidden="true">expand_more</i>
-                </button>
-              </div>
-
-              @if (isExpanded(event.id)) {
-              <div [id]="'details-' + section.id + '-' + event.id"
-                class="px-5 sm:px-6 py-5 border-t border-slate-200 dark:border-brand-border bg-slate-50/60 dark:bg-brand-bg/40">
-                @if (section.id === 'education') {
-                <div class="mb-5">
-                  <h4 class="font-bold text-slate-900 dark:text-brand-text mb-2">{{ event.organization }}</h4>
-                  <p class="text-sm text-slate-600 dark:text-brand-muted leading-relaxed">
-                    {{ event.institutionDescription || event.organizationTooltip || event.description }}
-                  </p>
-                </div>
-                }
-
-                @if (section.id === 'job') {
-                <div class="space-y-2 mb-5">
-                  @if (event.status) {
-                  <p class="text-sm text-slate-600 dark:text-brand-muted leading-relaxed">
-                    <strong class="text-slate-800 dark:text-brand-text">Statut :</strong> {{ event.status }}
-                  </p>
-                  }
-                  @if (event.responsibility) {
-                  <p class="text-sm text-slate-600 dark:text-brand-muted leading-relaxed">
-                    <strong class="text-slate-800 dark:text-brand-text">Responsabilité :</strong>
-                    {{ event.responsibility }}
-                  </p>
-                  }
-                </div>
-                }
-
-                <p class="text-sm text-slate-600 dark:text-brand-muted leading-relaxed mb-4">{{ event.description }}</p>
-
-                @if (event.highlights.length > 0) {
-                <ul class="space-y-2 mb-5">
-                  @for (highlight of event.highlights; track highlight) {
-                  <li class="flex items-start gap-2">
-                    <i class="material-symbols-outlined text-base shrink-0 mt-0.5" [ngClass]="section.colorClass"
-                      aria-hidden="true">check</i>
-                    <span class="text-sm text-slate-500 dark:text-brand-muted">{{ highlight }}</span>
-                  </li>
-                  }
-                </ul>
-                }
-
-                @if (event.technologies && event.technologies.length > 0) {
-                <div class="flex flex-wrap gap-2 mb-5">
-                  @for (technology of event.technologies; track technology) {
-                  <small
-                    class="px-2 py-1 bg-white dark:bg-brand-surface text-xs rounded border border-slate-200 dark:border-brand-border text-slate-500 dark:text-brand-muted">
-                    {{ technology }}
-                  </small>
-                  }
-                </div>
-                }
-
-                @if (event.relatedProjects && event.relatedProjects.length > 0) {
-                <div class="pt-4 border-t border-slate-200 dark:border-brand-border">
-                  <strong class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-brand-muted mb-2 block">
-                    Expériences associées
-                  </strong>
-                  <div class="flex flex-wrap gap-2">
-                    @for (project of event.relatedProjects; track project.id) {
-                    <a [routerLink]="['/projects', project.id]"
-                      class="inline-flex items-center gap-1 px-2 py-1 bg-brand-blue/10 text-brand-blue text-xs rounded-md font-medium hover:bg-brand-blue/20 transition-colors">
-                      <i class="material-symbols-outlined text-xs" aria-hidden="true">folder_open</i>
-                      {{ project.title }}
-                    </a>
-                    }
-                  </div>
-                </div>
-                }
-
-                @if (event.relatedSkillCategories && event.relatedSkillCategories.length > 0) {
-                <div class="mt-4 pt-4 border-t border-slate-200 dark:border-brand-border">
-                  <strong class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-brand-muted mb-2 block">
-                    Compétences mobilisées
-                  </strong>
-                  <div class="flex flex-wrap gap-2">
-                    @for (skill of event.relatedSkillCategories; track skill.id) {
-                    <a [routerLink]="['/skills', skill.id]"
-                      class="inline-flex items-center gap-1 px-2 py-1 bg-brand-green/10 text-brand-green text-xs rounded-md font-medium hover:bg-brand-green/20 transition-colors">
-                      {{ skill.name }}
-                    </a>
-                    }
-                  </div>
-                </div>
-                }
-              </div>
+        @for (event of getRowEvents(row); track event.id) {
+        <article class="timeline-card"
+          [ngClass]="event.type === 'job' ? 'timeline-card--job' : 'timeline-card--education'">
+          <div class="p-5 sm:p-6">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+              <small class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold"
+                [ngClass]="event.type === 'job' ? 'bg-brand-blue/10 text-brand-blue' : 'bg-brand-green/10 text-brand-green'">
+                <i class="material-symbols-outlined text-sm" aria-hidden="true">{{ event.type === 'job' ? 'work' : 'school' }}</i>
+                {{ event.type === 'job' ? 'Entreprise' : 'Formation' }}
+              </small>
+              @if (event.current) {
+              <small class="px-2.5 py-1 rounded-full bg-brand-amber/15 text-brand-amber text-xs font-semibold">En cours</small>
               }
             </div>
-          </article>
+
+            <p class="text-sm font-semibold mb-2" [ngClass]="event.colorClass">{{ formatDateRange(event) }}</p>
+            <h2 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-brand-text mb-4">{{ event.title }}</h2>
+
+            <div class="flex items-center gap-3 mb-3">
+              @if (event.organizationLogo) {
+              <span class="w-14 h-10 shrink-0 rounded-lg bg-slate-50 dark:bg-white/90 flex items-center justify-center p-1.5">
+                <img [src]="event.organizationLogo" [alt]="'Logo ' + event.organization"
+                  class="max-w-full max-h-full object-contain"
+                  [ngClass]="event.organizationLogoMonochrome ? 'brightness-0' : ''" loading="lazy" />
+              </span>
+              }
+              <div class="min-w-0">
+                <p class="font-semibold text-sm text-slate-800 dark:text-brand-text">{{ event.organization }}</p>
+                <p class="inline-flex items-center gap-1 text-xs text-slate-500 dark:text-brand-muted">
+                  <i class="material-symbols-outlined text-sm" aria-hidden="true">location_on</i>
+                  {{ event.location }}
+                </p>
+              </div>
+            </div>
+
+            <p class="text-sm text-slate-600 dark:text-brand-muted leading-relaxed mb-5">{{ event.description }}</p>
+
+            <button type="button" (click)="openDetails(event, $event.currentTarget)"
+              class="inline-flex items-center gap-2 text-sm font-semibold hover:gap-3 transition-all"
+              [ngClass]="event.colorClass" [attr.aria-label]="'Voir le détail de ' + event.title">
+              Voir le détail
+              <i class="material-symbols-outlined text-lg" aria-hidden="true">arrow_outward</i>
+            </button>
+          </div>
+        </article>
+        }
+      </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Second-level reading modal -->
+@if (selectedEvent; as event) {
+<div class="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6">
+  <button type="button" class="absolute inset-0 w-full h-full bg-slate-950/70 backdrop-blur-sm cursor-default"
+    tabindex="-1" aria-label="Fermer la fenêtre de détail" (click)="closeDetails()"></button>
+
+  <section #dialogPanel tabindex="-1" role="dialog" aria-modal="true" [attr.aria-labelledby]="'modal-title-' + event.id"
+    class="timeline-dialog relative w-full max-w-3xl max-h-[90vh] bg-white dark:bg-brand-surface rounded-2xl shadow-2xl border border-slate-200 dark:border-brand-border overflow-hidden flex flex-col outline-none">
+    <header class="flex items-start justify-between gap-4 p-5 sm:p-6 border-b border-slate-200 dark:border-brand-border">
+      <div>
+        <div class="flex flex-wrap items-center gap-2 mb-2">
+          <small class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold"
+            [ngClass]="event.type === 'job' ? 'bg-brand-blue/10 text-brand-blue' : 'bg-brand-green/10 text-brand-green'">
+            <i class="material-symbols-outlined text-sm" aria-hidden="true">{{ event.type === 'job' ? 'work' : 'school' }}</i>
+            {{ event.type === 'job' ? 'Expérience en entreprise' : 'Formation' }}
+          </small>
+          @if (event.current) {
+          <small class="px-2.5 py-1 rounded-full bg-brand-amber/15 text-brand-amber text-xs font-semibold">En cours</small>
+          }
+        </div>
+        <h2 [id]="'modal-title-' + event.id" class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-brand-text">
+          {{ event.title }}
+        </h2>
+        <p class="mt-1 text-sm font-semibold" [ngClass]="event.colorClass">{{ formatDateRange(event) }}</p>
+      </div>
+      <button type="button" (click)="closeDetails()"
+        class="w-10 h-10 shrink-0 rounded-full inline-flex items-center justify-center text-slate-500 dark:text-brand-muted hover:text-slate-900 dark:hover:text-brand-text hover:bg-slate-100 dark:hover:bg-brand-bg transition-colors"
+        aria-label="Fermer">
+        <i class="material-symbols-outlined" aria-hidden="true">close</i>
+      </button>
+    </header>
+
+    <div class="overflow-y-auto p-5 sm:p-6">
+      <div class="flex flex-wrap items-center gap-x-6 gap-y-3 mb-6">
+        @if (event.organizationUrl) {
+        <a [href]="event.organizationUrl" target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center gap-3 font-semibold" [ngClass]="event.colorClass">
+          @if (event.organizationLogo) {
+          <span class="w-16 h-11 rounded-lg bg-slate-50 dark:bg-white/90 flex items-center justify-center p-1.5">
+            <img [src]="event.organizationLogo" [alt]="'Logo ' + event.organization"
+              class="max-w-full max-h-full object-contain" [ngClass]="event.organizationLogoMonochrome ? 'brightness-0' : ''" />
+          </span>
+          }
+          {{ event.organization }}
+          <i class="material-symbols-outlined text-base" aria-hidden="true">open_in_new</i>
+        </a>
+        } @else {
+        <span class="inline-flex items-center gap-3 font-semibold" [ngClass]="event.colorClass">
+          @if (event.organizationLogo) {
+          <span class="w-16 h-11 rounded-lg bg-slate-50 dark:bg-white/90 flex items-center justify-center p-1.5">
+            <img [src]="event.organizationLogo" [alt]="'Logo ' + event.organization"
+              class="max-w-full max-h-full object-contain" [ngClass]="event.organizationLogoMonochrome ? 'brightness-0' : ''" />
+          </span>
+          }
+          {{ event.organization }}
+        </span>
+        }
+
+        <span class="inline-flex items-center gap-1 text-sm text-slate-500 dark:text-brand-muted">
+          <i class="material-symbols-outlined text-base" aria-hidden="true">location_on</i>
+          {{ event.location }}
+        </span>
+      </div>
+
+      @if (event.type === 'education') {
+      <div class="mb-6 p-4 rounded-xl bg-brand-green/5 border border-brand-green/15">
+        <h3 class="font-bold text-slate-900 dark:text-brand-text mb-2">À propos de l'établissement</h3>
+        <p class="text-sm text-slate-600 dark:text-brand-muted leading-relaxed">
+          {{ event.institutionDescription || event.organizationTooltip || event.description }}
+        </p>
+      </div>
+      }
+
+      @if (event.type === 'job' && (event.status || event.responsibility)) {
+      <div class="mb-6 p-4 rounded-xl bg-brand-blue/5 border border-brand-blue/15 space-y-2">
+        @if (event.status) {
+        <p class="text-sm text-slate-600 dark:text-brand-muted leading-relaxed">
+          <strong class="text-slate-800 dark:text-brand-text">Statut :</strong> {{ event.status }}
+        </p>
+        }
+        @if (event.responsibility) {
+        <p class="text-sm text-slate-600 dark:text-brand-muted leading-relaxed">
+          <strong class="text-slate-800 dark:text-brand-text">Responsabilité :</strong> {{ event.responsibility }}
+        </p>
+        }
+      </div>
+      }
+
+      <p class="text-sm sm:text-base text-slate-600 dark:text-brand-muted leading-relaxed mb-6">{{ event.description }}</p>
+
+      @if (event.highlights.length > 0) {
+      <div class="mb-6">
+        <h3 class="font-bold text-slate-900 dark:text-brand-text mb-3">
+          {{ event.type === 'job' ? 'Missions et acquis' : 'Programme et acquis' }}
+        </h3>
+        <ul class="grid sm:grid-cols-2 gap-3">
+          @for (highlight of event.highlights; track highlight) {
+          <li class="flex items-start gap-2">
+            <i class="material-symbols-outlined text-base mt-0.5" [ngClass]="event.colorClass" aria-hidden="true">check_circle</i>
+            <span class="text-sm text-slate-600 dark:text-brand-muted">{{ highlight }}</span>
+          </li>
+          }
+        </ul>
+      </div>
+      }
+
+      @if (event.technologies && event.technologies.length > 0) {
+      <div class="flex flex-wrap gap-2 mb-6">
+        @for (technology of event.technologies; track technology) {
+        <small class="px-2.5 py-1 bg-slate-50 dark:bg-brand-bg text-xs rounded-full border border-slate-200 dark:border-brand-border text-slate-600 dark:text-brand-muted">
+          {{ technology }}
+        </small>
+        }
+      </div>
+      }
+
+      @if (event.relatedProjects && event.relatedProjects.length > 0) {
+      <div class="pt-5 border-t border-slate-200 dark:border-brand-border">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-brand-muted mb-3">Expériences associées</h3>
+        <div class="flex flex-wrap gap-2">
+          @for (project of event.relatedProjects; track project.id) {
+          <a [routerLink]="['/projects', project.id]"
+            class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-brand-blue/10 text-brand-blue text-xs rounded-lg font-medium hover:bg-brand-blue/20 transition-colors">
+            <i class="material-symbols-outlined text-sm" aria-hidden="true">folder_open</i>
+            {{ project.title }}
+          </a>
           }
         </div>
       </div>
-    </section>
-    }
-  </div>
-</section>
+      }
+
+      @if (event.relatedSkillCategories && event.relatedSkillCategories.length > 0) {
+      <div class="mt-5 pt-5 border-t border-slate-200 dark:border-brand-border">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-brand-muted mb-3">Compétences mobilisées</h3>
+        <div class="flex flex-wrap gap-2">
+          @for (skill of event.relatedSkillCategories; track skill.id) {
+          <a [routerLink]="['/skills', skill.id]"
+            class="inline-flex items-center px-3 py-1.5 bg-brand-green/10 text-brand-green text-xs rounded-lg font-medium hover:bg-brand-green/20 transition-colors">
+            {{ skill.name }}
+          </a>
+          }
+        </div>
+      </div>
+      }
+    </div>
+  </section>
+</div>
+}
 
 <!-- CTA Section -->
 <section class="py-16 px-4 md:px-8">
